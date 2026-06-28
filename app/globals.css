@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  /* SNK Web Solutions Brand Theme - Black Background */
+  --red: #E31E24;
+  --red-dark: #C01A1F;
+  --white: #FFFFFF;
+  --bg-light: #1A1A1A;
+  --text: #F0F0F0;
+
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #161616;
+  --bg-card: #1A1A1A;
+  --text-primary: #F0F0F0;
+  --text-secondary: #999999;
+  --accent: #E31E24;
+  --accent-dark: #C01A1F;
+  --border: #2A2A2A;
+  --success: #22a34a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-inner { animation: none !important; }
+  .fade-in-up { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: #333333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Marquee */
+.marquee { overflow: hidden; contain: layout style paint; }
+.marquee-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 3.5rem;
+  animation: marquee var(--marquee-duration, 38s) linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-inner { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  .marquee-inner { animation-duration: calc(var(--marquee-duration, 38s) * 0.85); }
+}
+
+/* Card hover */
+.case-card, .blog-card {
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.2s ease;
+}
+.case-card:hover, .blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(227, 30, 36, 0.15);
+  border-color: var(--accent);
+}
+
+/* Forms */
+input, textarea, select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(227, 30, 36, 0.15);
+}
+
+/* Nav link */
+.nav-link { position: relative; transition: color 0.2s ease; }
+.nav-link.active::after, .nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Fade in up (used on About page) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+}
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Horizontal scroll areas */
+.scroll-x-smooth {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #333333 var(--bg-secondary);
+}
+.scroll-x-smooth::-webkit-scrollbar { height: 4px; }
+.scroll-x-smooth::-webkit-scrollbar-track { background: var(--bg-secondary); }
+.scroll-x-smooth::-webkit-scrollbar-thumb { background: #333333; border-radius: 2px; }
+.scroll-x-smooth::-webkit-scrollbar-thumb:hover { background: var(--accent); }
