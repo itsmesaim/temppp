@@ -313,11 +313,11 @@ export default function EcosystemCanvas() {
         ctx.textAlign = "center";
         if (index > 0) {
           ctx.fillStyle = "#e4e4e7";
-          ctx.font = `600 ${fontSize}px var(--font-geist-sans)`;
+          ctx.font = `600 ${fontSize}px var(--font-poppins)`;
           ctx.fillText(node.label, node.x, node.y + fontSize * 0.35);
         } else {
           ctx.fillStyle = "#67e8f9";
-          ctx.font = `700 ${coreFontSize}px var(--font-geist-sans)`;
+          ctx.font = `700 ${coreFontSize}px var(--font-poppins)`;
           ctx.fillText("CORE", node.x, node.y + coreFontSize * 0.3);
         }
       });

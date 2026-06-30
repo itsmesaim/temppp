@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
         </section>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-[#2E2E2E]">
+      <div className="mt-12 pt-8 border-t border-[#2A2A2A]">
         <Link href="/" className="text-sm text-[#888888] hover:text-[#E31E24] transition">← Back to Home</Link>
       </div>
     </div>

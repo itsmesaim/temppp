@@ -80,7 +80,7 @@ export default function Contact() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="map-pin" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
@@ -101,7 +101,7 @@ export default function Contact() {
           <HoverLift>
           <a
             href="tel:+919321587762"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="phone" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
@@ -118,7 +118,7 @@ export default function Contact() {
           <HoverLift>
           <a
             href="mailto:snkwebsolutions@gmail.com"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="mail" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
@@ -132,7 +132,7 @@ export default function Contact() {
 
           {/* Hours */}
           <StaggerItem>
-          <div className="flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] h-full">
+          <div className="flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] h-full">
             <IconBox name="clock" />
             <div>
               <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">Business Hours</div>
@@ -291,7 +291,7 @@ export default function Contact() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block relative rounded-3xl overflow-hidden border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(227,30,36,0.2)] hover:-translate-y-1"
+          className="group block relative rounded-3xl overflow-hidden border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(227,30,36,0.2)] hover:-translate-y-1"
           style={{ height: '420px' }}
           aria-label="Open location in Google Maps"
         >
@@ -308,7 +308,7 @@ export default function Contact() {
 
           {/* Overlay label */}
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#121212]/90 backdrop-blur-sm border border-[#2E2E2E]">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0D0D0D]/90 backdrop-blur-sm border border-[#2A2A2A]">
               <IconBox name="map-pin" size={16} className="w-8 h-8" />
               <div>
                 <div className="text-white text-xs font-semibold">{OFFICE_ADDRESS.line1}</div>

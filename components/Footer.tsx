@@ -71,7 +71,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121212] border-t border-[#2E2E2E] text-sm text-white overflow-hidden">
+    <footer className="bg-[#0D0D0D] border-t border-[#2A2A2A] text-sm text-white overflow-hidden">
       {/* ── Main grid ── */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         <Stagger
@@ -109,7 +109,7 @@ export default function Footer() {
                     aria-label={s.name}
                     whileHover={{ y: -4, scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                    className="w-9 h-9 rounded-xl bg-[#222222] border border-[#2E2E2E] flex items-center justify-center text-[#888888] hover:text-white hover:border-[#E31E24]/60 hover:bg-[#E31E24]/10 transition-colors duration-300"
+                    className="w-9 h-9 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center text-[#888888] hover:text-white hover:border-[#E31E24]/60 hover:bg-[#E31E24]/10 transition-colors duration-300"
                   >
                     {s.icon}
                   </motion.a>
@@ -173,7 +173,7 @@ export default function Footer() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                  className="group flex items-start gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
                 >
                   <ServiceIcon
                     name="map-pin"
@@ -187,7 +187,7 @@ export default function Footer() {
 
                 <a
                   href="tel:+919321587762"
-                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
                 >
                   <ServiceIcon
                     name="phone"
@@ -201,7 +201,7 @@ export default function Footer() {
 
                 <a
                   href="mailto:snkwebsolutions@gmail.com"
-                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
                 >
                   <ServiceIcon
                     name="mail"
@@ -213,7 +213,7 @@ export default function Footer() {
                   </span>
                 </a>
 
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E]">
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A]">
                   <ServiceIcon
                     name="clock"
                     size={16}
@@ -233,7 +233,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-[#2E2E2E] to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-[#2A2A2A] to-transparent" />
       </div>
 
       <Reveal
@@ -251,14 +251,14 @@ export default function Footer() {
           >
             Privacy Policy
           </Link>
-          <span className="text-[#2E2E2E]">|</span>
+          <span className="text-[#2A2A2A]">|</span>
           <Link
             href="/terms"
             className="hover:text-[#E31E24] transition-colors"
           >
             Terms &amp; Conditions
           </Link>
-          <span className="text-[#2E2E2E]">|</span>
+          <span className="text-[#2A2A2A]">|</span>
           <Link
             href="/sitemap.xml"
             className="hover:text-[#E31E24] transition-colors"

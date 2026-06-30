@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <div className="overflow-x-clip">
       {/* HERO */}
-      <section className="relative min-h-[100dvh] flex items-center border-b border-[#2E2E2E] pt-16">
+      <section className="relative min-h-[100dvh] flex items-center border-b border-[#2A2A2A] pt-16">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <motion.div
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#E31E24]/8 blur-[100px]"
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="md:col-span-7 pt-10 pb-16 md:pb-10">
             <HeroReveal>
               <HeroItem>
-                <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#1A1A1A] text-xs tracking-[2px] mb-6 border border-[#2E2E2E] text-[#888888]">
+                <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#1A1A1A] text-xs tracking-[2px] mb-6 border border-[#2A2A2A] text-[#888888]">
                   EST. 2010 • NAVI MUMBAI • MAHARASHTRA
                 </div>
               </HeroItem>
@@ -92,7 +92,7 @@ export default function Home() {
               </HeroItem>
 
               <HeroItem delay={0.16}>
-                <p className="max-w-lg text-xl text-[#9A9A9A] mb-10 leading-relaxed">
+                <p className="max-w-lg text-xl text-[#999999] mb-10 leading-relaxed">
                   Trusted digital marketing agency in Navi Mumbai — helping startups, SMEs, healthcare brands, and enterprises increase visibility, generate quality leads, and maximize ROI.
                 </p>
               </HeroItem>
@@ -110,7 +110,7 @@ export default function Home() {
                   <GlowButton>
                     <Link
                       href="/contact"
-                      className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-white hover:bg-[#1A1A1A] hover:border-[#E31E24]/40 transition-all"
+                      className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-white hover:bg-[#1A1A1A] hover:border-[#E31E24]/40 transition-all"
                     >
                       Book a Strategy Call
                     </Link>
@@ -130,7 +130,7 @@ export default function Home() {
 
           <Reveal variant="scaleIn" delay={0.35} duration={0.85} className="md:col-span-5">
             <FloatPulse>
-              <div className="relative h-[280px] sm:h-[360px] md:h-[520px] rounded-3xl overflow-hidden border border-[#2E2E2E] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
+              <div className="relative h-[280px] sm:h-[360px] md:h-[520px] rounded-3xl overflow-hidden border border-[#2A2A2A] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
                 <EcosystemCanvas />
                 <div className="absolute bottom-4 right-4 text-[10px] text-[#666666] tracking-widest">INTERACTIVE DIGITAL ECOSYSTEM</div>
               </div>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* CLIENT LOGOS MARQUEE */}
-      <section className="py-8 border-b border-[#2E2E2E] bg-[#1A1A1A] overflow-hidden">
+      <section className="py-8 border-b border-[#2A2A2A] bg-[#1A1A1A] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal variant="fadeIn" duration={0.5}>
             <div className="flex items-center justify-between mb-4 text-xs tracking-widest text-[#666666]">
@@ -200,7 +200,7 @@ export default function Home() {
           {services.map((service, i) => (
             <StaggerItem key={i}>
               <HoverLift>
-                <div className="group h-full p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] transition-colors duration-300">
+                <div className="group h-full p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] transition-colors duration-300">
                   <motion.div
                     className="mb-6 opacity-80"
                     whileHover={{ scale: 1.15, rotate: 4 }}
@@ -237,7 +237,7 @@ export default function Home() {
             ].map((stat, i) => (
               <StaggerItem key={i} variant="scaleIn">
                 <HoverLift scale={1.04}>
-                  <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-colors">
+                  <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors">
                     <motion.div
                       className="text-6xl font-semibold tracking-tighter text-[#E31E24] mb-1"
                       initial={{ opacity: 0, scale: 0.5 }}
@@ -257,7 +257,7 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#121212] py-20 border-t border-[#2E2E2E] relative overflow-hidden">
+      <section className="bg-[#0D0D0D] py-20 border-t border-[#2A2A2A] relative overflow-hidden">
         <motion.div
           className="absolute inset-0 pointer-events-none"
           animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}

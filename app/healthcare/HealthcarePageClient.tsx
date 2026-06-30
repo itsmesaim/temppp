@@ -15,28 +15,28 @@ import {
 
 const healthcareServices = [
   {
-    href: '/healthcare/lead-generation',
-    icon: 'target' as IconName,
-    badge: 'Lead Generation',
-    title: 'Healthcare Lead Generation',
-    desc: 'Result-driven healthcare lead generation for hospitals, clinics, and diagnostic centres — using Google Ads, Meta advertising, SEO, landing pages, CRM integration, and conversion optimization to attract high-quality patient inquiries.',
-    highlights: ['Google Ads & PPC', 'Meta Advertising', 'CRM Integration', 'Landing Pages'],
+    href: '/healthcare/seo',
+    icon: 'search' as IconName,
+    badge: 'SEO',
+    title: 'Healthcare SEO',
+    desc: 'Specialized SEO services for hospitals, clinics, doctors, and diagnostic centres across Navi Mumbai, Mumbai, and Maharashtra — medical keyword research, local SEO, Google Business Profile optimization, and healthcare content that helps patients find trusted providers online.',
+    highlights: ['Medical Keyword Research', 'Local SEO', 'Technical SEO', 'Google Business Profile'],
   },
   {
     href: '/healthcare/social-media',
     icon: 'smartphone' as IconName,
     badge: 'Social Media',
-    title: 'Healthcare Social Media Marketing',
+    title: 'Healthcare Social Media',
     desc: 'Specialized social media solutions for doctors, clinics, and hospitals — creating informative, compliant content for patient education, community engagement, healthcare awareness, and brand building across all major platforms.',
     highlights: ['Content Creation', 'Patient Engagement', 'Paid Social Ads', 'Reputation Management'],
   },
   {
-    href: '/healthcare/seo',
-    icon: 'search' as IconName,
-    badge: 'SEO',
-    title: 'Healthcare SEO Services',
-    desc: 'Medical keyword research, local SEO, Google Business Profile optimization, technical audits, and healthcare content optimization — helping patients find your practice when they search for trusted providers online.',
-    highlights: ['Medical Keyword Research', 'Local SEO', 'Technical SEO', 'Google Business Profile'],
+    href: '/healthcare/lead-generation',
+    icon: 'target' as IconName,
+    badge: 'Lead Generation',
+    title: 'Healthcare Lead Generation',
+    desc: 'Result-driven healthcare lead generation for hospitals, clinics, and diagnostic centres — using SEO, Google Ads, Meta advertising, landing pages, CRM integration, and conversion optimization to attract high-quality patient inquiries.',
+    highlights: ['Google Ads & PPC', 'Meta Advertising', 'CRM Integration', 'Landing Pages'],
   },
 ];
 
@@ -49,9 +49,9 @@ const stats = [
 
 export default function HealthcarePageClient() {
   return (
-    <div className="bg-[#121212] min-h-screen overflow-x-clip">
+    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
       {/* Hero */}
-      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
+      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none"
           animate={{ opacity: [0.6, 1, 0.6] }}
@@ -71,7 +71,7 @@ export default function HealthcarePageClient() {
               </h1>
             </HeroItem>
             <HeroItem delay={0.14}>
-              <p className="max-w-2xl text-xl md:text-2xl text-[#9A9A9A] mb-10 leading-relaxed">
+              <p className="max-w-2xl text-xl md:text-2xl text-[#999999] mb-10 leading-relaxed">
                 SNK offers result-driven healthcare digital marketing for hospitals, clinics, doctors, diagnostic centres, and healthcare organizations across Navi Mumbai, Mumbai, Thane, and Maharashtra — connecting providers with patients actively searching for medical services online.
               </p>
             </HeroItem>
@@ -87,7 +87,7 @@ export default function HealthcarePageClient() {
                 </GlowButton>
                 <Link
                   href="/services"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
                 >
                   All Services
                 </Link>
@@ -98,7 +98,7 @@ export default function HealthcarePageClient() {
       </section>
 
       {/* Stats */}
-      <section className="border-b border-[#2E2E2E]">
+      <section className="border-b border-[#2A2A2A]">
         <Stagger className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10" fast>
           {stats.map((s) => (
             <StaggerItem key={s.number} variant="scaleIn">
@@ -112,16 +112,16 @@ export default function HealthcarePageClient() {
       </section>
 
       {/* Intro */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <Reveal>
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               Healthcare Digital Marketing That Delivers Results
             </h2>
-            <p className="text-[#9A9A9A] text-lg leading-relaxed mb-5">
+            <p className="text-[#999999] text-lg leading-relaxed mb-5">
               Effective healthcare marketing requires data-driven campaigns, advanced targeting, and continuous optimization. Our services use SEO, Google Ads, Meta advertising, social media marketing, landing page optimization, and conversion-focused strategies to generate qualified patient leads.
             </p>
-            <p className="text-[#9A9A9A] text-lg leading-relaxed">
+            <p className="text-[#999999] text-lg leading-relaxed">
               Whether you operate a specialty clinic, diagnostic laboratory, dental practice, multi-specialty hospital, or healthcare center, we help increase patient acquisition while maximizing marketing ROI — trusted by providers across Navi Mumbai, Mumbai, Thane, and Maharashtra.
             </p>
           </div>
@@ -129,7 +129,7 @@ export default function HealthcarePageClient() {
       </section>
 
       {/* Services */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <Reveal className="mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Our Healthcare Marketing Services
@@ -144,7 +144,7 @@ export default function HealthcarePageClient() {
               <HoverLift>
                 <Link
                   href={s.href}
-                  className="group p-8 rounded-2xl bg-[#181818] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-colors block h-full"
+                  className="group p-8 rounded-2xl bg-[#0D0D0D] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors block h-full"
                 >
                   <div className="flex items-center justify-between mb-6">
                     <ServiceIcon name={s.icon} size={30} />
@@ -195,7 +195,7 @@ export default function HealthcarePageClient() {
             </GlowButton>
             <Link
               href="/case-studies"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
             >
               View Case Studies
             </Link>

@@ -50,10 +50,10 @@ const process = [
 
 export default function AIDigitalMarketingPage() {
   return (
-    <div className="bg-[#121212] min-h-screen">
+    <div className="bg-[#0D0D0D] min-h-screen">
 
       {/* Hero */}
-      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
+      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
         {/* Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 relative">
@@ -76,7 +76,7 @@ export default function AIDigitalMarketingPage() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
             >
               ← All Services
             </Link>
@@ -97,7 +97,7 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* What is AI Marketing */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">THE DIFFERENCE</div>
@@ -116,10 +116,10 @@ export default function AIDigitalMarketingPage() {
               { label: 'Manual Marketing', items: ['Weekly optimisations', 'Limited A/B testing', 'Gut-feel targeting', 'Reactive reporting'] },
               { label: 'AI Marketing', items: ['Real-time optimisation', 'Thousands of variants', 'Predictive targeting', 'Proactive intelligence'], isRed: true },
             ].map((col) => (
-              <div key={col.label} className={`p-6 rounded-2xl border ${col.isRed ? 'bg-[#1A0505] border-[#E31E24]/40' : 'bg-[#1A1A1A] border-[#2E2E2E]'}`}>
+              <div key={col.label} className={`p-6 rounded-2xl border ${col.isRed ? 'bg-[#1A0505] border-[#E31E24]/40' : 'bg-[#1A1A1A] border-[#2A2A2A]'}`}>
                 <div className={`text-xs tracking-[2px] font-semibold mb-4 ${col.isRed ? 'text-[#E31E24]' : 'text-[#555555]'}`}>{col.label}</div>
                 {col.items.map((item) => (
-                  <div key={item} className={`text-sm py-2 border-b border-[#2E2E2E] last:border-0 ${col.isRed ? 'text-[#CCCCCC]' : 'text-[#555555] line-through'}`}>
+                  <div key={item} className={`text-sm py-2 border-b border-[#2A2A2A] last:border-0 ${col.isRed ? 'text-[#CCCCCC]' : 'text-[#555555] line-through'}`}>
                     {item}
                   </div>
                 ))}
@@ -130,12 +130,12 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">CAPABILITIES</div>
         <h2 className="text-5xl font-semibold tracking-tighter text-white mb-12">What we deploy for you.</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {capabilities.map((cap) => (
-            <div key={cap.title} className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all group">
+            <div key={cap.title} className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all group">
               <div className="mb-5 group-hover:scale-110 transition-transform"><ServiceIcon name={cap.icon} size={36} /></div>
               <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">{cap.title}</h3>
               <p className="text-[#777777] leading-relaxed text-sm">{cap.desc}</p>
@@ -145,16 +145,16 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* Process */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">HOW IT WORKS</div>
         <h2 className="text-5xl font-semibold tracking-tighter text-white mb-12">From zero to AI-powered<br />in four steps.</h2>
         <div className="grid md:grid-cols-4 gap-6">
           {process.map((p, i) => (
             <div key={p.step} className="relative">
               {i < process.length - 1 && (
-                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-[#2E2E2E] z-0" />
+                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-[#2A2A2A] z-0" />
               )}
-              <div className="relative z-10 p-7 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] h-full">
+              <div className="relative z-10 p-7 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] h-full">
                 <div className="text-[#E31E24] text-4xl font-semibold tracking-tighter mb-4">{p.step}</div>
                 <h3 className="text-white font-semibold text-xl mb-3">{p.title}</h3>
                 <p className="text-[#777777] text-sm leading-relaxed">{p.desc}</p>

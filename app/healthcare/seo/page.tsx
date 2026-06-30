@@ -41,10 +41,10 @@ const whyMatters = [
 
 export default function HealthcareSEOPage() {
   return (
-    <div className="bg-[#121212] min-h-screen overflow-x-clip">
+    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
 
       {/* Hero */}
-      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
+      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none"
           animate={{ opacity: [0.5, 0.9, 0.5] }}
@@ -60,13 +60,14 @@ export default function HealthcareSEOPage() {
             <HeroItem delay={0.08}>
               <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
                 Healthcare<br />
-                <span className="text-[#E31E24]">SEO Services.</span>
+                <span className="text-[#E31E24]">SEO.</span>
               </h1>
             </HeroItem>
             <HeroItem delay={0.14}>
               <p className="max-w-2xl text-xl md:text-2xl text-[#888888] mb-10 leading-relaxed">
-                Help more patients find you on Google. We rank hospitals, clinics, and doctors higher — driving
-                consistent organic traffic and qualified appointment requests.
+                Patients increasingly rely on search engines to find trusted healthcare providers. We help
+                hospitals, clinics, and doctors improve online visibility, attract local patients, and build trust
+                in highly competitive healthcare markets.
               </p>
             </HeroItem>
             <HeroItem delay={0.2}>
@@ -81,7 +82,7 @@ export default function HealthcareSEOPage() {
                 </GlowButton>
                 <Link
                   href="/healthcare"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
                 >
                   ← Healthcare Services
                 </Link>
@@ -92,7 +93,7 @@ export default function HealthcareSEOPage() {
       </section>
 
       {/* Results */}
-      <section className="border-b border-[#2E2E2E]">
+      <section className="border-b border-[#2A2A2A]">
         <Stagger className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10" fast>
           {results.map((r) => (
             <StaggerItem key={r.number} variant="scaleIn">
@@ -106,26 +107,26 @@ export default function HealthcareSEOPage() {
       </section>
 
       {/* Intro */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
             SEO Designed for the Healthcare Industry
           </h2>
           <p className="text-[#888888] text-lg leading-relaxed mb-5">
             SNK is a leading <strong className="text-white">healthcare SEO agency</strong> providing
-            specialised SEO services for hospitals, clinics, doctors, diagnostic centres, and healthcare organisations
+            specialized SEO services for hospitals, clinics, doctors, diagnostic centres, and healthcare organisations
             across Navi Mumbai, Mumbai, and Maharashtra.
           </p>
           <p className="text-[#888888] text-lg leading-relaxed">
-            We understand the unique challenges of healthcare marketing — from YMYL content standards and Google's
-            E-E-A-T requirements to local patient search behaviour. Our healthcare SEO strategies are built to improve
-            rankings, attract the right patients, and create long-term organic growth for your practice.
+            Our healthcare SEO services include medical keyword research, local SEO, Google Business Profile
+            optimization, technical SEO audits, healthcare content optimization, reputation management, and website
+            performance improvements — helping medical practices generate more appointment requests and qualified leads.
           </p>
         </div>
       </section>
 
       {/* Why SEO Matters */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
@@ -138,7 +139,7 @@ export default function HealthcareSEOPage() {
           </div>
           <div className="lg:w-1/2 space-y-4">
             {whyMatters.map((point) => (
-              <div key={point} className="flex items-start gap-3 p-4 rounded-xl bg-[#181818] border border-[#2E2E2E]">
+              <div key={point} className="flex items-start gap-3 p-4 rounded-xl bg-[#0D0D0D] border border-[#2A2A2A]">
                 <div className="mt-0.5 w-5 h-5 rounded-full bg-[#E31E24]/20 flex items-center justify-center flex-shrink-0">
                   <div className="w-2 h-2 rounded-full bg-[#E31E24]" />
                 </div>
@@ -150,7 +151,7 @@ export default function HealthcareSEOPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Our Healthcare SEO Services
@@ -163,7 +164,7 @@ export default function HealthcareSEOPage() {
           {seoServices.map((s) => (
             <StaggerItem key={s.title}>
               <HoverLift>
-              <div className="p-6 rounded-2xl bg-[#181818] border border-[#2E2E2E] hover:border-[#E31E24]/30 transition-colors group h-full">
+              <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-[#2A2A2A] hover:border-[#E31E24]/30 transition-colors group h-full">
                 <div className="mb-4"><ServiceIcon name={s.icon} size={24} /></div>
                 <h3 className="text-white font-semibold text-base mb-2 group-hover:text-[#E31E24] transition-colors">
                   {s.title}
@@ -197,7 +198,7 @@ export default function HealthcareSEOPage() {
             </GlowButton>
             <Link
               href="/services"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
             >
               All Services
             </Link>

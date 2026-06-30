@@ -15,75 +15,51 @@ import {
 
 const services = [
   {
-    id: 'web',
-    icon: 'monitor' as IconName,
-    title: 'Website Design & Development',
-    tagline: 'Modern, responsive, conversion-focused websites.',
-    desc: 'SNK is a leading website development company in Navi Mumbai, creating professional websites that enhance credibility, improve user experience, search visibility, and lead generation.',
-    features: ['Corporate Website Development', 'Business Website Development', 'eCommerce Development', 'Landing Page Design', 'WordPress Development', 'UI/UX Design', 'SEO-Friendly Development', 'Website Speed Optimization'],
-  },
-  {
-    id: 'mobile',
-    icon: 'smartphone' as IconName,
-    title: 'Responsive & Mobile-Friendly Websites',
-    tagline: 'Seamless experiences on every device.',
-    desc: 'Every website we build is designed with speed, security, mobile responsiveness, and SEO best practices — engaging visitors and converting them into customers across all screen sizes.',
-    features: ['Mobile-First Design', 'Cross-Device Testing', 'Touch-Optimized UI', 'Fast Mobile Loading', 'Adaptive Layouts', 'Progressive Enhancement'],
-  },
-  {
     id: 'seo',
     icon: 'search' as IconName,
     title: 'Search Engine Optimization (SEO)',
-    tagline: 'Rank higher. Attract qualified traffic.',
-    desc: 'Professional SEO services in Navi Mumbai that improve search rankings, increase organic traffic, and convert visitors into customers through technical knowledge, content optimization, and data-driven insights.',
-    features: ['Technical SEO Audits', 'Keyword Research', 'On-Page Optimization', 'Local & International SEO', 'Link Building', 'Rank Tracking & Reporting'],
+    tagline: 'Improve rankings, increase traffic, generate more leads.',
+    desc: 'Professional SEO services in Navi Mumbai that help your business rank higher on Google and generate quality leads. We develop customized SEO strategies combining technical knowledge, content optimization, and data-driven insights for sustainable online growth.',
+    features: ['Keyword Research & Competitor Analysis', 'On-Page SEO Optimization', 'Technical SEO Audits', 'Local SEO Strategies', 'Google Business Profile Optimization', 'Content Optimization & SEO Strategy', 'High-Quality Link Building', 'Website Speed & Performance', 'Analytics Tracking & Reporting'],
   },
   {
-    id: 'performance',
-    icon: 'target' as IconName,
-    title: 'Digital Marketing Services',
-    tagline: 'Data-driven campaigns that deliver ROI.',
-    desc: 'Customized digital marketing services in Navi Mumbai combining strategic planning, creative execution, and data-driven insights — including SEO, Google Ads, social media, content marketing, and ORM.',
-    features: ['Google Ads & PPC', 'Lead Generation Campaigns', 'Conversion Tracking', 'Remarketing', 'Marketing Automation', 'Performance Reporting'],
+    id: 'aeo',
+    icon: 'bot' as IconName,
+    title: 'Answer Engine Optimization (AEO)',
+    tagline: 'Be the answer across AI-powered search.',
+    desc: 'As search technology evolves, businesses need more than traditional SEO. We help you appear in featured snippets, voice search results, AI-generated answers, and knowledge panels by structuring content so search engines and AI platforms deliver your business as the most relevant answer.',
+    features: ['Direct Answer Content Optimization', 'FAQ Creation & Optimization', 'Schema Markup & Structured Data', 'Featured Snippet Optimization', 'Voice Search Optimization', 'Knowledge Graph & Entity Optimization', 'AI Search Readiness Assessment', 'Semantic SEO & Topical Authority'],
   },
   {
     id: 'social',
     icon: 'smartphone' as IconName,
     title: 'Social Media Marketing',
     tagline: 'Build communities. Drive conversations.',
-    desc: 'End-to-end social media management across Instagram, Facebook, LinkedIn, and more — crafting platform-native content, growing your audience, and turning engagement into business outcomes.',
-    features: ['Social Media Strategy', 'Content Creation', 'Community Management', 'Paid Social Ads', 'Influencer Partnerships', 'Analytics & Reporting'],
+    desc: 'Strategic social media marketing that helps businesses attract the right audience, strengthen brand presence, and convert engagement into loyal customers — across Instagram, Facebook, LinkedIn, and more.',
+    features: ['Social Media Strategy', 'Content Creation & Management', 'Community Management', 'Paid Social Advertising', 'Audience Targeting', 'Brand Awareness Campaigns', 'Engagement Optimization', 'Analytics & Performance Reporting'],
   },
   {
-    id: 'content',
-    icon: 'pen' as IconName,
-    title: 'Content Creation & Marketing',
-    tagline: 'Stories that educate, engage, and convert.',
-    desc: 'Compelling content that educates, engages, and converts your audience — from blog articles and social posts to email sequences and brand storytelling that builds authority.',
-    features: ['Blog & Articles', 'Social Content', 'Email Marketing', 'Video Scripts', 'Brand Voice Guidelines', 'Content Strategy'],
+    id: 'performance',
+    icon: 'target' as IconName,
+    title: 'Performance Marketing',
+    tagline: 'Turn advertising spend into measurable revenue.',
+    desc: 'Data-driven advertising strategies that focus on results, not just clicks. We create, manage, and optimize campaigns that generate qualified leads, increase sales, and maximize return on investment.',
+    features: ['Google Ads Management', 'Facebook & Instagram Advertising', 'Lead Generation Campaigns', 'E-commerce Marketing', 'Remarketing & Retargeting', 'Landing Page Optimization', 'Conversion Tracking & Analytics', 'Performance Max Campaigns'],
   },
   {
-    id: 'maintenance',
-    icon: 'wrench' as IconName,
-    title: 'Website Maintenance & Support',
-    tagline: 'Always secure, fast, and up to date.',
-    desc: 'Dedicated post-launch support to keep your digital assets secure, up-to-date, and performing at their best — so you can focus on running your business.',
-    features: ['Security Updates', 'Bug Fixes', 'Content Updates', 'Performance Monitoring', 'Backup Management', 'Technical Support'],
-  },
-  {
-    id: 'brand',
-    icon: 'globe' as IconName,
-    title: 'Branding & Business Promotion',
-    tagline: 'Stand out. Get recognized. Grow.',
-    desc: 'Strategic branding and business promotion solutions that set your business apart, drive recognition, and create a sharp market position with the narrative to own it.',
-    features: ['Brand Identity', 'Market Positioning', 'Go-To-Market Strategy', 'Competitive Analysis', 'Messaging Frameworks', 'Launch Planning'],
+    id: 'web',
+    icon: 'monitor' as IconName,
+    title: 'Web Design & Development',
+    tagline: 'Modern, responsive, conversion-focused websites.',
+    desc: 'SNK is a leading website development company in Navi Mumbai, creating modern, responsive, and conversion-focused websites that enhance credibility, improve user experience, search visibility, and lead generation.',
+    features: ['Corporate Website Development', 'Business Website Development', 'eCommerce Website Development', 'Landing Page Design', 'WordPress Website Development', 'UI/UX Design Services', 'Website Maintenance & Support', 'Website Speed Optimization', 'SEO-Friendly Website Development'],
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#121212] min-h-screen overflow-x-clip">
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 border-b border-[#2E2E2E]">
+    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 border-b border-[#2A2A2A]">
         <motion.div
           className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#E31E24]/6 blur-[100px] pointer-events-none"
           animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -101,7 +77,7 @@ export default function ServicesPage() {
             </h1>
           </HeroItem>
           <HeroItem delay={0.12}>
-            <p className="max-w-2xl text-xl text-[#9A9A9A] mb-10 leading-relaxed">
+            <p className="max-w-2xl text-xl text-[#999999] mb-10 leading-relaxed">
               Looking for the best digital marketing agency in Navi Mumbai? With over 15+ years of experience, we provide customized digital marketing services that combine strategic planning, creative execution, and data-driven insights to help startups, SMEs, healthcare brands, and enterprises grow online.
             </p>
           </HeroItem>
@@ -132,11 +108,11 @@ export default function ServicesPage() {
               <HoverLift>
                 <div
                   id={service.id}
-                  className="group relative rounded-3xl p-9 border bg-[#1A1A1A] border-[#2E2E2E] hover:border-[#E31E24]/50 transition-colors duration-300 h-full"
+                  className="group relative rounded-3xl p-9 border bg-[#1A1A1A] border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 h-full"
                 >
                   <div className="mb-4 opacity-80"><ServiceIcon name={service.icon} size={36} /></div>
                   <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-1 text-white">{service.title}</h2>
-                  <div className="text-[#9A9A9A] text-sm mb-4 italic">{service.tagline}</div>
+                  <div className="text-[#999999] text-sm mb-4 italic">{service.tagline}</div>
                   <p className="text-[#AAAAAA] leading-relaxed mb-8">{service.desc}</p>
 
                   <div className="grid grid-cols-2 gap-2 mb-8">

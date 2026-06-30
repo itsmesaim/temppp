@@ -42,10 +42,10 @@ const whyUs = [
 
 export default function HealthcareSocialMediaPage() {
   return (
-    <div className="bg-[#121212] min-h-screen overflow-x-clip">
+    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
 
       {/* Hero */}
-      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
+      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none"
           animate={{ opacity: [0.5, 0.9, 0.5] }}
@@ -60,14 +60,14 @@ export default function HealthcareSocialMediaPage() {
             </HeroItem>
             <HeroItem delay={0.08}>
               <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
-                Healthcare Social<br />
-                <span className="text-[#E31E24]">Media Marketing.</span>
+                Healthcare<br />
+                <span className="text-[#E31E24]">Social Media.</span>
               </h1>
             </HeroItem>
             <HeroItem delay={0.14}>
               <p className="max-w-2xl text-xl md:text-2xl text-[#888888] mb-10 leading-relaxed">
-                Build patient trust, increase brand visibility, and grow your healthcare practice through
-                strategic, compliant, and engaging social media marketing.
+                Connect with patients, build trust, and strengthen your online presence through specialized
+                social media solutions for doctors, clinics, hospitals, and medical brands.
               </p>
             </HeroItem>
             <HeroItem delay={0.2}>
@@ -82,7 +82,7 @@ export default function HealthcareSocialMediaPage() {
                 </GlowButton>
                 <Link
                   href="/healthcare"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
                 >
                   ← Healthcare Services
                 </Link>
@@ -93,7 +93,7 @@ export default function HealthcareSocialMediaPage() {
       </section>
 
       {/* Intro */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
             Social Media Built for Healthcare Professionals
@@ -105,14 +105,15 @@ export default function HealthcareSocialMediaPage() {
           </p>
           <p className="text-[#888888] text-lg leading-relaxed">
             Our healthcare marketing specialists create informative, compliant, and engaging content that helps
-            healthcare organisations establish credibility and maintain meaningful patient relationships — across
-            every platform your patients use.
+            healthcare organisations establish credibility and maintain meaningful patient relationships. We leverage
+            strategic campaign planning, audience targeting, and platform-specific optimization to reach the right
+            audience while maintaining a professional and compliant online presence.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Our Healthcare Social Media Services
@@ -125,7 +126,7 @@ export default function HealthcareSocialMediaPage() {
           {services.map((s) => (
             <StaggerItem key={s.title}>
               <HoverLift>
-              <div className="p-6 rounded-2xl bg-[#181818] border border-[#2E2E2E] hover:border-[#E31E24]/30 transition-colors group h-full">
+              <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-[#2A2A2A] hover:border-[#E31E24]/30 transition-colors group h-full">
                 <div className="mb-4"><ServiceIcon name={s.icon} size={24} /></div>
                 <h3 className="text-white font-semibold text-base mb-2 group-hover:text-[#E31E24] transition-colors">
                   {s.title}
@@ -139,13 +140,13 @@ export default function HealthcareSocialMediaPage() {
       </section>
 
       {/* Platforms */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10">Platforms We Manage</h2>
         <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-5" fast>
           {platforms.map((p) => (
             <StaggerItem key={p.name} variant="scaleIn">
               <HoverLift>
-              <div className="p-7 rounded-2xl bg-[#181818] border border-[#2E2E2E] text-center h-full">
+              <div className="p-7 rounded-2xl bg-[#0D0D0D] border border-[#2A2A2A] text-center h-full">
                 <div className="text-2xl font-bold text-[#E31E24] mb-2">{p.name}</div>
                 <div className="text-[#666666] text-sm">{p.desc}</div>
               </div>
@@ -156,7 +157,7 @@ export default function HealthcareSocialMediaPage() {
       </section>
 
       {/* Why Us */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
@@ -176,7 +177,7 @@ export default function HealthcareSocialMediaPage() {
           </div>
           <div className="lg:w-1/2 space-y-4">
             {whyUs.map((point) => (
-              <div key={point} className="flex items-start gap-3 p-4 rounded-xl bg-[#181818] border border-[#2E2E2E]">
+              <div key={point} className="flex items-start gap-3 p-4 rounded-xl bg-[#0D0D0D] border border-[#2A2A2A]">
                 <div className="mt-0.5 w-5 h-5 rounded-full bg-[#E31E24]/20 flex items-center justify-center flex-shrink-0">
                   <div className="w-2 h-2 rounded-full bg-[#E31E24]" />
                 </div>
@@ -208,7 +209,7 @@ export default function HealthcareSocialMediaPage() {
             </GlowButton>
             <Link
               href="/case-studies"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
             >
               View Case Studies
             </Link>

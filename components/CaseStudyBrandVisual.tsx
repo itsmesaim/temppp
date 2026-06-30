@@ -26,7 +26,7 @@ export default function CaseStudyBrandVisual({
     <div
       className={`relative w-full h-full overflow-hidden ${className}`}
       style={{
-        background: `radial-gradient(ellipse at 30% 20%, ${accent}18 0%, transparent 55%), linear-gradient(145deg, #222222 0%, #181818 50%, #121212 100%)`,
+        background: `radial-gradient(ellipse at 30% 20%, ${accent}18 0%, transparent 55%), linear-gradient(145deg, #1A1A1A 0%, #0D0D0D 50%, #0D0D0D 100%)`,
       }}
     >
       <div

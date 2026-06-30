@@ -11,7 +11,7 @@ export default function CaseStudiesSection() {
   const featured = getFeaturedCaseStudies();
 
   return (
-    <section className="py-20 bg-[#121212] border-t border-[#2E2E2E]">
+    <section className="py-20 bg-[#0D0D0D] border-t border-[#2A2A2A]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <Reveal>
@@ -53,7 +53,7 @@ export default function CaseStudiesSection() {
               <HoverLift lift={-8} scale={1.015}>
                 <Link
                   href={`/case-studies/${cs.slug}`}
-                  className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] overflow-hidden h-full"
+                  className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -96,7 +96,7 @@ export default function CaseStudiesSection() {
                       {cs.shortDesc}
                     </p>
 
-                    <div className="p-4 rounded-2xl bg-[#222222] border border-[#2E2E2E] group-hover:border-[#E31E24]/30 transition-colors mb-5">
+                    <div className="p-4 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-5">
                       <div className="text-xs text-[#666666] mb-1 tracking-wide">
                         KEY RESULT
                       </div>
@@ -125,7 +125,7 @@ export default function CaseStudiesSection() {
         <Reveal className="mt-8 text-center md:hidden">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-[#2E2E2E] text-white text-sm font-medium hover:border-[#E31E24] hover:text-[#E31E24] transition"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-[#2A2A2A] text-white text-sm font-medium hover:border-[#E31E24] hover:text-[#E31E24] transition"
           >
             View All Case Studies →
           </Link>

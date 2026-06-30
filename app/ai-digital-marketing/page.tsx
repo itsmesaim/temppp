@@ -100,10 +100,10 @@ const faqs = [
 
 export default function AIDigitalMarketingPage() {
   return (
-    <div className="bg-[#121212] min-h-screen overflow-x-clip">
+    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
 
       {/* Hero */}
-      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
+      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none"
           animate={{ opacity: [0.5, 1, 0.5] }}
@@ -144,7 +144,7 @@ export default function AIDigitalMarketingPage() {
                 </GlowButton>
                 <Link
                   href="/services"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
                 >
                   ← All Services
                 </Link>
@@ -174,7 +174,7 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* What is AI Marketing */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <Reveal className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">THE DIFFERENCE</div>
@@ -193,10 +193,10 @@ export default function AIDigitalMarketingPage() {
               { label: 'Manual Marketing', items: ['Weekly optimisations', 'Limited A/B testing', 'Gut-feel targeting', 'Reactive reporting', 'Fixed budgets', 'Slow content output'] },
               { label: 'AI Marketing', items: ['Real-time optimisation', 'Thousands of variants', 'Predictive targeting', 'Proactive intelligence', 'Dynamic budget allocation', 'Content at scale'], isRed: true },
             ].map((col) => (
-              <div key={col.label} className={`p-6 rounded-2xl border ${col.isRed ? 'bg-[#1A0505] border-[#E31E24]/40' : 'bg-[#1A1A1A] border-[#2E2E2E]'}`}>
+              <div key={col.label} className={`p-6 rounded-2xl border ${col.isRed ? 'bg-[#1A0505] border-[#E31E24]/40' : 'bg-[#1A1A1A] border-[#2A2A2A]'}`}>
                 <div className={`text-xs tracking-[2px] font-semibold mb-4 ${col.isRed ? 'text-[#E31E24]' : 'text-[#555555]'}`}>{col.label}</div>
                 {col.items.map((item) => (
-                  <div key={item} className={`text-sm py-2 border-b border-[#2E2E2E] last:border-0 ${col.isRed ? 'text-[#CCCCCC]' : 'text-[#555555] line-through'}`}>
+                  <div key={item} className={`text-sm py-2 border-b border-[#2A2A2A] last:border-0 ${col.isRed ? 'text-[#CCCCCC]' : 'text-[#555555] line-through'}`}>
                     {item}
                   </div>
                 ))}
@@ -207,7 +207,7 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">CAPABILITIES</div>
         <h2 className="text-5xl font-semibold tracking-tighter text-white mb-4">What we deploy for you.</h2>
         <p className="text-[#888888] text-lg mb-12 max-w-2xl">A full suite of AI marketing capabilities tailored to your business goals — from traffic to leads to revenue.</p>
@@ -215,7 +215,7 @@ export default function AIDigitalMarketingPage() {
           {capabilities.map((cap) => (
             <StaggerItem key={cap.title}>
               <HoverLift>
-              <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-colors duration-300 group h-full">
+              <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 group h-full">
                 <div className="mb-5 group-hover:scale-110 transition-transform duration-300"><ServiceIcon name={cap.icon} size={36} /></div>
                 <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">{cap.title}</h3>
                 <p className="text-[#777777] leading-relaxed text-sm">{cap.desc}</p>
@@ -227,7 +227,7 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* Process */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">HOW IT WORKS</div>
         <h2 className="text-5xl font-semibold tracking-tighter text-white mb-12">From zero to AI-powered<br />in four steps.</h2>
         <Stagger className="grid md:grid-cols-4 gap-6" stagger={0.1}>
@@ -235,10 +235,10 @@ export default function AIDigitalMarketingPage() {
             <StaggerItem key={p.step}>
             <div className="relative h-full">
               {i < process.length - 1 && (
-                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-[#2E2E2E] z-0" />
+                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-[#2A2A2A] z-0" />
               )}
               <HoverLift>
-              <div className="relative z-10 p-7 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] h-full hover:border-[#E31E24]/40 transition-colors">
+              <div className="relative z-10 p-7 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] h-full hover:border-[#E31E24]/40 transition-colors">
                 <div className="text-[#E31E24] text-4xl font-semibold tracking-tighter mb-4">{p.step}</div>
                 <h3 className="text-white font-semibold text-xl mb-3">{p.title}</h3>
                 <p className="text-[#777777] text-sm leading-relaxed">{p.desc}</p>
@@ -251,13 +251,13 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="max-w-4xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
+      <section className="max-w-4xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">FAQ</div>
         <h2 className="text-5xl font-semibold tracking-tighter text-white mb-12">Common questions.</h2>
         <Stagger className="space-y-4" stagger={0.06}>
           {faqs.map((faq, i) => (
             <StaggerItem key={i}>
-            <div className="p-7 rounded-2xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24]/30 transition-colors">
+            <div className="p-7 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/30 transition-colors">
               <div className="flex items-start gap-4">
                 <span className="text-[#E31E24] font-bold text-lg mt-0.5 shrink-0">Q</span>
                 <div>

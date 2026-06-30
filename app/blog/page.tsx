@@ -28,7 +28,7 @@ export default function Blog() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="blog-card group cursor-pointer overflow-hidden rounded-3xl border border-[#2E2E2E] bg-[#222222] flex flex-col"
+            className="blog-card group cursor-pointer overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] flex flex-col"
           >
             {/* Cover image */}
             <div className="relative h-56 bg-[#1A1A1A] overflow-hidden">
@@ -45,7 +45,7 @@ export default function Blog() {
                 {post.categories.slice(0, 2).map((cat) => (
                   <span
                     key={cat}
-                    className="px-3 py-1 text-xs rounded-full bg-[#121212]/80 backdrop-blur-sm text-white tracking-widest border border-[#2E2E2E]"
+                    className="px-3 py-1 text-xs rounded-full bg-[#0D0D0D]/80 backdrop-blur-sm text-white tracking-widest border border-[#2A2A2A]"
                   >
                     {cat}
                   </span>
@@ -62,7 +62,7 @@ export default function Blog() {
                 {post.excerpt}
               </p>
 
-              <div className="mt-6 pt-5 border-t border-[#2E2E2E] flex items-center justify-between text-sm">
+              <div className="mt-6 pt-5 border-t border-[#2A2A2A] flex items-center justify-between text-sm">
                 <div>
                   <div className="text-white font-medium">{post.author}</div>
                   <div className="text-xs text-[#666666] mt-0.5">

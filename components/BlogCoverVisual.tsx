@@ -28,7 +28,7 @@ export default function BlogCoverVisual({
     <div
       className={`relative w-full h-full overflow-hidden ${className}`}
       style={{
-        background: `radial-gradient(ellipse at 25% 15%, ${accent}22 0%, transparent 55%), linear-gradient(145deg, #222222 0%, #181818 50%, #121212 100%)`,
+        background: `radial-gradient(ellipse at 25% 15%, ${accent}22 0%, transparent 55%), linear-gradient(145deg, #1A1A1A 0%, #0D0D0D 50%, #0D0D0D 100%)`,
       }}
       aria-hidden
     >
