@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   BarChart3,
@@ -42,50 +42,50 @@ import {
   Wrench,
   Zap,
   type LucideIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
 export type IconName =
-  | "bot"
-  | "target"
-  | "flask"
-  | "message"
-  | "pen"
-  | "bar-chart"
-  | "search"
-  | "mail"
-  | "cart"
-  | "trending-up"
-  | "monitor"
-  | "globe"
-  | "smartphone"
-  | "megaphone"
-  | "wrench"
-  | "trophy"
-  | "briefcase"
-  | "settings"
-  | "wallet"
-  | "lightbulb"
-  | "clock"
-  | "phone"
-  | "hammer"
-  | "handshake"
-  | "calendar"
-  | "rocket"
-  | "smile"
-  | "zap"
-  | "eye"
-  | "map-pin"
-  | "hospital"
-  | "clipboard"
-  | "link"
-  | "key"
-  | "file-text"
-  | "star"
-  | "heart"
-  | "video"
-  | "palette"
-  | "check"
-  | "planning";
+  | 'bot'
+  | 'target'
+  | 'flask'
+  | 'message'
+  | 'pen'
+  | 'bar-chart'
+  | 'search'
+  | 'mail'
+  | 'cart'
+  | 'trending-up'
+  | 'monitor'
+  | 'globe'
+  | 'smartphone'
+  | 'megaphone'
+  | 'wrench'
+  | 'trophy'
+  | 'briefcase'
+  | 'settings'
+  | 'wallet'
+  | 'lightbulb'
+  | 'clock'
+  | 'phone'
+  | 'hammer'
+  | 'handshake'
+  | 'calendar'
+  | 'rocket'
+  | 'smile'
+  | 'zap'
+  | 'eye'
+  | 'map-pin'
+  | 'hospital'
+  | 'clipboard'
+  | 'link'
+  | 'key'
+  | 'file-text'
+  | 'star'
+  | 'heart'
+  | 'video'
+  | 'palette'
+  | 'check'
+  | 'planning';
 
 const iconMap: Record<IconName, LucideIcon> = {
   bot: Bot,
@@ -93,11 +93,11 @@ const iconMap: Record<IconName, LucideIcon> = {
   flask: FlaskConical,
   message: MessageCircle,
   pen: PenLine,
-  "bar-chart": BarChart3,
+  'bar-chart': BarChart3,
   search: Search,
   mail: Mail,
   cart: ShoppingCart,
-  "trending-up": TrendingUp,
+  'trending-up': TrendingUp,
   monitor: Monitor,
   globe: Globe,
   smartphone: Smartphone,
@@ -117,12 +117,12 @@ const iconMap: Record<IconName, LucideIcon> = {
   smile: Smile,
   zap: Zap,
   eye: Eye,
-  "map-pin": MapPin,
+  'map-pin': MapPin,
   hospital: Hospital,
   clipboard: ClipboardList,
   link: Link2,
   key: Key,
-  "file-text": FileText,
+  'file-text': FileText,
   star: Star,
   heart: Heart,
   video: Video,
@@ -141,19 +141,12 @@ interface ServiceIconProps {
 export function ServiceIcon({
   name,
   size = 24,
-  className = "text-[#E31E24]",
+  className = 'text-[#E31E24]',
   strokeWidth = 1.75,
 }: ServiceIconProps) {
   const Icon = iconMap[name];
   if (!Icon) return null;
-  return (
-    <Icon
-      size={size}
-      className={className}
-      strokeWidth={strokeWidth}
-      aria-hidden
-    />
-  );
+  return <Icon size={size} className={className} strokeWidth={strokeWidth} aria-hidden />;
 }
 
 interface IconBoxProps {
@@ -162,7 +155,7 @@ interface IconBoxProps {
   className?: string;
 }
 
-export function IconBox({ name, size = 20, className = "" }: IconBoxProps) {
+export function IconBox({ name, size = 20, className = '' }: IconBoxProps) {
   return (
     <div
       className={`w-10 h-10 rounded-xl bg-[#E31E24]/10 border border-[#E31E24]/20 flex items-center justify-center flex-shrink-0 ${className}`}

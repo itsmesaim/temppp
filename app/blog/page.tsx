@@ -5,7 +5,8 @@ import { blogPosts } from '../../lib/blog-data';
 
 export const metadata = {
   title: 'Blog | SNK',
-  description: 'Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from the SNK team.',
+  description:
+    'Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from the SNK team.',
 };
 
 export default function Blog() {
@@ -15,10 +16,13 @@ export default function Blog() {
       <div className="max-w-2xl mb-12">
         <div className="text-[#E31E24] tracking-[3px] text-sm mb-2">INSIGHTS</div>
         <h1 className="text-5xl md:text-6xl tracking-tight font-semibold leading-tight">
-          Thoughts on growth,<br />strategy &amp; the craft.
+          Thoughts on growth,
+          <br />
+          strategy &amp; the craft.
         </h1>
         <p className="mt-5 text-lg text-[#888888]">
-          Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from the SNK team.
+          Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from
+          the SNK team.
         </p>
       </div>
 
@@ -80,7 +84,9 @@ export default function Blog() {
 
       {/* ── Bottom CTA ── */}
       <div className="mt-16 text-center">
-        <p className="text-[#666666] text-sm mb-4">Want tailored digital marketing advice for your business?</p>
+        <p className="text-[#666666] text-sm mb-4">
+          Want tailored digital marketing advice for your business?
+        </p>
         <Link
           href="/contact"
           className="inline-flex h-12 items-center justify-center rounded-full bg-[#E31E24] px-8 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-all hover:shadow-[0_0_24px_rgba(227,30,36,0.4)]"

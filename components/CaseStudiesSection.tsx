@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { getFeaturedCaseStudies } from "../lib/case-studies-data";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getFeaturedCaseStudies } from '../lib/case-studies-data';
 
-import { Reveal, Stagger, StaggerItem, HoverLift, motion } from "./motion";
+import { Reveal, Stagger, StaggerItem, HoverLift, motion } from './motion';
 
 export default function CaseStudiesSection() {
   const featured = getFeaturedCaseStudies();
@@ -24,9 +24,8 @@ export default function CaseStudiesSection() {
                 <span className="text-[#E31E24]">Case Studies</span>
               </h2>
               <p className="mt-4 text-[#888888] max-w-lg text-lg">
-                Real campaigns. Measurable outcomes. Here&apos;s how we&apos;ve
-                transformed brands across industries into digital growth
-                stories.
+                Real campaigns. Measurable outcomes. Here&apos;s how we&apos;ve transformed brands
+                across industries into digital growth stories.
               </p>
             </div>
           </Reveal>
@@ -39,7 +38,7 @@ export default function CaseStudiesSection() {
               <motion.span
                 className="inline-block"
                 whileHover={{ x: 6 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
                 →
               </motion.span>
@@ -88,7 +87,7 @@ export default function CaseStudiesSection() {
                         {cs.client}
                       </h3>
                       <p className="text-[#666666] text-sm mt-1">
-                        {cs.duration} • {cs.services.slice(0, 2).join(" + ")}
+                        {cs.duration} • {cs.services.slice(0, 2).join(' + ')}
                       </p>
                     </div>
 
@@ -97,12 +96,8 @@ export default function CaseStudiesSection() {
                     </p>
 
                     <div className="p-4 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-5">
-                      <div className="text-xs text-[#666666] mb-1 tracking-wide">
-                        KEY RESULT
-                      </div>
-                      <div className="text-[#E31E24] font-semibold text-lg">
-                        {cs.keyResult}
-                      </div>
+                      <div className="text-xs text-[#666666] mb-1 tracking-wide">KEY RESULT</div>
+                      <div className="text-[#E31E24] font-semibold text-lg">{cs.keyResult}</div>
                     </div>
 
                     <div className="flex items-center gap-2 text-sm font-medium text-[#888888] group-hover:text-white transition-colors">

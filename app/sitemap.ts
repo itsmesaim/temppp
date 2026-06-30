@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { blogPosts } from '../lib/blog-data';
 import { caseStudies } from '../lib/case-studies-data';
+import { getAllServiceSlugs } from '../lib/services-data';
 
 const BASE_URL = 'https://snkwebsolutions.com';
 
@@ -9,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/services',
-    '/services/ai-digital-marketing',
+    ...getAllServiceSlugs().map((slug) => `/services/${slug}`),
     '/ai-digital-marketing',
     '/case-studies',
     '/blog',

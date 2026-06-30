@@ -4,7 +4,7 @@ import HealthcarePageClient from './HealthcarePageClient';
 export const metadata: Metadata = {
   title: 'Healthcare Digital Marketing Services in Navi Mumbai | SNK',
   description:
-    'Specialised healthcare digital marketing services in Navi Mumbai — lead generation, social media marketing, and SEO for hospitals, clinics, doctors, and diagnostic centres.',
+    'Healthcare digital marketing in Navi Mumbai — lead generation, social media, and SEO for hospitals, clinics, doctors, diagnostic centres, and healthcare organizations across Maharashtra.',
 };
 
 export default function HealthcarePage() {

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
 interface CaseStudyBrandVisualProps {
   client: string;
   clientLogo: string;
   industry: string;
   accent?: string;
-  variant?: "cover" | "hero" | "gallery";
+  variant?: 'cover' | 'hero' | 'gallery';
   className?: string;
 }
 
@@ -15,12 +15,12 @@ export default function CaseStudyBrandVisual({
   client,
   clientLogo,
   industry,
-  accent = "#E31E24",
-  variant = "cover",
-  className = "",
+  accent = '#E31E24',
+  variant = 'cover',
+  className = '',
 }: CaseStudyBrandVisualProps) {
-  const isHero = variant === "hero";
-  const logoSize = isHero ? 220 : variant === "gallery" ? 120 : 140;
+  const isHero = variant === 'hero';
+  const logoSize = isHero ? 220 : variant === 'gallery' ? 120 : 140;
 
   return (
     <div
@@ -47,9 +47,7 @@ export default function CaseStudyBrandVisual({
       <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
         <div
           className={`rounded-2xl bg-white/95 flex items-center justify-center shadow-lg ${
-            isHero
-              ? "w-44 h-44 md:w-52 md:h-52 p-5"
-              : "w-28 h-28 md:w-32 md:h-32 p-3"
+            isHero ? 'w-44 h-44 md:w-52 md:h-52 p-5' : 'w-28 h-28 md:w-32 md:h-32 p-3'
           }`}
         >
           <Image
@@ -57,15 +55,13 @@ export default function CaseStudyBrandVisual({
             alt={`${client} logo`}
             width={logoSize}
             height={logoSize}
-            sizes={isHero ? "208px" : variant === "gallery" ? "120px" : "128px"}
+            sizes={isHero ? '208px' : variant === 'gallery' ? '120px' : '128px'}
             loading="lazy"
             className="w-full h-full object-contain"
           />
         </div>
         {!isHero && (
-          <p className="mt-4 text-[10px] tracking-[3px] text-[#666666] uppercase">
-            {industry}
-          </p>
+          <p className="mt-4 text-[10px] tracking-[3px] text-[#666666] uppercase">{industry}</p>
         )}
       </div>
     </div>

@@ -9,11 +9,7 @@ export function generateStaticParams() {
 }
 
 /* ── Per-page metadata ── */
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
@@ -34,7 +30,10 @@ function renderBlock(block: ContentBlock, i: number) {
       );
     case 'heading':
       return (
-        <h2 key={i} className="text-2xl md:text-3xl font-semibold text-white tracking-tight mt-12 mb-4">
+        <h2
+          key={i}
+          className="text-2xl md:text-3xl font-semibold text-white tracking-tight mt-12 mb-4"
+        >
           {block.text}
         </h2>
       );
@@ -73,18 +72,13 @@ function renderBlock(block: ContentBlock, i: number) {
 }
 
 /* ── Page component (Next.js 15 — params is a Promise) ── */
-export default async function BlogPost({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
   return (
     <div className="bg-[#0D0D0D] min-h-screen">
-
       {/* ── Hero ── */}
       <section className="border-b border-[#2A2A2A]">
         <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
@@ -144,9 +138,7 @@ export default async function BlogPost({
       {(() => {
         const related = blogPosts
           .filter(
-            (p) =>
-              p.slug !== post.slug &&
-              p.categories.some((c) => post.categories.includes(c))
+            (p) => p.slug !== post.slug && p.categories.some((c) => post.categories.includes(c))
           )
           .slice(0, 2);
 
@@ -156,7 +148,9 @@ export default async function BlogPost({
           <section className="border-t border-[#2A2A2A] bg-[#0D0D0D] py-16">
             <div className="max-w-4xl mx-auto px-6">
               <div className="text-[#E31E24] tracking-[3px] text-xs mb-2">KEEP READING</div>
-              <h2 className="text-3xl font-semibold tracking-tight text-white mb-8">Related Articles</h2>
+              <h2 className="text-3xl font-semibold tracking-tight text-white mb-8">
+                Related Articles
+              </h2>
               <div className="grid sm:grid-cols-2 gap-5">
                 {related.map((r) => (
                   <Link
@@ -179,7 +173,9 @@ export default async function BlogPost({
                       <h3 className="text-sm font-semibold text-white leading-snug group-hover:text-[#E31E24] transition-colors line-clamp-2">
                         {r.title}
                       </h3>
-                      <div className="text-xs text-[#666666] mt-2">{r.date} · {r.readTime} read</div>
+                      <div className="text-xs text-[#666666] mt-2">
+                        {r.date} · {r.readTime} read
+                      </div>
                     </div>
                   </Link>
                 ))}

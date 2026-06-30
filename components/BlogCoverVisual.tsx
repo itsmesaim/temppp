@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
 interface BlogCoverVisualProps {
   slug: string;
   categories: string[];
   title: string;
-  variant?: "card" | "hero";
+  variant?: 'card' | 'hero';
   className?: string;
 }
 
-const ACCENTS = ["#E31E24", "#C01A1F", "#B81820", "#D42028", "#A01518"];
+const ACCENTS = ['#E31E24', '#C01A1F', '#B81820', '#D42028', '#A01518'];
 
 function hashSlug(slug: string) {
-  return slug.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
 }
 
 export default function BlogCoverVisual({
   slug,
   categories,
   title,
-  variant = "card",
-  className = "",
+  variant = 'card',
+  className = '',
 }: BlogCoverVisualProps) {
   const accent = ACCENTS[hashSlug(slug) % ACCENTS.length];
-  const isHero = variant === "hero";
+  const isHero = variant === 'hero';
 
   return (
     <div
@@ -48,7 +48,7 @@ export default function BlogCoverVisual({
       />
 
       <div
-        className={`relative z-10 flex flex-col justify-end h-full p-5 ${isHero ? "md:p-8" : ""}`}
+        className={`relative z-10 flex flex-col justify-end h-full p-5 ${isHero ? 'md:p-8' : ''}`}
       >
         {categories[0] && (
           <span
@@ -64,7 +64,7 @@ export default function BlogCoverVisual({
         )}
         <p
           className={`font-semibold text-white/90 leading-snug line-clamp-3 ${
-            isHero ? "text-lg md:text-2xl max-w-2xl" : "text-sm"
+            isHero ? 'text-lg md:text-2xl max-w-2xl' : 'text-sm'
           }`}
         >
           {title}

@@ -1,12 +1,8 @@
-"use client";
+'use client';
 
-import { MotionConfig, motion, useReducedMotion } from "framer-motion";
+import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
 
-export default function PageTransition({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PageTransition({ children }: { children: React.ReactNode }) {
   const reduced = useReducedMotion();
 
   if (reduced) {

@@ -13,9 +13,7 @@ export default function CaseStudiesPage() {
     return caseStudies.filter((cs) => {
       const matchesFilter =
         activeFilter === 'All' ||
-        cs.services.some((s) =>
-          s.toLowerCase().includes(activeFilter.toLowerCase())
-        ) ||
+        cs.services.some((s) => s.toLowerCase().includes(activeFilter.toLowerCase())) ||
         cs.industry.toLowerCase().includes(activeFilter.toLowerCase());
 
       const q = searchQuery.toLowerCase();
@@ -38,7 +36,9 @@ export default function CaseStudiesPage() {
         <div className="max-w-7xl mx-auto px-6 relative">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs text-[#555555] mb-8">
-            <Link href="/" className="hover:text-[#E31E24] transition">Home</Link>
+            <Link href="/" className="hover:text-[#E31E24] transition">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-[#888888]">Case Studies</span>
           </div>
@@ -48,11 +48,13 @@ export default function CaseStudiesPage() {
               PROVEN RESULTS
             </div>
             <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter text-white leading-[0.95] mb-6">
-              Real Results for<br />
+              Real Results for
+              <br />
               <span className="text-[#E31E24]">Real Businesses.</span>
             </h1>
             <p className="text-xl text-[#888888] max-w-2xl mb-10">
-              Discover how SNK helps businesses grow through web development, SEO, branding, digital marketing, and software solutions — with results that speak for themselves.
+              Discover how SNK helps businesses grow through web development, SEO, branding, digital
+              marketing, and software solutions — with results that speak for themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -78,8 +80,13 @@ export default function CaseStudiesPage() {
               { value: '300%', label: 'Max Traffic Growth' },
               { value: '94%', label: 'Top 10 Keywords' },
             ].map((stat, i) => (
-              <div key={i} className="p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] text-center">
-                <div className="text-3xl font-semibold tracking-tighter text-[#E31E24] mb-1">{stat.value}</div>
+              <div
+                key={i}
+                className="p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] text-center"
+              >
+                <div className="text-3xl font-semibold tracking-tighter text-[#E31E24] mb-1">
+                  {stat.value}
+                </div>
                 <div className="text-xs text-[#666666] tracking-wide">{stat.label}</div>
               </div>
             ))}
@@ -115,7 +122,12 @@ export default function CaseStudiesPage() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
               <input
                 type="text"
@@ -138,7 +150,10 @@ export default function CaseStudiesPage() {
               <h3 className="text-2xl font-semibold text-white mb-2">No results found</h3>
               <p className="text-[#666666]">Try adjusting your filters or search terms</p>
               <button
-                onClick={() => { setActiveFilter('All'); setSearchQuery(''); }}
+                onClick={() => {
+                  setActiveFilter('All');
+                  setSearchQuery('');
+                }}
                 className="mt-6 px-6 py-2 rounded-full bg-[#E31E24] text-white text-sm font-medium hover:bg-[#C01A1F] transition"
               >
                 Clear All Filters
@@ -147,8 +162,14 @@ export default function CaseStudiesPage() {
           ) : (
             <>
               <div className="mb-6 text-sm text-[#555555]">
-                Showing <span className="text-white font-medium">{filtered.length}</span> case {filtered.length === 1 ? 'study' : 'studies'}
-                {activeFilter !== 'All' && <span> in <span className="text-[#E31E24]">{activeFilter}</span></span>}
+                Showing <span className="text-white font-medium">{filtered.length}</span> case{' '}
+                {filtered.length === 1 ? 'study' : 'studies'}
+                {activeFilter !== 'All' && (
+                  <span>
+                    {' '}
+                    in <span className="text-[#E31E24]">{activeFilter}</span>
+                  </span>
+                )}
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filtered.map((cs) => (
@@ -206,13 +227,18 @@ export default function CaseStudiesPage() {
                       {/* Key Result */}
                       <div className="flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-4">
                         <span className="text-xs text-[#555555]">Key Result</span>
-                        <span className="text-[#E31E24] font-semibold text-sm text-right">{cs.keyResult}</span>
+                        <span className="text-[#E31E24] font-semibold text-sm text-right">
+                          {cs.keyResult}
+                        </span>
                       </div>
 
                       {/* Services Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {cs.services.slice(0, 3).map((s) => (
-                          <span key={s} className="px-2 py-0.5 rounded-md bg-[#1A1A1A] border border-[#2A2A2A] text-[#666666] text-xs">
+                          <span
+                            key={s}
+                            className="px-2 py-0.5 rounded-md bg-[#1A1A1A] border border-[#2A2A2A] text-[#666666] text-xs"
+                          >
                             {s}
                           </span>
                         ))}
@@ -238,11 +264,13 @@ export default function CaseStudiesPage() {
             YOUR TURN
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-4">
-            Ready to become our next<br />
+            Ready to become our next
+            <br />
             <span className="text-[#E31E24]">success story?</span>
           </h2>
           <p className="text-[#666666] text-lg mb-8">
-            Let&apos;s build your case study together. Book a free strategy call and see how we can grow your brand.
+            Let&apos;s build your case study together. Book a free strategy call and see how we can
+            grow your brand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

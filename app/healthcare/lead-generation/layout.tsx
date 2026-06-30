@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Healthcare Lead Generation Services in Navi Mumbai | SNK',
   description:
-    'Trusted healthcare lead generation agency in Navi Mumbai. We help hospitals, clinics, doctors & diagnostic centres attract high-quality patient inquiries through data-driven digital marketing campaigns.',
+    'Healthcare lead generation services in Navi Mumbai. Result-driven campaigns for hospitals, clinics, doctors, and diagnostic centres across Navi Mumbai, Mumbai, Thane, and Maharashtra.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

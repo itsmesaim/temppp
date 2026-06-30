@@ -1,21 +1,15 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ServiceIcon, type IconName } from "../../components/ServiceIcon";
-import {
-  Reveal,
-  Stagger,
-  StaggerItem,
-  HoverLift,
-  GlowButton,
-} from "../../components/motion";
-import { FOUNDED_YEAR } from "../../lib/site";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ServiceIcon, type IconName } from '../../components/ServiceIcon';
+import { Reveal, Stagger, StaggerItem, HoverLift, GlowButton } from '../../components/motion';
+import { FOUNDED_YEAR } from '../../lib/site';
 
 function FadeInSection({
   children,
-  className = "",
+  className = '',
   delay = 0,
 }: {
   children: React.ReactNode;
@@ -30,91 +24,91 @@ function FadeInSection({
 }
 
 const services: {
-  id: string;
+  slug: string;
   icon: IconName;
   title: string;
   desc: string;
 }[] = [
   {
-    id: "seo",
-    icon: "search",
-    title: "Search Engine Optimization (SEO)",
-    desc: "Rank higher on Google, drive organic traffic, and turn search visibility into qualified leads.",
+    slug: 'seo',
+    icon: 'search',
+    title: 'Search Engine Optimization (SEO)',
+    desc: 'Rank higher on Google, drive organic traffic, and turn search visibility into qualified leads.',
   },
   {
-    id: "aeo",
-    icon: "bot",
-    title: "Answer Engine Optimization (AEO)",
-    desc: "Show up in featured snippets, voice search, and AI answers when customers ask questions online.",
+    slug: 'aeo',
+    icon: 'bot',
+    title: 'Answer Engine Optimization (AEO)',
+    desc: 'Show up in featured snippets, voice search, and AI answers when customers ask questions online.',
   },
   {
-    id: "social",
-    icon: "smartphone",
-    title: "Social Media Marketing",
-    desc: "Grow your audience, build brand trust, and turn social engagement into real business results.",
+    slug: 'social-media',
+    icon: 'smartphone',
+    title: 'Social Media Marketing',
+    desc: 'Grow your audience, build brand trust, and turn social engagement into real business results.',
   },
   {
-    id: "performance",
-    icon: "target",
-    title: "Performance Marketing",
-    desc: "Run ROI-focused ad campaigns on Google and Meta that generate leads and measurable revenue.",
+    slug: 'performance-marketing',
+    icon: 'target',
+    title: 'Performance Marketing',
+    desc: 'Run ROI-focused ad campaigns on Google and Meta that generate leads and measurable revenue.',
   },
   {
-    id: "web",
-    icon: "monitor",
-    title: "Web Design & Development",
-    desc: "Get a fast, mobile-friendly website built to look professional and convert visitors into customers.",
+    slug: 'web-design',
+    icon: 'monitor',
+    title: 'Web Design & Development',
+    desc: 'Get a fast, mobile-friendly website built to look professional and convert visitors into customers.',
   },
 ];
 
 const whyChoose: { icon: IconName; title: string }[] = [
-  { icon: "trophy", title: `Established and trusted since ${FOUNDED_YEAR}` },
-  { icon: "briefcase", title: "Experienced and dedicated professionals" },
-  { icon: "settings", title: "Customized business-focused solutions" },
-  { icon: "wallet", title: "Affordable and scalable services" },
-  { icon: "lightbulb", title: "Creative and innovative approach" },
-  { icon: "clock", title: "Timely project delivery" },
-  { icon: "phone", title: "Transparent communication" },
-  { icon: "hammer", title: "Ongoing support and maintenance" },
-  { icon: "handshake", title: "Strong commitment to client success" },
+  { icon: 'trophy', title: `Established and trusted since ${FOUNDED_YEAR}` },
+  { icon: 'briefcase', title: 'Experienced and dedicated professionals' },
+  { icon: 'settings', title: 'Customized business-focused solutions' },
+  { icon: 'wallet', title: 'Affordable and scalable services' },
+  { icon: 'lightbulb', title: 'Creative and innovative approach' },
+  { icon: 'clock', title: 'Timely project delivery' },
+  { icon: 'phone', title: 'Transparent communication' },
+  { icon: 'hammer', title: 'Ongoing support and maintenance' },
+  { icon: 'handshake', title: 'Strong commitment to client success' },
 ];
 
 const team: { name: string; role: string; img: string; bio: string }[] = [
   {
-    name: "Mr. Sandeep Narayan Kanade",
-    role: "Founder & Director",
-    img: "/team-sandeep.webp",
+    name: 'Mr. Sandeep Narayan Kanade',
+    role: 'Founder & Director',
+    img: '/team-sandeep.webp',
     bio: `Founder and Director of SNK since ${FOUNDED_YEAR}. With a passion for technology and business development, he guides the organization through evolving market trends while centering leadership on quality, innovation, integrity, and customer satisfaction.`,
   },
   {
-    name: "Pinky",
-    role: "Senior Counsellor",
-    img: "/team-pinky.webp",
-    bio: "A trusted advisor who guides clients through their digital journey with professionalism, clarity, and a genuine commitment to their success.",
+    name: 'Pinky',
+    role: 'Senior Counsellor',
+    img: '/team-pinky.webp',
+    bio: 'A trusted advisor who guides clients through their digital journey with professionalism, clarity, and a genuine commitment to their success.',
   },
   {
-    name: "Yusuf Kadiri",
-    role: "Digital Marketing Associate",
-    img: "/team-main.webp",
-    bio: "Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.",
+    name: 'Yusuf Kadiri',
+    role: 'Digital Marketing Associate',
+    img: '/team-main.webp',
+    bio: 'Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.',
   },
   {
-    name: "Anup Patil",
-    role: "Social Media Associate",
-    img: "/team-anup.webp",
-    bio: "Manages and grows brand presence across social platforms through engaging content, strategic planning, and community engagement.",
+    name: 'Anup Patil',
+    role: 'Social Media Associate',
+    img: '/team-anup.webp',
+    bio: 'Manages and grows brand presence across social platforms through engaging content, strategic planning, and community engagement.',
   },
   {
-    name: "Aakash Karnekar",
-    role: "Digital Marketing Associate",
-    img: "/team-akash.webp",
-    bio: "Executes performance-focused digital marketing strategies across multiple channels to deliver consistent, measurable client growth.",
+    name: 'Aakash Karnekar',
+    role: 'Digital Marketing Associate',
+    img: '/team-akash.webp',
+    bio: 'Executes performance-focused digital marketing strategies across multiple channels to deliver consistent, measurable client growth.',
   },
   {
-    name: "Kahkasha Bhatkar",
-    role: "Website Developer",
-    img: "/team-kahkasha.webp",
-    bio: "Builds responsive, high-performance websites that combine clean code, modern design, and excellent user experience to elevate brands online.",
+    name: 'Kahkasha Bhatkar',
+    role: 'Website Developer',
+    img: '/team-kahkasha.webp',
+    bio: 'Builds responsive, high-performance websites that combine clean code, modern design, and excellent user experience to elevate brands online.',
   },
 ];
 
@@ -133,9 +127,7 @@ export default function About() {
           <FadeInSection delay={0}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/25 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse" />
-              <span className="text-[#E31E24] text-xs font-semibold tracking-[3px]">
-                ABOUT US
-              </span>
+              <span className="text-[#E31E24] text-xs font-semibold tracking-[3px]">ABOUT US</span>
             </div>
           </FadeInSection>
 
@@ -146,8 +138,8 @@ export default function About() {
               <span className="text-[#E31E24]">SNK</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#999999] max-w-2xl mx-auto leading-relaxed">
-              A trusted digital solutions company helping businesses establish,
-              grow, and strengthen their online presence.
+              A trusted digital solutions company helping businesses establish, grow, and strengthen
+              their online presence.
             </p>
           </FadeInSection>
 
@@ -175,9 +167,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeInSection>
-              <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-3">
-                ABOUT US
-              </div>
+              <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-3">ABOUT US</div>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 leading-tight">
                 Your Trusted Digital
                 <br />
@@ -185,24 +175,20 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-[#AAAAAA] leading-relaxed">
                 <p>
-                  Founded in{" "}
-                  <strong className="text-white">{FOUNDED_YEAR}</strong>, SNK is
-                  a trusted digital solutions company dedicated to helping
-                  businesses establish, grow, and strengthen their online
-                  presence.
+                  Founded in <strong className="text-white">{FOUNDED_YEAR}</strong>, SNK is a
+                  trusted digital solutions company dedicated to helping businesses establish, grow,
+                  and strengthen their online presence.
                 </p>
                 <p>
-                  With nearly two decades of industry experience, we have
-                  successfully delivered innovative web design, website
-                  development, digital marketing, and branding solutions to
-                  businesses across various industries.
+                  With nearly two decades of industry experience, we have successfully delivered
+                  innovative web design, website development, digital marketing, and branding
+                  solutions to businesses across various industries.
                 </p>
                 <p>
-                  Over the years, SNK has built a reputation for
-                  professionalism, reliability, and customer satisfaction. We
-                  believe that every business deserves a strong digital
-                  presence, and our team works passionately to transform ideas
-                  into successful online experiences.
+                  Over the years, SNK has built a reputation for professionalism, reliability, and
+                  customer satisfaction. We believe that every business deserves a strong digital
+                  presence, and our team works passionately to transform ideas into successful
+                  online experiences.
                 </p>
               </div>
             </FadeInSection>
@@ -210,24 +196,24 @@ export default function About() {
             <Stagger className="grid grid-cols-2 gap-4" fast>
               {[
                 {
-                  num: "15+",
-                  label: "Years of Experience",
-                  icon: "calendar" as IconName,
+                  num: '15+',
+                  label: 'Years of Experience',
+                  icon: 'calendar' as IconName,
                 },
                 {
-                  num: "150+",
-                  label: "Projects Delivered",
-                  icon: "rocket" as IconName,
+                  num: '150+',
+                  label: 'Projects Delivered',
+                  icon: 'rocket' as IconName,
                 },
                 {
-                  num: "100+",
-                  label: "Happy Clients",
-                  icon: "smile" as IconName,
+                  num: '100+',
+                  label: 'Happy Clients',
+                  icon: 'smile' as IconName,
                 },
                 {
                   num: String(FOUNDED_YEAR),
-                  label: "Founded",
-                  icon: "zap" as IconName,
+                  label: 'Founded',
+                  icon: 'zap' as IconName,
                 },
               ].map((stat) => (
                 <StaggerItem key={stat.label} variant="scaleIn">
@@ -239,9 +225,7 @@ export default function About() {
                       <div className="text-3xl font-bold text-[#E31E24] tracking-tight">
                         {stat.num}
                       </div>
-                      <div className="text-xs text-[#888888] tracking-wide mt-1">
-                        {stat.label}
-                      </div>
+                      <div className="text-xs text-[#888888] tracking-wide mt-1">{stat.label}</div>
                     </div>
                   </HoverLift>
                 </StaggerItem>
@@ -255,9 +239,7 @@ export default function About() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <FadeInSection>
           <div className="text-center mb-12">
-            <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">
-              OUR PURPOSE
-            </div>
+            <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">OUR PURPOSE</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
               Mission &amp; Vision
             </h2>
@@ -268,24 +250,19 @@ export default function About() {
               <div className="absolute top-0 left-0 w-48 h-48 rounded-full bg-[#E31E24]/6 blur-[50px] pointer-events-none" />
               <div className="relative">
                 <div className="w-11 h-11 rounded-2xl bg-[#E31E24]/15 border border-[#E31E24]/30 flex items-center justify-center mb-5">
-                  <ServiceIcon
-                    name="target"
-                    size={22}
-                    className="text-[#E31E24]"
-                  />
+                  <ServiceIcon name="target" size={22} className="text-[#E31E24]" />
                 </div>
                 <div className="text-[#E31E24] text-xs tracking-[3px] uppercase font-semibold mb-3">
                   OUR MISSION
                 </div>
                 <p className="text-base md:text-lg text-white font-medium leading-relaxed">
-                  Our mission is to provide high-quality, cost-effective, and
-                  result-driven digital services that help our clients achieve
-                  their business goals. We combine{" "}
+                  Our mission is to provide high-quality, cost-effective, and result-driven digital
+                  services that help our clients achieve their business goals. We combine{' '}
                   <span className="text-[#E31E24]">
                     creativity, technology, and strategic thinking
-                  </span>{" "}
-                  to deliver customized solutions that drive growth, improve
-                  customer engagement, and create lasting value.
+                  </span>{' '}
+                  to deliver customized solutions that drive growth, improve customer engagement,
+                  and create lasting value.
                 </p>
               </div>
             </div>
@@ -300,12 +277,10 @@ export default function About() {
                   OUR VISION
                 </div>
                 <p className="text-base md:text-lg text-white font-medium leading-relaxed">
-                  To become a leading and trusted digital solutions provider by
-                  delivering innovative websites, effective digital marketing
-                  strategies, and exceptional customer service that empower
-                  businesses to achieve{" "}
-                  <span className="text-[#E31E24]">sustainable growth</span> and
-                  long-term success.
+                  To become a leading and trusted digital solutions provider by delivering
+                  innovative websites, effective digital marketing strategies, and exceptional
+                  customer service that empower businesses to achieve{' '}
+                  <span className="text-[#E31E24]">sustainable growth</span> and long-term success.
                 </p>
               </div>
             </div>
@@ -317,24 +292,19 @@ export default function About() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <FadeInSection>
           <div className="text-center mb-12">
-            <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">
-              WHAT WE DO
-            </div>
+            <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">WHAT WE DO</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
               Our Services
             </h2>
           </div>
         </FadeInSection>
 
-        <Stagger
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          stagger={0.06}
-        >
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" stagger={0.06}>
           {services.map((service) => (
-            <StaggerItem key={service.id} className="h-full">
+            <StaggerItem key={service.slug} className="h-full">
               <HoverLift lift={-4}>
                 <Link
-                  href={`/services#${service.id}`}
+                  href={`/services/${service.slug}`}
                   className="group flex flex-col h-full p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors duration-300"
                 >
                   <div className="mb-4">
@@ -343,9 +313,7 @@ export default function About() {
                   <h3 className="font-semibold text-white text-base leading-snug mb-2 group-hover:text-[#E31E24] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-[#888888] text-sm leading-relaxed flex-1">
-                    {service.desc}
-                  </p>
+                  <p className="text-[#888888] text-sm leading-relaxed flex-1">{service.desc}</p>
                   <span className="mt-4 text-[#E31E24] text-sm font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                     View service →
                   </span>
@@ -370,11 +338,7 @@ export default function About() {
             </div>
           </FadeInSection>
 
-          <Stagger
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
-            stagger={0.05}
-            fast
-          >
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.05} fast>
             {whyChoose.map((item) => (
               <StaggerItem key={item.title}>
                 <HoverLift>
@@ -398,36 +362,31 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-12">
-              <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">
-                OUR TEAM
-              </div>
+              <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">OUR TEAM</div>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
                 Meet Our Team
               </h2>
               <p className="text-[#888888] text-lg mt-3 max-w-2xl mx-auto">
-                The people behind SNK — led by our Founder &amp; Director,
-                working together to deliver exceptional digital solutions.
+                The people behind SNK — led by our Founder &amp; Director, working together to
+                deliver exceptional digital solutions.
               </p>
             </div>
           </FadeInSection>
 
-          <Stagger
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            stagger={0.08}
-          >
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08}>
             {team.map((member, i) => (
               <StaggerItem key={member.name}>
                 <HoverLift lift={-10}>
                   <div
                     className={`group relative flex flex-col h-full rounded-3xl bg-[#1A1A1A] border hover:border-[#E31E24]/60 transition-colors overflow-hidden ${
-                      i <= 1 ? "border-[#E31E24]/30" : "border-[#2A2A2A]"
+                      i <= 1 ? 'border-[#E31E24]/30' : 'border-[#2A2A2A]'
                     }`}
                     onMouseEnter={() => setActiveTeam(i)}
                     onMouseLeave={() => setActiveTeam(null)}
                   >
                     <div
                       className="relative w-full overflow-hidden"
-                      style={{ paddingBottom: "100%" }}
+                      style={{ paddingBottom: '100%' }}
                     >
                       <div className="absolute inset-0">
                         <Image
@@ -435,7 +394,7 @@ export default function About() {
                           alt={member.name}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 33vw"
-                          loading={i < 2 ? "eager" : "lazy"}
+                          loading={i < 2 ? 'eager' : 'lazy'}
                           priority={i === 0}
                           className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                         />
@@ -447,12 +406,12 @@ export default function About() {
                         {member.name}
                       </h3>
                       <div
-                        className={`text-sm font-medium mt-1 mb-2 transition-colors ${activeTeam === i ? "text-[#E31E24]" : "text-[#E31E24]/80"}`}
+                        className={`text-sm font-medium mt-1 mb-2 transition-colors ${activeTeam === i ? 'text-[#E31E24]' : 'text-[#E31E24]/80'}`}
                       >
                         {member.role}
                       </div>
                       <p
-                        className={`text-xs leading-relaxed flex-1 transition-colors ${activeTeam === i ? "text-[#AAAAAA]" : "text-[#888888]"}`}
+                        className={`text-xs leading-relaxed flex-1 transition-colors ${activeTeam === i ? 'text-[#AAAAAA]' : 'text-[#888888]'}`}
                       >
                         {member.bio}
                       </p>
@@ -483,16 +442,15 @@ export default function About() {
 
               <div className="max-w-2xl mx-auto space-y-4 text-[#AAAAAA] text-base leading-relaxed mb-10">
                 <p>
-                  At SNK, we are committed to helping businesses succeed in the
-                  digital world. Whether you need a professional website, a
-                  powerful digital marketing strategy, engaging content, or
-                  complete online branding solutions, our team is ready to help
+                  At SNK, we are committed to helping businesses succeed in the digital world.
+                  Whether you need a professional website, a powerful digital marketing strategy,
+                  engaging content, or complete online branding solutions, our team is ready to help
                   you achieve your goals.
                 </p>
                 <p className="text-[#CCCCCC]">
-                  Partner with SNK and transform your digital vision into
-                  reality. Together, we build stronger brands, create meaningful
-                  online experiences, and drive sustainable business growth.
+                  Partner with SNK and transform your digital vision into reality. Together, we
+                  build stronger brands, create meaningful online experiences, and drive sustainable
+                  business growth.
                 </p>
               </div>
 
