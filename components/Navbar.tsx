@@ -1,60 +1,41 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ServiceIcon } from './ServiceIcon';
 
 const MenuIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={1.5}
-      d="M4 6h16M4 12h16M4 18h16"
-    />
+  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16" />
   </svg>
 );
 
 const CloseIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
+  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
-const ChevronDown = () => (
+const ChevronDown = ({ open }: { open?: boolean }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-3.5 w-3.5 ml-1 inline-block opacity-60"
+    className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
   >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
 );
 
 const services = [
   { href: '/services', label: 'All Services' },
-  { href: '/services/seo', label: 'Search Engine Optimization (SEO)' },
-  { href: '/services/aeo', label: 'Answer Engine Optimization (AEO)' },
-  { href: '/services/social-media', label: 'Social Media Marketing' },
+  { href: '/services/seo', label: 'SEO' },
+  { href: '/services/aeo', label: 'AEO' },
+  { href: '/services/social-media', label: 'Social Media' },
   { href: '/services/performance-marketing', label: 'Performance Marketing' },
-  { href: '/services/web-design', label: 'Web Design & Development' },
+  { href: '/services/web-design', label: 'Web Design' },
 ];
 
 const healthcareLinks = [
@@ -64,18 +45,94 @@ const healthcareLinks = [
   { href: '/healthcare/lead-generation', label: 'Healthcare Lead Generation' },
 ];
 
-const linkClass = (active: boolean, accent = false) => {
-  if (accent)
-    return `nav-link transition-colors ${active ? 'active text-[#E31E24]' : 'text-[#E31E24]/80 hover:text-[#E31E24]'}`;
-  return `nav-link text-[#999999] hover:text-white transition-colors ${active ? 'active text-white' : ''}`;
-};
+function NavItem({
+  href,
+  label,
+  active,
+  nowrap,
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+  nowrap?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`relative px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors ${
+        nowrap ? 'whitespace-nowrap' : ''
+      } ${active ? 'text-white' : 'text-[#999999] hover:text-white'}`}
+    >
+      {label}
+      {active && (
+        <span className="absolute bottom-0 left-2.5 right-2.5 xl:left-3 xl:right-3 h-px bg-[#E31E24] rounded-full" />
+      )}
+    </Link>
+  );
+}
+
+function DesktopDropdown({
+  label,
+  active,
+  items,
+  nowrap,
+}: {
+  label: string;
+  active: boolean;
+  items: { href: string; label: string }[];
+  nowrap?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className={`inline-flex items-center gap-1 px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors ${
+          nowrap ? 'whitespace-nowrap' : ''
+        } ${active || open ? 'text-white' : 'text-[#999999] hover:text-white'}`}
+        aria-expanded={open}
+      >
+        {label}
+        <ChevronDown open={open} />
+      </button>
+      {(active || open) && (
+        <span className="absolute bottom-0 left-2.5 right-2.5 xl:left-3 xl:right-3 h-px bg-[#E31E24] rounded-full" />
+      )}
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.15 }}
+            className="absolute top-full left-0 mt-2 min-w-[240px] rounded-xl border border-[#2A2A2A] bg-[#141414] p-1.5 shadow-xl shadow-black/40"
+          >
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block rounded-lg px-3 py-2.5 text-sm text-[#AAAAAA] hover:text-white hover:bg-[#1F1F1F] transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [healthcareOpen, setHealthcareOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -84,157 +141,80 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      if (y < 60) {
-        setVisible(true);
-      } else if (y > lastScrollY.current + 8) {
-        setVisible(false);
-      } else if (y < lastScrollY.current - 8) {
-        setVisible(true);
-      }
-      lastScrollY.current = y;
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
     setIsOpen(false);
     setServicesOpen(false);
     setHealthcareOpen(false);
   }, [pathname]);
 
-  const showBar = visible || isOpen;
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const mobileLinkClass = (active: boolean) =>
+    `rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+      active ? 'text-white bg-[#1A1A1A]' : 'text-[#AAAAAA] hover:text-white hover:bg-[#161616]'
+    }`;
 
   return (
-    <motion.header
-      className="fixed top-0 left-0 right-0 z-50"
-      initial={{ y: 0 }}
-      animate={{ y: showBar ? 0 : '-100%' }}
-      transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-    >
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#E31E24]/40 to-transparent" />
-      <nav className="relative bg-[#0D0D0D]/95 backdrop-blur-lg border-b border-[#2A2A2A]">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-20 lg:h-[5.5rem] gap-4">
-            <Link href="/" className="group shrink-0">
-              <motion.div
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative"
-              >
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav className="bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#2A2A2A]/80">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-[4.5rem] gap-4">
+            <Link href="/" className="flex shrink-0 items-center">
+              <div className="rounded-2xl bg-white px-5 py-1.5">
                 <Image
-                  src="/snk-logo.webp"
-                  alt="SNK"
-                  width={240}
-                  height={240}
-                  sizes="(max-width: 1024px) 56px, 64px"
-                  className="h-12 w-auto sm:h-14 lg:h-16 rounded-lg object-contain transition-shadow duration-300 group-hover:shadow-[0_0_22px_rgba(227,30,36,0.3)]"
+                  src="/snk-logo.jpg"
+                  alt="SNK Web Solutions"
+                  width={1080}
+                  height={1080}
+                  sizes="(max-width: 1024px) 150px, 180px"
+                  className="h-11 w-auto object-contain sm:h-[3.25rem]"
                   priority
                 />
-              </motion.div>
+              </div>
             </Link>
 
-            {/* Pill nav */}
-            <div className="hidden xl:flex items-center gap-0.5 px-3 py-2 rounded-full bg-[#161616] border border-[#2A2A2A]">
-              <Link
-                href="/"
-                className={`px-3 py-1.5 text-[15px] font-semibold ${linkClass(isActive('/'))}`}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className={`px-3 py-1.5 text-[15px] font-semibold ${linkClass(isActive('/about'))}`}
-              >
-                About Us
-              </Link>
-              <Link
+            <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center min-w-0">
+              <NavItem href="/" label="Home" active={isActive('/')} />
+              <NavItem href="/about" label="About Us" active={isActive('/about')} />
+              <NavItem
                 href="/ai-digital-marketing"
-                className={`px-3 py-1.5 text-[15px] font-semibold whitespace-nowrap ${linkClass(isActive('/ai-digital-marketing'), true)}`}
-              >
-                AI Digital Marketing
-              </Link>
-
-              <div className="dropdown relative">
-                <button
-                  className={`nav-link flex items-center text-[15px] font-semibold text-[#999999] hover:text-white transition-colors ${isActive('/services') ? 'active text-white' : ''}`}
-                >
-                  Services <ChevronDown />
-                </button>
-                <div className="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden shadow-2xl shadow-black/60">
-                  {services.map((s) => (
-                    <Link
-                      key={`${s.href}-${s.label}`}
-                      href={s.href}
-                      className="block px-5 py-3 text-sm text-[#999999] hover:text-white hover:bg-[#E31E24]/10 transition-all border-b border-[#2A2A2A] last:border-0"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="dropdown relative">
-                <button
-                  className={`nav-link flex items-center text-[15px] font-semibold whitespace-nowrap transition-colors ${isActive('/healthcare') ? 'text-[#E31E24]' : 'text-[#999999] hover:text-white'}`}
-                >
-                  Healthcare Digital Marketing <ChevronDown />
-                </button>
-                <div className="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden shadow-2xl shadow-black/60">
-                  {healthcareLinks.map((h, i) => (
-                    <Link
-                      key={h.href}
-                      href={h.href}
-                      className={`flex items-center px-5 py-3 text-sm hover:text-white hover:bg-[#E31E24]/10 transition-all border-b border-[#2A2A2A] last:border-0 ${
-                        i === 0
-                          ? 'text-[#E31E24]/80 hover:text-[#E31E24] font-medium'
-                          : 'text-[#999999]'
-                      }`}
-                    >
-                      {i === 0 && (
-                        <ServiceIcon name="hospital" size={14} className="mr-2 text-[#E31E24]" />
-                      )}
-                      {h.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/case-studies"
-                className={`px-3 py-1.5 text-[15px] font-semibold ${linkClass(isActive('/case-studies'))}`}
-              >
-                Case Studies
-              </Link>
-              <Link
-                href="/blog"
-                className={`px-3 py-1.5 text-[15px] font-semibold ${linkClass(isActive('/blog'))}`}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/contact"
-                className={`px-3 py-1.5 text-[15px] font-semibold ${linkClass(isActive('/contact'))}`}
-              >
-                Contact
-              </Link>
+                label="AI Digital Marketing"
+                active={isActive('/ai-digital-marketing')}
+                nowrap
+              />
+              <DesktopDropdown
+                label="Services"
+                active={isActive('/services')}
+                items={services}
+              />
+              <DesktopDropdown
+                label="Healthcare DM"
+                active={isActive('/healthcare')}
+                items={healthcareLinks}
+                nowrap
+              />
+              <NavItem href="/case-studies" label="Case Studies" active={isActive('/case-studies')} />
+              <NavItem href="/blog" label="Blog" active={isActive('/blog')} />
+              <NavItem href="/contact" label="Contact" active={isActive('/contact')} />
             </div>
 
-            <div className="hidden xl:block shrink-0">
+            <div className="hidden lg:block shrink-0">
               <Link
                 href="/contact"
-                className="px-6 py-2.5 rounded-full bg-[#E31E24] text-white text-sm font-semibold hover:bg-[#C01A1F] transition-all active:scale-[0.985] hover:shadow-[0_0_22px_rgba(227,30,36,0.35)]"
+                className="inline-flex h-10 items-center rounded-lg bg-[#E31E24] px-5 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-colors whitespace-nowrap"
               >
-                Book Strategy Call
+                Book a Call
               </Link>
             </div>
 
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="xl:hidden text-white p-2"
+              className="lg:hidden text-[#CCCCCC] hover:text-white p-2 -mr-2 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -249,96 +229,92 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-              className="xl:hidden relative border-t border-[#2A2A2A] bg-[#0D0D0D]/95 backdrop-blur-xl overflow-hidden"
+              transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+              className="lg:hidden border-t border-[#2A2A2A] bg-[#0D0D0D] overflow-hidden"
             >
-              <div className="px-6 py-6 flex flex-col gap-1 text-base">
-                <Link
-                  href="/"
-                  onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] ${isActive('/') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
-                >
+              <div className="px-4 py-4 flex flex-col gap-1 max-h-[calc(100dvh-4.5rem)] overflow-y-auto">
+                <Link href="/" onClick={() => setIsOpen(false)} className={mobileLinkClass(isActive('/'))}>
                   Home
                 </Link>
                 <Link
                   href="/about"
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] ${isActive('/about') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
+                  className={mobileLinkClass(isActive('/about'))}
                 >
                   About Us
                 </Link>
                 <Link
                   href="/ai-digital-marketing"
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] font-semibold ${isActive('/ai-digital-marketing') ? 'text-[#E31E24]' : 'text-[#E31E24]/80'}`}
+                  className={mobileLinkClass(isActive('/ai-digital-marketing'))}
                 >
                   AI Digital Marketing
                 </Link>
 
-                <div>
-                  <button
-                    onClick={() => setServicesOpen(!servicesOpen)}
-                    className="w-full text-left py-3 border-b border-[#1A1A1A] text-[#CCCCCC] flex justify-between items-center"
-                  >
-                    Services <ChevronDown />
-                  </button>
-                  {servicesOpen && (
-                    <div className="pl-4 py-2 flex flex-col gap-1">
-                      {services.map((s) => (
-                        <Link
-                          key={`${s.href}-${s.label}`}
-                          href={s.href}
-                          onClick={() => setIsOpen(false)}
-                          className="py-2 text-sm text-[#888888] hover:text-white transition-colors"
-                        >
-                          {s.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
+                >
+                  Services
+                  <ChevronDown open={servicesOpen} />
+                </button>
+                {servicesOpen && (
+                  <div className="ml-3 flex flex-col gap-0.5 pb-1">
+                    {services.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
-                <div>
-                  <button
-                    onClick={() => setHealthcareOpen(!healthcareOpen)}
-                    className={`w-full text-left py-3 border-b border-[#1A1A1A] flex justify-between items-center ${isActive('/healthcare') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
-                  >
-                    Healthcare Digital Marketing <ChevronDown />
-                  </button>
-                  {healthcareOpen && (
-                    <div className="pl-4 py-2 flex flex-col gap-1">
-                      {healthcareLinks.map((h) => (
-                        <Link
-                          key={h.href}
-                          href={h.href}
-                          onClick={() => setIsOpen(false)}
-                          className="py-2 text-sm text-[#888888] hover:text-white transition-colors"
-                        >
-                          {h.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setHealthcareOpen(!healthcareOpen)}
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
+                >
+                  Healthcare DM
+                  <ChevronDown open={healthcareOpen} />
+                </button>
+                {healthcareOpen && (
+                  <div className="ml-3 flex flex-col gap-0.5 pb-1">
+                    {healthcareLinks.map((h) => (
+                      <Link
+                        key={h.href}
+                        href={h.href}
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                      >
+                        {h.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
                 <Link
                   href="/case-studies"
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] ${isActive('/case-studies') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
+                  className={mobileLinkClass(isActive('/case-studies'))}
                 >
                   Case Studies
                 </Link>
                 <Link
                   href="/blog"
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] ${isActive('/blog') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
+                  className={mobileLinkClass(isActive('/blog'))}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 border-b border-[#1A1A1A] ${isActive('/contact') ? 'text-[#E31E24]' : 'text-[#CCCCCC]'}`}
+                  className={mobileLinkClass(isActive('/contact'))}
                 >
                   Contact
                 </Link>
@@ -346,15 +322,15 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-4 w-full text-center py-3 rounded-full bg-[#E31E24] text-white font-semibold hover:bg-[#C01A1F] transition-all"
+                  className="mt-3 flex h-11 items-center justify-center rounded-lg bg-[#E31E24] text-sm font-semibold text-white hover:bg-[#C01A1F] transition-colors"
                 >
-                  Book Strategy Call
+                  Book a Call
                 </Link>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 }

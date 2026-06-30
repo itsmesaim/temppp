@@ -3,11 +3,50 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IconBox } from '../../components/ServiceIcon';
-import { Reveal, Stagger, StaggerItem, HoverLift, GlowButton } from '../../components/motion';
+import { Reveal, Stagger, StaggerItem, GlowButton } from '../../components/motion';
 import { OFFICE_ADDRESS } from '../../lib/site';
 
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${OFFICE_ADDRESS.mapsQuery}`;
-const MAPS_EMBED = `https://maps.google.com/maps?q=${OFFICE_ADDRESS.mapsQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+const MAPS_URL = OFFICE_ADDRESS.mapsUrl;
+const MAPS_EMBED = OFFICE_ADDRESS.mapsEmbed;
+
+type ContactCardProps = {
+  icon: 'map-pin' | 'phone' | 'mail' | 'clock';
+  label: string;
+  children: React.ReactNode;
+  href?: string;
+};
+
+function ContactCard({ icon, label, children, href }: ContactCardProps) {
+  const className =
+    'flex h-full items-start gap-3 rounded-xl border border-[#2A2A2A] bg-[#141414] p-4 transition-colors hover:bg-[#1A1A1A]';
+
+  const content = (
+    <>
+      <IconBox name={icon} size={18} className="w-9 h-9 rounded-lg" />
+      <div className="min-w-0 flex-1">
+        <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#666666]">
+          {label}
+        </div>
+        {children}
+      </div>
+    </>
+  );
+
+  if (href) {
+    const external = href.startsWith('http');
+    return (
+      <a
+        href={href}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <div className={className}>{content}</div>;
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -80,91 +119,36 @@ export default function Contact() {
       {/* ── Contact info cards ── */}
       <div className="max-w-5xl mx-auto px-6 pb-10">
         <Stagger
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-          stagger={0.08}
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 auto-rows-fr"
+          stagger={0.06}
           fast
         >
-          {/* Address */}
-          <StaggerItem>
-            <HoverLift>
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
-              >
-                <IconBox name="map-pin" className="group-hover:bg-[#E31E24]/20 transition-colors" />
-                <div>
-                  <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">
-                    Office Address
-                  </div>
-                  <div className="text-white text-sm font-medium leading-snug group-hover:text-[#E31E24] transition-colors">
-                    {OFFICE_ADDRESS.line1}
-                  </div>
-                  <div className="text-[#888888] text-xs mt-0.5 leading-relaxed">
-                    {OFFICE_ADDRESS.line2}
-                    <br />
-                    {OFFICE_ADDRESS.city}
-                  </div>
-                </div>
-              </a>
-            </HoverLift>
+          <StaggerItem className="h-full">
+            <ContactCard icon="map-pin" label="Office Address" href={MAPS_URL}>
+              <p className="text-sm font-medium leading-snug text-white">{OFFICE_ADDRESS.line1}</p>
+              <p className="mt-0.5 text-xs leading-relaxed text-[#888888]">{OFFICE_ADDRESS.line2}</p>
+            </ContactCard>
           </StaggerItem>
 
-          {/* Phone */}
-          <StaggerItem>
-            <HoverLift>
-              <a
-                href="tel:+919321587762"
-                className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
-              >
-                <IconBox name="phone" className="group-hover:bg-[#E31E24]/20 transition-colors" />
-                <div>
-                  <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">
-                    Phone
-                  </div>
-                  <div className="text-white text-sm font-medium group-hover:text-[#E31E24] transition-colors">
-                    +91 93215 87762
-                  </div>
-                  <div className="text-[#888888] text-xs mt-0.5">Call us anytime</div>
-                </div>
-              </a>
-            </HoverLift>
+          <StaggerItem className="h-full">
+            <ContactCard icon="phone" label="Phone" href="tel:+919321587762">
+              <p className="text-sm font-medium text-white">+91 93215 87762</p>
+              <p className="mt-0.5 text-xs text-[#888888]">Mon–Sat, 10 AM – 7 PM</p>
+            </ContactCard>
           </StaggerItem>
 
-          {/* Email */}
-          <StaggerItem>
-            <HoverLift>
-              <a
-                href="mailto:snkwebsolutions@gmail.com"
-                className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
-              >
-                <IconBox name="mail" className="group-hover:bg-[#E31E24]/20 transition-colors" />
-                <div>
-                  <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">
-                    Email
-                  </div>
-                  <div className="text-white text-sm font-medium break-all group-hover:text-[#E31E24] transition-colors">
-                    snkwebsolutions@gmail.com
-                  </div>
-                  <div className="text-[#888888] text-xs mt-0.5">We reply within 24 hrs</div>
-                </div>
-              </a>
-            </HoverLift>
+          <StaggerItem className="h-full">
+            <ContactCard icon="mail" label="Email" href="mailto:snkwebsolutions@gmail.com">
+              <p className="break-all text-sm font-medium text-white">snkwebsolutions@gmail.com</p>
+              <p className="mt-0.5 text-xs text-[#888888]">Reply within 24 hours</p>
+            </ContactCard>
           </StaggerItem>
 
-          {/* Hours */}
-          <StaggerItem>
-            <div className="flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] h-full">
-              <IconBox name="clock" />
-              <div>
-                <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">
-                  Business Hours
-                </div>
-                <div className="text-white text-sm font-medium">Monday – Saturday</div>
-                <div className="text-[#888888] text-xs mt-0.5">10:00 AM – 7:00 PM</div>
-              </div>
-            </div>
+          <StaggerItem className="h-full">
+            <ContactCard icon="clock" label="Business Hours">
+              <p className="text-sm font-medium text-white">Monday – Saturday</p>
+              <p className="mt-0.5 text-xs text-[#888888]">10:00 AM – 7:00 PM</p>
+            </ContactCard>
           </StaggerItem>
         </Stagger>
       </div>
@@ -374,11 +358,11 @@ export default function Contact() {
               <IconBox name="map-pin" size={16} className="w-8 h-8" />
               <div>
                 <div className="text-white text-xs font-semibold">{OFFICE_ADDRESS.line1}</div>
-                <div className="text-[#888888] text-[10px]">{OFFICE_ADDRESS.city}</div>
+                <div className="text-[#888888] text-[10px]">{OFFICE_ADDRESS.line2}</div>
               </div>
             </div>
             <div className="px-3 py-2 rounded-xl bg-[#E31E24]/90 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              OPEN IN MAPS →
+              Open in Maps
             </div>
           </div>
         </a>

@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "optimize-images": "node scripts/optimize-images.mjs",
-    "generate-favicon": "node scripts/generate-favicon.mjs"
+    "generate-favicon": "node scripts/generate-favicon.mjs",
+    "generate-logo": "node scripts/generate-logo.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.42.0",

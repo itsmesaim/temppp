@@ -6,7 +6,7 @@ import { ServiceIcon } from './ServiceIcon';
 import { Reveal, Stagger, StaggerItem, motion } from './motion';
 import { OFFICE_ADDRESS, FOUNDED_YEAR } from '../lib/site';
 
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${OFFICE_ADDRESS.mapsQuery}`;
+const MAPS_URL = OFFICE_ADDRESS.mapsUrl;
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -83,10 +83,10 @@ export default function Footer() {
             <div>
               <div className="mb-5">
                 <Image
-                  src="/snk-logo.webp"
+                  src="/snk-logo.jpg"
                   alt="SNK"
-                  width={160}
-                  height={160}
+                  width={1080}
+                  height={1080}
                   sizes="120px"
                   loading="lazy"
                   className="h-14 w-auto rounded-lg object-contain"
