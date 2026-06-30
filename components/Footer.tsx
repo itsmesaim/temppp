@@ -1,32 +1,33 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { ServiceIcon } from './ServiceIcon';
-import { Reveal, Stagger, StaggerItem, motion } from './motion';
+import Link from "next/link";
+import Image from "next/image";
+import { ServiceIcon } from "./ServiceIcon";
+import { Reveal, Stagger, StaggerItem, motion } from "./motion";
+import { OFFICE_ADDRESS, FOUNDED_YEAR } from "../lib/site";
 
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=S-10-B+Hawares+Centurion+Mall+Nerul+East+Sector+19+Nerul+Navi+Mumbai+Maharashtra+400706";
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${OFFICE_ADDRESS.mapsQuery}`;
 
 const quickLinks = [
-  { label: "Home",              href: "/" },
-  { label: "About",             href: "/about" },
-  { label: "Services",          href: "/services" },
-  { label: "Case Studies",      href: "/case-studies" },
-  { label: "Blog",              href: "/blog" },
-  { label: "Careers",           href: "/contact" },
-  { label: "Contact",           href: "/contact" },
-  { label: "Free Website Audit",href: "/contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Careers", href: "/contact" },
+  { label: "Contact", href: "/contact" },
+  { label: "Free Website Audit", href: "/contact" },
 ];
 
 const serviceLinks = [
-  { label: "Website Design",       href: "/services" },
-  { label: "Website Development",  href: "/services" },
-  { label: "SEO",                  href: "/services" },
-  { label: "Digital Marketing",    href: "/services" },
+  { label: "Website Design", href: "/services" },
+  { label: "Website Development", href: "/services" },
+  { label: "SEO", href: "/services" },
+  { label: "Digital Marketing", href: "/services" },
   { label: "Social Media Marketing", href: "/services" },
-  { label: "Branding",             href: "/services" },
-  { label: "Website Maintenance",  href: "/services" },
-  { label: "Content Marketing",    href: "/services" },
+  { label: "Branding", href: "/services" },
+  { label: "Website Maintenance", href: "/services" },
+  { label: "Content Marketing", href: "/services" },
 ];
 
 const socials = [
@@ -70,156 +71,200 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D0D0D] border-t border-[#1E1E1E] text-sm text-white overflow-hidden">
-
+    <footer className="bg-[#121212] border-t border-[#2E2E2E] text-sm text-white overflow-hidden">
       {/* ── Main grid ── */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
-        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8" stagger={0.08}>
+        <Stagger
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+          stagger={0.08}
+        >
           {/* ── Col 1: Brand ── */}
           <StaggerItem variant="fadeUp">
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 ring-1 ring-[#2A2A2A]">
+            <div>
+              <div className="mb-5">
                 <Image
                   src="/snk-logo.webp"
-                  alt="SNK Web Solutions logo"
-                  width={40}
-                  height={40}
-                  sizes="40px"
+                  alt="SNK"
+                  width={160}
+                  height={160}
+                  sizes="120px"
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="h-14 w-auto rounded-lg object-contain"
                 />
               </div>
-              <div className="leading-tight">
-                <span className="font-semibold text-lg tracking-tighter">SNK</span>
-                <span className="text-[10px] text-[#E31E24] ml-1 tracking-[2px]">WEB SOLUTIONS</span>
+
+              <p className="text-[#888888] text-sm leading-relaxed mb-6 max-w-[240px]">
+                Helping businesses grow and thrive in the digital world since{" "}
+                {FOUNDED_YEAR}. Your trusted partner for websites, digital
+                marketing, and branding.
+              </p>
+
+              <div className="flex items-center gap-3">
+                {socials.map((s) => (
+                  <motion.a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    whileHover={{ y: -4, scale: 1.08 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 18 }}
+                    className="w-9 h-9 rounded-xl bg-[#222222] border border-[#2E2E2E] flex items-center justify-center text-[#888888] hover:text-white hover:border-[#E31E24]/60 hover:bg-[#E31E24]/10 transition-colors duration-300"
+                  >
+                    {s.icon}
+                  </motion.a>
+                ))}
               </div>
             </div>
-
-            <p className="text-[#888888] text-sm leading-relaxed mb-6 max-w-[220px]">
-              Helping businesses grow and thrive in the digital world since 2007. Your trusted partner for websites, digital marketing, and branding.
-            </p>
-
-            <div className="flex items-center gap-3">
-              {socials.map((s) => (
-                <motion.a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.name}
-                  whileHover={{ y: -4, scale: 1.08 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-                  className="w-9 h-9 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center text-[#888888] hover:text-white hover:border-[#E31E24]/60 hover:bg-[#E31E24]/10 transition-colors duration-300"
-                >
-                  {s.icon}
-                </motion.a>
-              ))}
-            </div>
-          </div>
           </StaggerItem>
 
           {/* ── Col 2: Quick Links ── */}
           <StaggerItem variant="fadeUp">
-          <div>
-            <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">Quick Links</div>
-            <ul className="space-y-2.5">
-              {quickLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    className="text-[#888888] hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#E31E24] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">
+                Quick Links
+              </div>
+              <ul className="space-y-2.5">
+                {quickLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="text-[#888888] hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#E31E24] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </StaggerItem>
 
           {/* ── Col 3: Services ── */}
           <StaggerItem variant="fadeUp">
-          <div>
-            <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">Services</div>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    className="text-[#888888] hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#E31E24] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">
+                Services
+              </div>
+              <ul className="space-y-2.5">
+                {serviceLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="text-[#888888] hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 group"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#E31E24] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </StaggerItem>
 
           {/* ── Col 4: Contact ── */}
           <StaggerItem variant="fadeUp">
-          <div>
-            <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">Contact Us</div>
-            <div className="space-y-3">
+            <div>
+              <div className="text-xs tracking-[3px] text-[#E31E24] uppercase mb-5">
+                Contact Us
+              </div>
+              <div className="space-y-3">
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                >
+                  <ServiceIcon
+                    name="map-pin"
+                    size={16}
+                    className="mt-0.5 flex-shrink-0 text-[#E31E24]"
+                  />
+                  <span className="text-[#888888] text-xs leading-relaxed group-hover:text-[#CCCCCC] transition-colors">
+                    {OFFICE_ADDRESS.full}
+                  </span>
+                </a>
 
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
-              >
-                <ServiceIcon name="map-pin" size={16} className="mt-0.5 flex-shrink-0 text-[#E31E24]" />
-                <span className="text-[#888888] text-xs leading-relaxed group-hover:text-[#CCCCCC] transition-colors">
-                  S-10-B, Hawares Centurion Mall, Nerul East, Sector 19, Nerul, Navi Mumbai, Maharashtra 400706
-                </span>
-              </a>
+                <a
+                  href="tel:+919321587762"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                >
+                  <ServiceIcon
+                    name="phone"
+                    size={16}
+                    className="flex-shrink-0 text-[#E31E24]"
+                  />
+                  <span className="text-[#888888] text-xs group-hover:text-[#CCCCCC] transition-colors">
+                    +91 93215 87762
+                  </span>
+                </a>
 
-              <a
-                href="tel:+919321587762"
-                className="group flex items-center gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
-              >
-                <ServiceIcon name="phone" size={16} className="flex-shrink-0 text-[#E31E24]" />
-                <span className="text-[#888888] text-xs group-hover:text-[#CCCCCC] transition-colors">+91 93215 87762</span>
-              </a>
+                <a
+                  href="mailto:snkwebsolutions@gmail.com"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
+                >
+                  <ServiceIcon
+                    name="mail"
+                    size={16}
+                    className="flex-shrink-0 text-[#E31E24]"
+                  />
+                  <span className="text-[#888888] text-xs group-hover:text-[#E31E24] transition-colors">
+                    snkwebsolutions@gmail.com
+                  </span>
+                </a>
 
-              <a
-                href="mailto:snkwebsolutions@gmail.com"
-                className="group flex items-center gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-all duration-300 hover:bg-[#E31E24]/5"
-              >
-                <ServiceIcon name="mail" size={16} className="flex-shrink-0 text-[#E31E24]" />
-                <span className="text-[#888888] text-xs group-hover:text-[#E31E24] transition-colors">snkwebsolutions@gmail.com</span>
-              </a>
-
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A]">
-                <ServiceIcon name="clock" size={16} className="mt-0.5 flex-shrink-0 text-[#E31E24]" />
-                <div className="text-xs text-[#888888] leading-relaxed">
-                  <div className="text-[#CCCCCC] font-medium mb-0.5">Monday – Saturday</div>
-                  10:00 AM – 7:00 PM
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#222222] border border-[#2E2E2E]">
+                  <ServiceIcon
+                    name="clock"
+                    size={16}
+                    className="mt-0.5 flex-shrink-0 text-[#E31E24]"
+                  />
+                  <div className="text-xs text-[#888888] leading-relaxed">
+                    <div className="text-[#CCCCCC] font-medium mb-0.5">
+                      Monday – Saturday
+                    </div>
+                    10:00 AM – 7:00 PM
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </StaggerItem>
         </Stagger>
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-[#2A2A2A] to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-[#2E2E2E] to-transparent" />
       </div>
 
-      <Reveal className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4" variant="fadeIn">
+      <Reveal
+        className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        variant="fadeIn"
+      >
         <div className="text-[#555555] text-xs tracking-wide">
-          © 2007–Present <span className="text-[#888888]">SNK Web Solutions</span>. All Rights Reserved.
+          © {FOUNDED_YEAR}–Present <span className="text-[#888888]">SNK</span>.
+          All Rights Reserved.
         </div>
         <div className="flex items-center gap-5 text-xs text-[#555555]">
-          <Link href="/privacy-policy" className="hover:text-[#E31E24] transition-colors">Privacy Policy</Link>
-          <span className="text-[#2A2A2A]">|</span>
-          <Link href="/terms" className="hover:text-[#E31E24] transition-colors">Terms &amp; Conditions</Link>
-          <span className="text-[#2A2A2A]">|</span>
-          <Link href="/sitemap.xml" className="hover:text-[#E31E24] transition-colors">Sitemap</Link>
+          <Link
+            href="/privacy-policy"
+            className="hover:text-[#E31E24] transition-colors"
+          >
+            Privacy Policy
+          </Link>
+          <span className="text-[#2E2E2E]">|</span>
+          <Link
+            href="/terms"
+            className="hover:text-[#E31E24] transition-colors"
+          >
+            Terms &amp; Conditions
+          </Link>
+          <span className="text-[#2E2E2E]">|</span>
+          <Link
+            href="/sitemap.xml"
+            className="hover:text-[#E31E24] transition-colors"
+          >
+            Sitemap
+          </Link>
         </div>
       </Reveal>
     </footer>

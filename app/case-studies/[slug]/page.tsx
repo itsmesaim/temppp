@@ -46,7 +46,7 @@ function AnimatedMetric({ value, suffix, label, startAnimation }: {
   const isDecimal = value.includes('.');
 
   return (
-    <div className="text-center p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] hover:border-[#E31E24] transition-colors">
+    <div className="text-center p-6 rounded-2xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] transition-colors">
       <div className="text-4xl md:text-5xl font-semibold tracking-tighter text-[#E31E24] mb-2">
         {startAnimation
           ? isDecimal
@@ -91,7 +91,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
   }, []);
 
   return (
-    <div className="overflow-x-clip bg-[#0D0D0D]">
+    <div className="overflow-x-clip bg-[#121212]">
       {/* HERO BANNER */}
       <section className="relative min-h-[70vh] flex items-end pb-16 pt-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -103,7 +103,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/85 to-[#0D0D0D]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/85 to-[#121212]/50" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(227,30,36,0.12)_0%,transparent_60%)]" />
         </div>
 
@@ -136,7 +136,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             </div>
 
             {/* Client Card */}
-            <div className="flex-shrink-0 p-5 rounded-2xl bg-[#161616]/90 backdrop-blur-md border border-[#2A2A2A] min-w-[220px]">
+            <div className="flex-shrink-0 p-5 rounded-2xl bg-[#1A1A1A]/90 backdrop-blur-md border border-[#2E2E2E] min-w-[220px]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-white p-2 flex items-center justify-center">
                   <Image
@@ -171,7 +171,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* OVERVIEW */}
-      <section className="py-16 border-b border-[#2A2A2A]">
+      <section className="py-16 border-b border-[#2E2E2E]">
         <Reveal className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-7">
             <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">PROJECT OVERVIEW</div>
@@ -188,11 +188,11 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             </ul>
           </div>
           <div className="md:col-span-5">
-            <div className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] h-full">
+            <div className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2E2E2E] h-full">
               <div className="text-[#E31E24] text-xs tracking-[3px] mb-4">KEY METRICS AT A GLANCE</div>
               <div className="space-y-4">
                 {cs.results.slice(0, 3).map((r, i) => (
-                  <div key={i} className="flex justify-between items-center py-3 border-b border-[#2A2A2A] last:border-0">
+                  <div key={i} className="flex justify-between items-center py-3 border-b border-[#2E2E2E] last:border-0">
                     <span className="text-[#888888] text-sm">{r.label}</span>
                     <span className="text-[#E31E24] font-semibold text-lg">{r.value}{r.suffix}</span>
                   </div>
@@ -202,7 +202,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <div className="text-xs text-[#555555] tracking-wide mb-2">TECHNOLOGY STACK</div>
                 <div className="flex flex-wrap gap-2">
                   {cs.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 rounded-md bg-[#1A1A1A] border border-[#2A2A2A] text-[#888888] text-xs">
+                    <span key={tech} className="px-3 py-1 rounded-md bg-[#222222] border border-[#2E2E2E] text-[#888888] text-xs">
                       {tech}
                     </span>
                   ))}
@@ -214,13 +214,13 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* CHALLENGE */}
-      <section className="py-16 border-b border-[#2A2A2A] bg-[#111111]">
+      <section className="py-16 border-b border-[#2E2E2E] bg-[#181818]">
         <Reveal className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center" variant="slideRight">
           <div className="md:col-span-5">
             <HoverLift>
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl bg-[#E31E24]/5 border border-[#E31E24]/10" />
-              <div className="relative p-8 rounded-3xl bg-[#161616] border border-[#2A2A2A]">
+              <div className="relative p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E]">
                 <div className="mb-4"><ServiceIcon name="zap" size={48} /></div>
                 <div className="text-[#E31E24] font-semibold text-2xl mb-2">The Problem</div>
                 <div className="text-[#666666] text-sm">Business challenge that required expert digital strategy</div>
@@ -237,7 +237,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* SOLUTION */}
-      <section className="py-16 border-b border-[#2A2A2A]">
+      <section className="py-16 border-b border-[#2E2E2E]">
         <Reveal className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center" variant="slideLeft">
           <div className="md:col-span-7">
             <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">OUR SOLUTION</div>
@@ -248,7 +248,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             <HoverLift>
             <div className="relative">
               <div className="absolute -top-4 -right-4 w-full h-full rounded-3xl bg-[#E31E24]/5 border border-[#E31E24]/10" />
-              <div className="relative p-8 rounded-3xl bg-[#161616] border border-[#2A2A2A]">
+              <div className="relative p-8 rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E]">
                 <div className="mb-4"><ServiceIcon name="target" size={48} /></div>
                 <div className="text-white font-semibold text-2xl mb-2">Our Approach</div>
                 <div className="text-[#666666] text-sm">Data-driven strategy tailored to their specific industry and goals</div>
@@ -260,7 +260,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* PROCESS */}
-      <section className="py-16 border-b border-[#2A2A2A] bg-[#111111]">
+      <section className="py-16 border-b border-[#2E2E2E] bg-[#181818]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">HOW WE DID IT</div>
@@ -276,7 +276,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 className={`flex-shrink-0 px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${
                   activeProcess === i
                     ? 'bg-[#E31E24] text-white'
-                    : 'bg-[#161616] border border-[#2A2A2A] text-[#888888] hover:border-[#E31E24] hover:text-white'
+                    : 'bg-[#1A1A1A] border border-[#2E2E2E] text-[#888888] hover:border-[#E31E24] hover:text-white'
                 }`}
               >
                 <ServiceIcon name={step.icon} size={16} className="text-current" />
@@ -293,7 +293,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="p-8 rounded-3xl bg-[#161616] border border-[#E31E24]/20"
+            className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#E31E24]/20"
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-xl bg-[#E31E24]/10 border border-[#E31E24]/20 flex items-center justify-center">
@@ -315,7 +315,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {processSteps.map((_, i) => (
               <div
                 key={i}
-                className={`h-1 flex-1 rounded-full transition-all ${i <= activeProcess ? 'bg-[#E31E24]' : 'bg-[#2A2A2A]'}`}
+                className={`h-1 flex-1 rounded-full transition-all ${i <= activeProcess ? 'bg-[#E31E24]' : 'bg-[#2E2E2E]'}`}
               />
             ))}
           </div>
@@ -323,7 +323,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* RESULTS - Animated Counters */}
-      <section className="py-16 border-b border-[#2A2A2A]" ref={resultsRef}>
+      <section className="py-16 border-b border-[#2E2E2E]" ref={resultsRef}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">MEASURABLE IMPACT</div>
@@ -345,7 +345,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* BEFORE & AFTER */}
-      <section className="py-16 border-b border-[#2A2A2A] bg-[#111111]">
+      <section className="py-16 border-b border-[#2E2E2E] bg-[#181818]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">TRANSFORMATION</div>
@@ -353,7 +353,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Before */}
-            <div className="p-8 rounded-3xl bg-[#161616] border border-[#333333]">
+            <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#333333]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-[#333333] flex items-center justify-center text-sm">✗</div>
                 <div className="font-semibold text-[#888888] text-lg">Before Working With Us</div>
@@ -368,10 +368,10 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               </div>
             </div>
             {/* After */}
-            <div className="p-8 rounded-3xl bg-[#161616] border border-[#E31E24]/30 shadow-[0_0_40px_rgba(227,30,36,0.05)]">
+            <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#E31E24]/30 shadow-[0_0_40px_rgba(227,30,36,0.05)]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full bg-[#E31E24]/20 border border-[#E31E24]/30 flex items-center justify-center text-sm text-[#E31E24]">✓</div>
-                <div className="font-semibold text-white text-lg">After SNK Web Solutions</div>
+                <div className="font-semibold text-white text-lg">After SNK</div>
               </div>
               <div className="space-y-4">
                 {cs.beforeAfter.after.map((item, i) => (
@@ -387,13 +387,13 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* CLIENT & RESULTS */}
-      <section className="py-16 border-b border-[#2A2A2A]">
+      <section className="py-16 border-b border-[#2E2E2E]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-[#E31E24] text-xs tracking-[3px] mb-3">CLIENT PARTNER</div>
           <h2 className="text-3xl font-semibold tracking-tighter text-white mb-8">Brand & Measurable Results</h2>
           <div className="grid md:grid-cols-12 gap-4">
             <div className="md:col-span-5">
-              <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden border border-[#2A2A2A]">
+              <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden border border-[#2E2E2E]">
                 <Image
                   src={cs.coverImage}
                   alt={cs.client}
@@ -405,7 +405,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             </div>
             <div className="md:col-span-7 grid sm:grid-cols-2 gap-4">
               {cs.results.map((metric, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] hover:border-[#E31E24]/30 transition-colors">
+                <div key={i} className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24]/30 transition-colors">
                   <div className="text-3xl font-semibold tracking-tighter text-[#E31E24] mb-2">
                     {metric.prefix}{metric.value}{metric.suffix}
                   </div>
@@ -418,7 +418,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="py-16 border-b border-[#2A2A2A] bg-[#111111]">
+      <section className="py-16 border-b border-[#2E2E2E] bg-[#181818]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="text-[#E31E24] text-xs tracking-[3px] mb-8">CLIENT TESTIMONIAL</div>
           <div className="relative">
@@ -441,7 +441,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
 
       {/* RELATED CASE STUDIES */}
       {related.length > 0 && (
-        <section className="py-16 border-b border-[#2A2A2A]">
+        <section className="py-16 border-b border-[#2E2E2E]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex justify-between items-center mb-10">
               <div>
@@ -458,7 +458,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <HoverLift>
                 <Link
                   href={`/case-studies/${rc.slug}`}
-                  className="case-card group block rounded-3xl bg-[#161616] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
+                  className="case-card group block rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] overflow-hidden h-full"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <Image
@@ -468,7 +468,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent pointer-events-none" />
                     <div className="absolute top-3 left-3">
                       <span className="px-2.5 py-1 rounded-full bg-[#E31E24]/80 text-white text-xs font-medium">
                         {rc.industry}
@@ -493,7 +493,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       )}
 
       {/* CTA */}
-      <section className="py-20 bg-[#111111]">
+      <section className="py-20 bg-[#181818]">
         <Reveal className="max-w-3xl mx-auto text-center px-6" variant="scaleIn">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/20 text-[#E31E24] text-xs tracking-[3px] mb-6">
             YOUR TURN
@@ -516,7 +516,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             </GlowButton>
             <Link
               href="/contact"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-base font-medium text-white hover:bg-[#161616] hover:border-[#E31E24] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-base font-medium text-white hover:bg-[#1A1A1A] hover:border-[#E31E24] transition-all"
             >
               Free Website Audit
             </Link>

@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IconBox } from '../../components/ServiceIcon';
 import { Reveal, Stagger, StaggerItem, HoverLift, GlowButton } from '../../components/motion';
+import { OFFICE_ADDRESS } from '../../lib/site';
 
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=S-10-B+Hawares+Centurion+Mall+Nerul+East+Sector+19+Nerul+Navi+Mumbai+Maharashtra+400706";
-const MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4823!2d73.0193!3d19.0330!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3b5b5b5b5b5%3A0x0!2sHawares+Centurion+Mall%2C+Nerul%2C+Navi+Mumbai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${OFFICE_ADDRESS.mapsQuery}`;
+const MAPS_EMBED = `https://maps.google.com/maps?q=${OFFICE_ADDRESS.mapsQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ export default function Contact() {
           company: formData.company,
           budget: formData.budget,
           message: formData.message,
-          _subject: `New enquiry from ${formData.name} — SNK Web Solutions`,
+          _subject: `New enquiry from ${formData.name} — SNK`,
           _template: 'table',
           _captcha: 'false',
         }),
@@ -79,16 +80,16 @@ export default function Contact() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="map-pin" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
               <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">Office Address</div>
               <div className="text-white text-sm font-medium leading-snug group-hover:text-[#E31E24] transition-colors">
-                S-10-B, Hawares Centurion Mall
+                {OFFICE_ADDRESS.line1}
               </div>
               <div className="text-[#888888] text-xs mt-0.5 leading-relaxed">
-                Nerul East, Sector 19, Nerul<br />Navi Mumbai, Maharashtra 400706
+                {OFFICE_ADDRESS.line2}<br />{OFFICE_ADDRESS.city}
               </div>
             </div>
           </a>
@@ -100,7 +101,7 @@ export default function Contact() {
           <HoverLift>
           <a
             href="tel:+919321587762"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="phone" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
@@ -117,7 +118,7 @@ export default function Contact() {
           <HoverLift>
           <a
             href="mailto:snkwebsolutions@gmail.com"
-            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
+            className="group flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)]"
           >
             <IconBox name="mail" className="group-hover:bg-[#E31E24]/20 transition-colors" />
             <div>
@@ -131,7 +132,7 @@ export default function Contact() {
 
           {/* Hours */}
           <StaggerItem>
-          <div className="flex flex-col gap-3 p-5 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] h-full">
+          <div className="flex flex-col gap-3 p-5 rounded-2xl bg-[#222222] border border-[#2E2E2E] h-full">
             <IconBox name="clock" />
             <div>
               <div className="text-[10px] tracking-[2px] text-[#E31E24] uppercase font-semibold mb-1">Business Hours</div>
@@ -211,7 +212,7 @@ export default function Contact() {
                     <input
                       type="text" name="name" value={formData.name} onChange={handleChange} required
                       className="w-full rounded-2xl px-6 py-4 text-lg placeholder:text-[#BBBBBB]"
-                      placeholder="Priya Sharma"
+                      placeholder="Your name"
                     />
                   </div>
                   <div>
@@ -219,7 +220,7 @@ export default function Contact() {
                     <input
                       type="email" name="email" value={formData.email} onChange={handleChange} required
                       className="w-full rounded-2xl px-6 py-4 text-lg placeholder:text-[#BBBBBB]"
-                      placeholder="you@company.com"
+                      placeholder="your.email@company.com"
                     />
                   </div>
                 </div>
@@ -230,7 +231,7 @@ export default function Contact() {
                     <input
                       type="text" name="company" value={formData.company} onChange={handleChange} required
                       className="w-full rounded-2xl px-6 py-4 text-lg placeholder:text-[#BBBBBB]"
-                      placeholder="Your Company"
+                      placeholder="Company or brand name"
                     />
                   </div>
                   <div>
@@ -253,7 +254,7 @@ export default function Contact() {
                   <textarea
                     name="message" value={formData.message} onChange={handleChange} required rows={6}
                     className="w-full rounded-3xl px-6 py-5 text-lg resize-y min-h-[140px] placeholder:text-[#BBBBBB]"
-                    placeholder="Tell us about your goals, current challenges, or the project you have in mind..."
+                    placeholder="Describe your project, goals, or the services you're interested in..."
                   />
                 </div>
 
@@ -281,7 +282,7 @@ export default function Contact() {
           <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">FIND US</div>
           <h2 className="text-3xl font-semibold tracking-tight text-white">Our Location</h2>
           <p className="text-[#888888] text-sm mt-1">
-            S-10-B, Hawares Centurion Mall, Nerul East, Sector 19, Nerul, Navi Mumbai, Maharashtra 400706
+            {OFFICE_ADDRESS.full}
           </p>
         </div>
 
@@ -290,7 +291,7 @@ export default function Contact() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block relative rounded-3xl overflow-hidden border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(227,30,36,0.2)] hover:-translate-y-1"
+          className="group block relative rounded-3xl overflow-hidden border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(227,30,36,0.2)] hover:-translate-y-1"
           style={{ height: '420px' }}
           aria-label="Open location in Google Maps"
         >
@@ -302,16 +303,16 @@ export default function Contact() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="SNK Web Solutions – Hawares Centurion Mall, Nerul, Navi Mumbai"
+            title={`SNK – ${OFFICE_ADDRESS.full}`}
           />
 
           {/* Overlay label */}
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0D0D0D]/90 backdrop-blur-sm border border-[#2A2A2A]">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#121212]/90 backdrop-blur-sm border border-[#2E2E2E]">
               <IconBox name="map-pin" size={16} className="w-8 h-8" />
               <div>
-                <div className="text-white text-xs font-semibold">Hawares Centurion Mall, Nerul</div>
-                <div className="text-[#888888] text-[10px]">Navi Mumbai, Maharashtra 400706</div>
+                <div className="text-white text-xs font-semibold">{OFFICE_ADDRESS.line1}</div>
+                <div className="text-[#888888] text-[10px]">{OFFICE_ADDRESS.city}</div>
               </div>
             </div>
             <div className="px-3 py-2 rounded-xl bg-[#E31E24]/90 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">

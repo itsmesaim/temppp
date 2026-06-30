@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { OFFICE_ADDRESS } from '../../lib/site';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | SNK Web Solutions',
-  description: 'Privacy Policy for SNK Web Solutions — how we collect, use, and protect your information.',
+  title: 'Privacy Policy | SNK',
+  description: 'Privacy Policy for SNK — how we collect, use, and protect your information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -17,8 +18,8 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">1. Who We Are</h2>
           <p>
-            SNK Web Solutions (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a digital solutions company based in Navi Mumbai, Maharashtra, India.
-            Our office is located at S-10-B, Hawares Centurion Mall, Nerul East, Sector 19, Nerul, Navi Mumbai, Maharashtra 400706.
+            SNK (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a digital solutions company based in Navi Mumbai, Maharashtra, India.
+            Our office is located at {OFFICE_ADDRESS.full}.
           </p>
         </section>
 
@@ -62,7 +63,7 @@ export default function PrivacyPolicyPage() {
         </section>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-[#2A2A2A]">
+      <div className="mt-12 pt-8 border-t border-[#2E2E2E]">
         <Link href="/" className="text-sm text-[#888888] hover:text-[#E31E24] transition">← Back to Home</Link>
       </div>
     </div>

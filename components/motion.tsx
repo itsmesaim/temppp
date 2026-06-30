@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   motion,
   useReducedMotion,
   type HTMLMotionProps,
   type Variants,
-} from 'framer-motion';
+} from "framer-motion";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
@@ -54,7 +54,7 @@ function viewportConfig(once = true) {
   return {
     once,
     amount: 0.05 as const,
-    margin: '0px 0px 0px 0px' as const,
+    margin: "0px 0px 0px 0px" as const,
   };
 }
 
@@ -62,11 +62,11 @@ function transition(duration = 0.65, delay = 0) {
   return { duration, delay, ease: EASE };
 }
 
-interface RevealProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
+interface RevealProps extends Omit<HTMLMotionProps<"div">, "children"> {
   children?: React.ReactNode;
   delay?: number;
   duration?: number;
-  variant?: 'fadeUp' | 'fadeIn' | 'scaleIn' | 'slideRight' | 'slideLeft';
+  variant?: "fadeUp" | "fadeIn" | "scaleIn" | "slideRight" | "slideLeft";
   once?: boolean;
 }
 
@@ -74,7 +74,7 @@ export function Reveal({
   children,
   delay = 0,
   duration = 0.65,
-  variant = 'fadeUp',
+  variant = "fadeUp",
   once = true,
   className,
   ...props
@@ -101,7 +101,7 @@ export function Reveal({
   );
 }
 
-interface StaggerProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
+interface StaggerProps extends Omit<HTMLMotionProps<"div">, "children"> {
   children?: React.ReactNode;
   stagger?: number;
   delayChildren?: number;
@@ -134,7 +134,9 @@ export function Stagger({
           ? staggerFast
           : {
               hidden: {},
-              visible: { transition: { staggerChildren: stagger, delayChildren } },
+              visible: {
+                transition: { staggerChildren: stagger, delayChildren },
+              },
             }
       }
       className={className}
@@ -148,7 +150,7 @@ export function Stagger({
 export function StaggerItem({
   children,
   className,
-  variant = 'fadeUp',
+  variant = "fadeUp",
   once = true,
   ...props
 }: RevealProps) {
@@ -175,7 +177,7 @@ export function StaggerItem({
   );
 }
 
-interface HoverLiftProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
+interface HoverLiftProps extends Omit<HTMLMotionProps<"div">, "children"> {
   children?: React.ReactNode;
   lift?: number;
   scale?: number;
@@ -198,7 +200,7 @@ export function HoverLift({
     <motion.div
       whileHover={{ y: lift, scale }}
       whileTap={{ scale: 0.98, y: lift / 2 }}
-      transition={{ type: 'spring', stiffness: 380, damping: 22 }}
+      transition={{ type: "spring", stiffness: 380, damping: 22 }}
       className={className}
       {...props}
     >
@@ -235,12 +237,12 @@ export function HeroReveal({
 export function HeroItem({
   children,
   className,
-  variant = 'fadeUp',
+  variant = "fadeUp",
   delay,
 }: {
   children: React.ReactNode;
   className?: string;
-  variant?: RevealProps['variant'];
+  variant?: RevealProps["variant"];
   delay?: number;
 }) {
   const reduced = useReducedMotion();
@@ -277,7 +279,7 @@ export function FloatPulse({
   return (
     <motion.div
       animate={{ y: [0, -8, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       className={className}
     >
       {children}
@@ -302,7 +304,7 @@ export function GlowButton({
     <motion.div
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
-      transition={{ type: 'spring', stiffness: 420, damping: 18 }}
+      transition={{ type: "spring", stiffness: 420, damping: 18 }}
       className={className}
     >
       {children}

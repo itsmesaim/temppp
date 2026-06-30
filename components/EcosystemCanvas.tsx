@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 
 interface Node {
   x: number;
@@ -33,11 +33,18 @@ export default function EcosystemCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: true });
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
-    const labels = ['SEO', 'PPC', 'CONTENT', 'SOCIAL', 'WEB', 'DATA'];
-    const colors = ['#67e8f9', '#c084fc', '#4ade80', '#f472b6', '#fbbf24', '#60a5fa'];
+    const labels = ["SEO", "PPC", "CONTENT", "SOCIAL", "WEB", "DATA"];
+    const colors = [
+      "#67e8f9",
+      "#c084fc",
+      "#4ade80",
+      "#f472b6",
+      "#fbbf24",
+      "#60a5fa",
+    ];
 
     const initNodes = (width: number, height: number) => {
       const centerX = width / 2;
@@ -53,8 +60,8 @@ export default function EcosystemCanvas() {
           vx: 0,
           vy: 0,
           radius: coreRadius,
-          label: 'SNK',
-          color: '#67e8f9',
+          label: "SNK",
+          color: "#67e8f9",
           pulse: 0,
           baseAngle: 0,
           orbitRadius: 0,
@@ -91,14 +98,23 @@ export default function EcosystemCanvas() {
       const prev = dimsRef.current;
       dimsRef.current = { width, height };
 
-      if (!prev.width || !prev.height || Math.abs(prev.width - width) > 2 || Math.abs(prev.height - height) > 2) {
+      if (
+        !prev.width ||
+        !prev.height ||
+        Math.abs(prev.width - width) > 2 ||
+        Math.abs(prev.height - height) > 2
+      ) {
         initNodes(width, height);
       }
 
       return { width, height };
     };
 
-    const updatePointer = (clientX: number, clientY: number, active: boolean) => {
+    const updatePointer = (
+      clientX: number,
+      clientY: number,
+      active: boolean,
+    ) => {
       const rect = canvas.getBoundingClientRect();
       pointerRef.current = {
         x: clientX - rect.left,
@@ -107,15 +123,20 @@ export default function EcosystemCanvas() {
       };
     };
 
-    const handleMouseMove = (e: MouseEvent) => updatePointer(e.clientX, e.clientY, true);
-    const handleMouseLeave = () => { pointerRef.current.active = false; };
+    const handleMouseMove = (e: MouseEvent) =>
+      updatePointer(e.clientX, e.clientY, true);
+    const handleMouseLeave = () => {
+      pointerRef.current.active = false;
+    };
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches[0]) {
         e.preventDefault();
         updatePointer(e.touches[0].clientX, e.touches[0].clientY, true);
       }
     };
-    const handleTouchEnd = () => { pointerRef.current.active = false; };
+    const handleTouchEnd = () => {
+      pointerRef.current.active = false;
+    };
 
     setupCanvas();
 
@@ -123,16 +144,18 @@ export default function EcosystemCanvas() {
     resizeObserver.observe(canvas);
 
     const visibilityObserver = new IntersectionObserver(
-      ([entry]) => { visibleRef.current = entry.isIntersecting; },
-      { threshold: 0.05 }
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.05 },
     );
     visibilityObserver.observe(canvas);
 
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
-    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
-    canvas.addEventListener('touchend', handleTouchEnd);
-    canvas.addEventListener('touchcancel', handleTouchEnd);
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd);
+    canvas.addEventListener("touchcancel", handleTouchEnd);
 
     const animate = () => {
       animationRef.current = requestAnimationFrame(animate);
@@ -155,7 +178,7 @@ export default function EcosystemCanvas() {
       ctx.clearRect(0, 0, width, height);
 
       // Ambient grid
-      ctx.strokeStyle = 'rgba(103, 232, 249, 0.04)';
+      ctx.strokeStyle = "rgba(103, 232, 249, 0.04)";
       ctx.lineWidth = 1;
       const gridSize = 32;
       for (let x = 0; x <= width; x += gridSize) {
@@ -241,7 +264,7 @@ export default function EcosystemCanvas() {
       // Always connect satellites to core
       const core = nodes[0];
       nodes.slice(1).forEach((node) => {
-        ctx.strokeStyle = 'rgba(103, 232, 249, 0.22)';
+        ctx.strokeStyle = "rgba(103, 232, 249, 0.22)";
         ctx.lineWidth = 1.2;
         ctx.beginPath();
         ctx.moveTo(core.x, core.y);
@@ -254,19 +277,27 @@ export default function EcosystemCanvas() {
       const coreFontSize = fontSize * 1.2;
 
       nodes.forEach((node, index) => {
-        const r = node.radius + (index === 0 ? node.pulse * 0.6 : node.pulse * 0.35);
+        const r =
+          node.radius + (index === 0 ? node.pulse * 0.6 : node.pulse * 0.35);
 
-        const grad = ctx.createRadialGradient(node.x, node.y, r * 0.4, node.x, node.y, r * 2.8);
-        grad.addColorStop(0, node.color + '55');
-        grad.addColorStop(0.5, node.color + '15');
-        grad.addColorStop(1, 'transparent');
+        const grad = ctx.createRadialGradient(
+          node.x,
+          node.y,
+          r * 0.4,
+          node.x,
+          node.y,
+          r * 2.8,
+        );
+        grad.addColorStop(0, node.color + "55");
+        grad.addColorStop(0.5, node.color + "15");
+        grad.addColorStop(1, "transparent");
 
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(node.x, node.y, r * 2.6, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = index === 0 ? '#0a0a0f' : '#111114';
+        ctx.fillStyle = index === 0 ? "#0a0a0f" : "#111114";
         ctx.strokeStyle = node.color;
         ctx.lineWidth = index === 0 ? 3 : 2;
         ctx.beginPath();
@@ -274,29 +305,32 @@ export default function EcosystemCanvas() {
         ctx.fill();
         ctx.stroke();
 
-        ctx.fillStyle = node.color + '40';
+        ctx.fillStyle = node.color + "40";
         ctx.beginPath();
         ctx.arc(node.x - r * 0.25, node.y - r * 0.25, r * 0.35, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.textAlign = 'center';
+        ctx.textAlign = "center";
         if (index > 0) {
-          ctx.fillStyle = '#e4e4e7';
+          ctx.fillStyle = "#e4e4e7";
           ctx.font = `600 ${fontSize}px var(--font-geist-sans)`;
           ctx.fillText(node.label, node.x, node.y + fontSize * 0.35);
         } else {
-          ctx.fillStyle = '#67e8f9';
+          ctx.fillStyle = "#67e8f9";
           ctx.font = `700 ${coreFontSize}px var(--font-geist-sans)`;
-          ctx.fillText('CORE', node.x, node.y + coreFontSize * 0.3);
+          ctx.fillText("CORE", node.x, node.y + coreFontSize * 0.3);
         }
       });
 
       // Floating particles
-      ctx.fillStyle = 'rgba(103, 232, 249, 0.55)';
+      ctx.fillStyle = "rgba(103, 232, 249, 0.55)";
       const particleCount = Math.floor(Math.min(width, height) / 18);
       for (let p = 0; p < particleCount; p++) {
-        const px = ((p * 31 + time * 12) % width);
-        const py = height * 0.2 + Math.sin(p + time * 1.3) * height * 0.22 + (p % 3) * height * 0.08;
+        const px = (p * 31 + time * 12) % width;
+        const py =
+          height * 0.2 +
+          Math.sin(p + time * 1.3) * height * 0.22 +
+          (p % 3) * height * 0.08;
         const size = 1 + Math.sin(time * 3 + p) * 0.5;
         ctx.beginPath();
         ctx.arc(px, py, size, 0, Math.PI * 2);
@@ -306,11 +340,15 @@ export default function EcosystemCanvas() {
       // Pointer glow
       if (pointer.active) {
         const glow = ctx.createRadialGradient(
-          pointer.x, pointer.y, 0,
-          pointer.x, pointer.y, pointerRadius * 0.5
+          pointer.x,
+          pointer.y,
+          0,
+          pointer.x,
+          pointer.y,
+          pointerRadius * 0.5,
         );
-        glow.addColorStop(0, 'rgba(227, 30, 36, 0.08)');
-        glow.addColorStop(1, 'transparent');
+        glow.addColorStop(0, "rgba(227, 30, 36, 0.08)");
+        glow.addColorStop(1, "transparent");
         ctx.fillStyle = glow;
         ctx.beginPath();
         ctx.arc(pointer.x, pointer.y, pointerRadius * 0.5, 0, Math.PI * 2);
@@ -323,11 +361,11 @@ export default function EcosystemCanvas() {
     return () => {
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
-      canvas.removeEventListener('mousemove', handleMouseMove);
-      canvas.removeEventListener('mouseleave', handleMouseLeave);
-      canvas.removeEventListener('touchmove', handleTouchMove);
-      canvas.removeEventListener('touchend', handleTouchEnd);
-      canvas.removeEventListener('touchcancel', handleTouchEnd);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("touchcancel", handleTouchEnd);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, []);
@@ -336,7 +374,7 @@ export default function EcosystemCanvas() {
     <canvas
       ref={canvasRef}
       className="w-full h-full cursor-crosshair touch-none"
-      style={{ background: 'transparent' }}
+      style={{ background: "transparent" }}
       aria-label="Interactive digital ecosystem visualization. Move your cursor to interact with connected nodes."
       role="img"
     />

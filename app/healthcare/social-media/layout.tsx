@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Healthcare Social Media Marketing in Navi Mumbai | SNK Web Solutions',
+  title: 'Healthcare Social Media Marketing in Navi Mumbai | SNK',
   description:
     'Healthcare social media marketing in Navi Mumbai. Build patient trust and brand authority through strategic, compliant content across Facebook, Instagram, LinkedIn, and YouTube.',
 };

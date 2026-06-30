@@ -18,7 +18,7 @@ export async function generateMetadata({
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} | SNK Web Solutions`,
+    title: `${post.title} | SNK`,
     description: post.excerpt,
   };
 }
@@ -83,10 +83,10 @@ export default async function BlogPost({
   if (!post) notFound();
 
   return (
-    <div className="bg-[#0D0D0D] min-h-screen">
+    <div className="bg-[#121212] min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="border-b border-[#2A2A2A]">
+      <section className="border-b border-[#2E2E2E]">
         <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
           <Link
             href="/blog"
@@ -121,7 +121,7 @@ export default async function BlogPost({
         </div>
 
         <div className="max-w-5xl mx-auto px-6">
-          <div className="relative h-64 md:h-96 rounded-t-3xl overflow-hidden border border-[#2A2A2A] border-b-0">
+          <div className="relative h-64 md:h-96 rounded-t-3xl overflow-hidden border border-[#2E2E2E] border-b-0">
             <Image
               src={post.image}
               alt={post.title}
@@ -153,7 +153,7 @@ export default async function BlogPost({
         if (related.length === 0) return null;
 
         return (
-          <section className="border-t border-[#2A2A2A] bg-[#111111] py-16">
+          <section className="border-t border-[#2E2E2E] bg-[#181818] py-16">
             <div className="max-w-4xl mx-auto px-6">
               <div className="text-[#E31E24] tracking-[3px] text-xs mb-2">KEEP READING</div>
               <h2 className="text-3xl font-semibold tracking-tight text-white mb-8">Related Articles</h2>
@@ -162,7 +162,7 @@ export default async function BlogPost({
                   <Link
                     key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="group flex flex-col rounded-2xl border border-[#2A2A2A] bg-[#1A1A1A] overflow-hidden hover:border-[#E31E24]/40 transition-all duration-300 hover:-translate-y-1"
+                    className="group flex flex-col rounded-2xl border border-[#2E2E2E] bg-[#222222] overflow-hidden hover:border-[#E31E24]/40 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative h-40 overflow-hidden">
                       <Image
@@ -190,7 +190,7 @@ export default async function BlogPost({
       })()}
 
       {/* ── Footer nav ── */}
-      <div className="border-t border-[#2A2A2A] py-12">
+      <div className="border-t border-[#2E2E2E] py-12">
         <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <Link href="/blog" className="text-[#E31E24] hover:underline text-sm">
             ← All Articles
@@ -199,7 +199,7 @@ export default async function BlogPost({
             href="/contact"
             className="inline-flex h-11 items-center justify-center rounded-full bg-[#E31E24] px-7 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-all hover:shadow-[0_0_24px_rgba(227,30,36,0.4)]"
           >
-            Work with SNK Web Solutions →
+            Work with SNK →
           </Link>
         </div>
       </div>

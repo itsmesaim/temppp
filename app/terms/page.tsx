@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | SNK Web Solutions',
-  description: 'Terms and Conditions for using SNK Web Solutions website and services.',
+  title: 'Terms & Conditions | SNK',
+  description: 'Terms and Conditions for using SNK website and services.',
 };
 
 export default function TermsPage() {
@@ -16,17 +16,17 @@ export default function TermsPage() {
       <div className="space-y-8 text-[#AAAAAA] leading-relaxed text-base">
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">1. Acceptance of Terms</h2>
-          <p>By accessing and using the SNK Web Solutions website, you agree to these Terms &amp; Conditions. If you do not agree, please do not use our website or services.</p>
+          <p>By accessing and using the SNK website, you agree to these Terms &amp; Conditions. If you do not agree, please do not use our website or services.</p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">2. Services</h2>
-          <p>SNK Web Solutions provides digital marketing, web development, SEO, branding, and related services. Specific deliverables, timelines, and fees are defined in individual proposals or service agreements.</p>
+          <p>SNK provides digital marketing, web development, SEO, branding, and related services. Specific deliverables, timelines, and fees are defined in individual proposals or service agreements.</p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">3. Website Content</h2>
-          <p>All content on this website — including text, graphics, logos, and case studies — is owned by SNK Web Solutions or used with permission. You may not reproduce or distribute our content without written consent.</p>
+          <p>All content on this website — including text, graphics, logos, and case studies — is owned by SNK or used with permission. You may not reproduce or distribute our content without written consent.</p>
         </section>
 
         <section>
@@ -36,7 +36,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">5. Limitation of Liability</h2>
-          <p>We make reasonable efforts to keep website information accurate, but we do not guarantee completeness or suitability for every purpose. SNK Web Solutions is not liable for indirect or consequential damages arising from use of this website.</p>
+          <p>We make reasonable efforts to keep website information accurate, but we do not guarantee completeness or suitability for every purpose. SNK is not liable for indirect or consequential damages arising from use of this website.</p>
         </section>
 
         <section>
@@ -59,7 +59,7 @@ export default function TermsPage() {
         </section>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-[#2A2A2A]">
+      <div className="mt-12 pt-8 border-t border-[#2E2E2E]">
         <Link href="/" className="text-sm text-[#888888] hover:text-[#E31E24] transition">← Back to Home</Link>
       </div>
     </div>

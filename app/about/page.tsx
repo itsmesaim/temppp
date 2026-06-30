@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ServiceIcon, type IconName } from '../../components/ServiceIcon';
-import { Reveal, Stagger, StaggerItem, HoverLift, FloatPulse, GlowButton } from '../../components/motion';
+import { Reveal, Stagger, StaggerItem, HoverLift, GlowButton } from '../../components/motion';
 
 function FadeInSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -30,7 +30,7 @@ const services: { icon: IconName; title: string; desc: string }[] = [
 ];
 
 const whyChoose: { icon: IconName; title: string; desc: string }[] = [
-  { icon: "trophy", title: "Established & Trusted Since 2007", desc: "Nearly two decades of proven experience delivering digital excellence." },
+  { icon: "trophy", title: "Established & Trusted Since 2010", desc: "Over a decade of proven experience delivering digital excellence." },
   { icon: "briefcase", title: "Experienced & Dedicated Professionals", desc: "A passionate team of specialists committed to your business goals." },
   { icon: "settings", title: "Customized Business Solutions", desc: "Tailored strategies built around your unique requirements and objectives." },
   { icon: "wallet", title: "Affordable & Scalable Services", desc: "Premium quality services priced to deliver exceptional ROI for every business." },
@@ -42,6 +42,12 @@ const whyChoose: { icon: IconName; title: string; desc: string }[] = [
 ];
 
 const team = [
+  {
+    name: "Mr. Sandeep Narayan Kanade",
+    role: "Founder & Director",
+    bio: "Established SNK in 2010 with a vision to help businesses leverage digital technology for growth. Leads with a focus on quality, innovation, integrity, and long-term client relationships.",
+    img: "/team-sandeep.webp",
+  },
   {
     name: "Pinky",
     role: "Senior Counsellor",
@@ -85,123 +91,45 @@ export default function About() {
   return (
     <div className="overflow-x-hidden">
 
-      {/* ==================== 1. FOUNDER & CEO HERO BANNER =================== */}
-      <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
-        {/* Background ambient glow */}
+      {/* ==================== 1. HERO BANNER =================== */}
+      <section className="relative min-h-[70vh] flex items-center py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#E31E24]/8 blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#E31E24]/5 blur-[80px]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#E31E24]/10 to-transparent" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#E31E24]/6 blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative max-w-4xl mx-auto px-6 w-full text-center">
+          <FadeInSection delay={0}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/25 mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse" />
+              <span className="text-[#E31E24] text-xs font-semibold tracking-[3px]">ABOUT SNK</span>
+            </div>
+          </FadeInSection>
 
-          {/* Left: Text Content */}
-          <div className="order-2 lg:order-1">
-            <FadeInSection delay={0}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/30 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse" />
-                <span className="text-[#E31E24] text-xs font-semibold tracking-[3px]">FOUNDER &amp; DIRECTOR</span>
-              </div>
-            </FadeInSection>
+          <FadeInSection delay={100}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.02] text-white mb-6">
+              Building Digital<br />
+              <span className="text-[#E31E24]">Success Stories</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-[#9A9A9A] max-w-2xl mx-auto leading-relaxed">
+              Trusted digital solutions partner helping businesses establish, grow, and strengthen their online presence since <strong className="text-white">2010</strong>.
+            </p>
+          </FadeInSection>
 
-            <FadeInSection delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white mb-3">
-                Meet Our<br />
-                <span className="text-[#E31E24]">Founder &amp; Director</span>
-              </h1>
-              <p className="text-2xl md:text-3xl font-medium text-[#CCCCCC] mb-8 tracking-tight">
-                Mr. Sandeep Narayan Kanade
-              </p>
-            </FadeInSection>
-
-            <FadeInSection delay={200}>
-              <div className="space-y-4 text-[#AAAAAA] leading-relaxed text-base mb-8">
-                <p>
-                  Mr. Sandeep Narayan Kanade is the Founder and Director of SNK Web Solutions. With a strong passion
-                  for technology, innovation, and business development, he established the company in <strong className="text-white">2007</strong> with
-                  the vision of helping businesses leverage the power of digital technology to achieve growth and success.
-                </p>
-                <p>
-                  Over the years, he has successfully guided the organization through changing market trends,
-                  technological advancements, and evolving client needs. His leadership philosophy is centered on
-                  <span className="text-white font-medium"> quality, innovation, integrity, and customer satisfaction.</span>
-                </p>
-                <p>
-                  Through his strategic vision and dedication, he has helped SNK Web Solutions earn the trust of clients
-                  by consistently delivering reliable and result-oriented digital solutions. He believes in building
-                  long-term relationships by understanding unique requirements and providing customized solutions that
-                  create measurable business value.
-                </p>
-                <p className="text-[#CCCCCC]">
-                  With extensive industry experience and a commitment to continuous improvement, he continues to lead
-                  the company toward excellence — empowering businesses with modern digital solutions that enhance their
-                  online presence and support long-term growth.
-                </p>
-              </div>
-            </FadeInSection>
-
-            <FadeInSection delay={300}>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="px-7 py-3.5 rounded-full bg-[#E31E24] text-white font-semibold text-sm hover:bg-[#C01A1F] transition-all duration-300 hover:shadow-[0_0_24px_rgba(227,30,36,0.4)] hover:-translate-y-0.5"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-7 py-3.5 rounded-full border border-[#E31E24]/50 text-[#E31E24] font-semibold text-sm hover:bg-[#E31E24]/10 transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Get Free Website Audit
-                </Link>
-              </div>
-            </FadeInSection>
-          </div>
-
-          {/* Right: Founder Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <FadeInSection delay={150}>
-              <FloatPulse>
-              <div className="relative">
-                {/* Outer glow ring */}
-                <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#E31E24]/20 to-transparent blur-2xl" />
-
-                {/* Glassmorphism frame */}
-                <div className="relative rounded-[1.75rem] p-1.5 bg-gradient-to-br from-[#E31E24]/30 via-[#2A2A2A]/60 to-[#1A1A1A]/80 backdrop-blur-sm shadow-[0_32px_80px_-10px_rgba(227,30,36,0.3)]">
-                  <div className="relative w-[320px] md:w-[380px] lg:w-[420px] aspect-[3/4] rounded-[1.5rem] overflow-hidden">
-                    <Image
-                      src="/team-sandeep.webp"
-                      alt="Mr. Sandeep Narayan Kanade – Founder & Director, SNK Web Solutions"
-                      fill
-                      sizes="(max-width: 768px) 320px, 420px"
-                      className="object-cover object-top"
-                      priority
-                    />
-                    {/* Subtle overlay gradient at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0D0D0D]/60 to-transparent" />
-                  </div>
-                </div>
-
-                {/* Floating badge – established */}
-                <div className="absolute -bottom-4 -left-4 px-4 py-2.5 rounded-2xl bg-[#1A1A1A] border border-[#E31E24]/30 shadow-xl backdrop-blur-sm">
-                  <div className="text-[#E31E24] text-xs tracking-widest font-semibold">EST.</div>
-                  <div className="text-white font-bold text-xl leading-none">2007</div>
-                </div>
-                {/* Floating badge – experience */}
-                <div className="absolute -top-4 -right-4 px-4 py-2.5 rounded-2xl bg-[#E31E24] shadow-xl">
-                  <div className="text-white/80 text-xs font-semibold">Industry</div>
-                  <div className="text-white font-bold text-xl leading-none">15+ yrs</div>
-                </div>
-              </div>
-              </FloatPulse>
-            </FadeInSection>
-          </div>
+          <FadeInSection delay={200}>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link href="/contact" className="px-7 py-3.5 rounded-full bg-[#E31E24] text-white font-semibold text-sm hover:bg-[#C01A1F] transition-all hover:shadow-[0_0_24px_rgba(227,30,36,0.4)]">
+                Contact Us
+              </Link>
+              <Link href="/contact" className="px-7 py-3.5 rounded-full border border-[#2E2E2E] text-[#CCCCCC] font-semibold text-sm hover:border-[#E31E24]/40 hover:text-white transition-all">
+                Get Free Website Audit
+              </Link>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
-      {/* ==================== 2. ABOUT SNK WEB SOLUTIONS ==================== */}
-      <section className="bg-[#161616] border-y border-[#2A2A2A] py-20">
+      {/* ==================== 2. ABOUT SNK ==================== */}
+      <section className="bg-[#1A1A1A] border-y border-[#2E2E2E] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -209,11 +137,11 @@ export default function About() {
             <FadeInSection>
               <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-3">ABOUT US</div>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 leading-tight">
-                Welcome to<br /><span className="text-[#E31E24]">SNK Web Solutions</span>
+                Welcome to<br /><span className="text-[#E31E24]">SNK</span>
               </h2>
               <div className="space-y-4 text-[#AAAAAA] leading-relaxed">
                 <p>
-                  Founded in <strong className="text-white">2007</strong>, SNK Web Solutions is a trusted digital solutions
+                  Founded in <strong className="text-white">2010</strong>, SNK is a trusted digital solutions
                   company dedicated to helping businesses establish, grow, and strengthen their online presence.
                 </p>
                 <p>
@@ -227,7 +155,7 @@ export default function About() {
                   customer engagement, and create lasting value.
                 </p>
                 <p>
-                  Over the years, SNK Web Solutions has built a reputation for professionalism, reliability, and
+                  Over the years, SNK has built a reputation for professionalism, reliability, and
                   customer satisfaction. We believe every business deserves a strong digital presence, and our passionate
                   team transforms ideas into successful online experiences.
                 </p>
@@ -240,11 +168,11 @@ export default function About() {
                   { num: "15+", label: "Years of Experience", icon: "calendar" as IconName },
                   { num: "150+", label: "Projects Delivered", icon: "rocket" as IconName },
                   { num: "100+", label: "Happy Clients", icon: "smile" as IconName },
-                  { num: "2007", label: "Founded", icon: "zap" as IconName },
+                  { num: "2010", label: "Founded", icon: "zap" as IconName },
                 ].map((stat) => (
                   <StaggerItem key={stat.label} variant="scaleIn">
                   <HoverLift>
-                  <div className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors duration-300 text-center group">
+                  <div className="p-6 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-colors duration-300 text-center group">
                     <div className="mb-2 flex justify-center"><ServiceIcon name={stat.icon} size={28} /></div>
                     <div className="text-3xl font-bold text-[#E31E24] tracking-tight">{stat.num}</div>
                     <div className="text-xs text-[#888888] tracking-wide mt-1">{stat.label}</div>
@@ -257,7 +185,34 @@ export default function About() {
         </div>
       </section>
 
-      {/* ==================== 3. OUR VISION ==================== */}
+      {/* ==================== 3. OUR MISSION ==================== */}
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <FadeInSection>
+          <div className="text-center mb-10">
+            <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">OUR MISSION</div>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">What Drives Us</h2>
+          </div>
+
+          <div className="relative rounded-3xl overflow-hidden border border-[#2E2E2E] bg-gradient-to-br from-[#222222] via-[#1A1A1A] to-[#121212] p-10 md:p-14">
+            <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-[#E31E24]/6 blur-[60px] pointer-events-none" />
+            <div className="relative flex flex-col md:flex-row items-start gap-8">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#E31E24]/15 border border-[#E31E24]/30 flex items-center justify-center">
+                <ServiceIcon name="target" size={24} className="text-[#E31E24]" />
+              </div>
+              <div>
+                <div className="text-[#E31E24] text-xs tracking-[3px] uppercase font-semibold mb-4">MISSION STATEMENT</div>
+                <p className="text-xl md:text-2xl text-white font-medium leading-relaxed tracking-tight">
+                  To provide high-quality, cost-effective, and result-driven digital services that help our clients
+                  achieve their business goals. We combine <span className="text-[#E31E24]">creativity, technology, and strategic thinking</span> to
+                  deliver customized solutions that drive growth, improve customer engagement, and create lasting value.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+      </section>
+
+      {/* ==================== 4. OUR VISION ==================== */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <FadeInSection>
           <div className="text-center mb-10">
@@ -265,7 +220,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">What We Stand For</h2>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden border border-[#E31E24]/25 bg-gradient-to-br from-[#1A1A1A] via-[#161616] to-[#0D0D0D] p-10 md:p-14 shadow-[0_0_80px_-20px_rgba(227,30,36,0.2)]">
+          <div className="relative rounded-3xl overflow-hidden border border-[#E31E24]/25 bg-gradient-to-br from-[#222222] via-[#1A1A1A] to-[#121212] p-10 md:p-14 shadow-[0_0_80px_-20px_rgba(227,30,36,0.2)]">
             {/* Background decorative elements */}
             <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#E31E24]/8 blur-[60px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-[#E31E24]/5 blur-[40px] pointer-events-none" />
@@ -288,7 +243,7 @@ export default function About() {
       </section>
 
       {/* ==================== 4. OUR SERVICES ==================== */}
-      <section className="bg-[#161616] border-y border-[#2A2A2A] py-20">
+      <section className="bg-[#1A1A1A] border-y border-[#2E2E2E] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-12">
@@ -305,7 +260,7 @@ export default function About() {
               <StaggerItem key={service.title}>
                 <HoverLift lift={-8}>
                 <div
-                  className="group relative h-full p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 hover:shadow-[0_20px_40px_-10px_rgba(227,30,36,0.2)] cursor-default overflow-hidden"
+                  className="group relative h-full p-6 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/50 transition-colors duration-300 hover:shadow-[0_20px_40px_-10px_rgba(227,30,36,0.2)] cursor-default overflow-hidden"
                   onMouseEnter={() => setActiveService(i)}
                   onMouseLeave={() => setActiveService(null)}
                 >
@@ -330,9 +285,9 @@ export default function About() {
         <FadeInSection>
           <div className="text-center mb-12">
             <div className="text-[#E31E24] uppercase tracking-[3px] text-xs mb-2">WHY CHOOSE US</div>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">Why Choose SNK Web Solutions</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">Why Choose SNK</h2>
             <p className="text-[#888888] text-lg mt-3 max-w-2xl mx-auto">
-              The advantages that make SNK Web Solutions the trusted digital partner for businesses.
+              The advantages that make SNK the trusted digital partner for businesses.
             </p>
           </div>
         </FadeInSection>
@@ -341,7 +296,7 @@ export default function About() {
           {whyChoose.map((item) => (
             <StaggerItem key={item.title}>
               <HoverLift>
-              <div className="group flex items-start gap-4 p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors duration-300 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)] h-full">
+              <div className="group flex items-start gap-4 p-6 rounded-2xl bg-[#222222] border border-[#2E2E2E] hover:border-[#E31E24]/40 transition-colors duration-300 hover:shadow-[0_12px_32px_-8px_rgba(227,30,36,0.15)] h-full">
                 <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-[#E31E24]/10 border border-[#E31E24]/20 flex items-center justify-center group-hover:bg-[#E31E24]/20 transition-colors duration-300">
                   <ServiceIcon name={item.icon} size={20} />
                 </div>
@@ -357,7 +312,7 @@ export default function About() {
       </section>
 
       {/* ==================== 6. MEET OUR TEAM ==================== */}
-      <section className="bg-[#161616] border-t border-[#2A2A2A] py-20">
+      <section className="bg-[#1A1A1A] border-t border-[#2E2E2E] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-12">
@@ -370,12 +325,12 @@ export default function About() {
           </FadeInSection>
 
           {/* 5 team members: 4 on desktop, 2 on tablet, 1 on mobile */}
-          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 justify-items-center" stagger={0.08}>
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center" stagger={0.08}>
             {team.map((member, i) => (
               <StaggerItem key={member.name}>
                 <HoverLift lift={-10}>
                 <div
-                  className="group relative flex flex-col w-full max-w-[280px] xl:max-w-none rounded-3xl bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#2A2A2A] hover:border-[#E31E24]/60 transition-colors duration-400 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_48px_-10px_rgba(227,30,36,0.25)]"
+                  className="group relative flex flex-col w-full max-w-[280px] xl:max-w-none rounded-3xl bg-[#222222]/80 backdrop-blur-sm border border-[#2E2E2E] hover:border-[#E31E24]/60 transition-colors duration-400 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_48px_-10px_rgba(227,30,36,0.25)]"
                   onMouseEnter={() => setActiveTeam(i)}
                   onMouseLeave={() => setActiveTeam(null)}
                 >
@@ -395,7 +350,7 @@ export default function About() {
                         loading="lazy"
                         className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-transparent to-transparent" />
                     </div>
                   </div>
 
@@ -418,7 +373,7 @@ export default function About() {
       {/* ==================== 7. FINAL CALL TO ACTION ==================== */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <FadeInSection>
-          <div className="relative rounded-[2rem] overflow-hidden border border-[#E31E24]/25 bg-gradient-to-br from-[#1A1A1A] via-[#161616] to-[#0D0D0D] shadow-[0_0_80px_-20px_rgba(227,30,36,0.2)]">
+          <div className="relative rounded-[2rem] overflow-hidden border border-[#E31E24]/25 bg-gradient-to-br from-[#222222] via-[#1A1A1A] to-[#121212] shadow-[0_0_80px_-20px_rgba(227,30,36,0.2)]">
             {/* Background glows */}
             <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#E31E24]/10 blur-[80px] pointer-events-none" />
             <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-[#E31E24]/8 blur-[60px] pointer-events-none" />
@@ -432,12 +387,12 @@ export default function About() {
 
               <div className="max-w-2xl mx-auto space-y-3 text-[#AAAAAA] text-base leading-relaxed mb-10">
                 <p>
-                  At SNK Web Solutions, we are committed to helping businesses succeed in the digital world.
+                  At SNK, we are committed to helping businesses succeed in the digital world.
                   Whether you need a professional website, a powerful digital marketing strategy, engaging content,
                   or complete online branding solutions, our team is ready to help you achieve your goals.
                 </p>
                 <p className="text-[#CCCCCC]">
-                  Partner with SNK Web Solutions and transform your digital vision into reality. Together, we build
+                  Partner with SNK and transform your digital vision into reality. Together, we build
                   stronger brands, create meaningful online experiences, and drive sustainable business growth.
                 </p>
               </div>
@@ -461,16 +416,16 @@ export default function About() {
                 </GlowButton>
                 <Link
                   href="/contact"
-                  className="px-8 py-4 rounded-full border border-[#2A2A2A] text-[#CCCCCC] font-semibold text-sm hover:border-[#E31E24]/40 hover:text-white transition-all duration-300"
+                  className="px-8 py-4 rounded-full border border-[#2E2E2E] text-[#CCCCCC] font-semibold text-sm hover:border-[#E31E24]/40 hover:text-white transition-all duration-300"
                 >
                   Get Free Website Audit
                 </Link>
               </div>
 
               {/* Trust indicators */}
-              <div className="flex flex-wrap justify-center gap-6 mt-12 pt-10 border-t border-[#2A2A2A]">
+              <div className="flex flex-wrap justify-center gap-6 mt-12 pt-10 border-t border-[#2E2E2E]">
                 {[
-                  { value: "2007", label: "Founded" },
+                  { value: "2010", label: "Founded" },
                   { value: "15+", label: "Years Experience" },
                   { value: "150+", label: "Projects Done" },
                   { value: "100+", label: "Happy Clients" },

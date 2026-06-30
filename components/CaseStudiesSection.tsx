@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { getFeaturedCaseStudies } from '../lib/case-studies-data';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { getFeaturedCaseStudies } from "../lib/case-studies-data";
 
-import { Reveal, Stagger, StaggerItem, HoverLift, motion } from './motion';
+import { Reveal, Stagger, StaggerItem, HoverLift, motion } from "./motion";
 
 export default function CaseStudiesSection() {
   const featured = getFeaturedCaseStudies();
 
   return (
-    <section className="py-20 bg-[#0D0D0D] border-t border-[#2A2A2A]">
+    <section className="py-20 bg-[#121212] border-t border-[#2E2E2E]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <Reveal>
@@ -24,7 +24,9 @@ export default function CaseStudiesSection() {
                 <span className="text-[#E31E24]">Case Studies</span>
               </h2>
               <p className="mt-4 text-[#888888] max-w-lg text-lg">
-                Real campaigns. Measurable outcomes. Here&apos;s how we&apos;ve transformed brands across industries into digital growth stories.
+                Real campaigns. Measurable outcomes. Here&apos;s how we&apos;ve
+                transformed brands across industries into digital growth
+                stories.
               </p>
             </div>
           </Reveal>
@@ -37,7 +39,7 @@ export default function CaseStudiesSection() {
               <motion.span
                 className="inline-block"
                 whileHover={{ x: 6 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
                 →
               </motion.span>
@@ -51,7 +53,7 @@ export default function CaseStudiesSection() {
               <HoverLift lift={-8} scale={1.015}>
                 <Link
                   href={`/case-studies/${cs.slug}`}
-                  className="case-card group relative block rounded-3xl bg-[#161616] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
+                  className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] overflow-hidden h-full"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -61,7 +63,7 @@ export default function CaseStudiesSection() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent pointer-events-none" />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 rounded-full bg-[#E31E24]/90 text-white text-xs font-semibold tracking-wide backdrop-blur-sm">
                         {cs.industry}
@@ -85,16 +87,22 @@ export default function CaseStudiesSection() {
                       <h3 className="font-semibold text-xl text-white tracking-tight group-hover:text-[#E31E24] transition-colors">
                         {cs.client}
                       </h3>
-                      <p className="text-[#666666] text-sm mt-1">{cs.duration} • {cs.services.slice(0, 2).join(' + ')}</p>
+                      <p className="text-[#666666] text-sm mt-1">
+                        {cs.duration} • {cs.services.slice(0, 2).join(" + ")}
+                      </p>
                     </div>
 
                     <p className="text-[#888888] text-sm leading-relaxed mb-5 line-clamp-2">
                       {cs.shortDesc}
                     </p>
 
-                    <div className="p-4 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-5">
-                      <div className="text-xs text-[#666666] mb-1 tracking-wide">KEY RESULT</div>
-                      <div className="text-[#E31E24] font-semibold text-lg">{cs.keyResult}</div>
+                    <div className="p-4 rounded-2xl bg-[#222222] border border-[#2E2E2E] group-hover:border-[#E31E24]/30 transition-colors mb-5">
+                      <div className="text-xs text-[#666666] mb-1 tracking-wide">
+                        KEY RESULT
+                      </div>
+                      <div className="text-[#E31E24] font-semibold text-lg">
+                        {cs.keyResult}
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-2 text-sm font-medium text-[#888888] group-hover:text-white transition-colors">
@@ -117,7 +125,7 @@ export default function CaseStudiesSection() {
         <Reveal className="mt-8 text-center md:hidden">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-[#2A2A2A] text-white text-sm font-medium hover:border-[#E31E24] hover:text-[#E31E24] transition"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-[#2E2E2E] text-white text-sm font-medium hover:border-[#E31E24] hover:text-[#E31E24] transition"
           >
             View All Case Studies →
           </Link>

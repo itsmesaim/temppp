@@ -15,66 +15,75 @@ import {
 
 const services = [
   {
+    id: 'web',
+    icon: 'monitor' as IconName,
+    title: 'Website Design & Development',
+    tagline: 'Modern, responsive, conversion-focused websites.',
+    desc: 'SNK is a leading website development company in Navi Mumbai, creating professional websites that enhance credibility, improve user experience, search visibility, and lead generation.',
+    features: ['Corporate Website Development', 'Business Website Development', 'eCommerce Development', 'Landing Page Design', 'WordPress Development', 'UI/UX Design', 'SEO-Friendly Development', 'Website Speed Optimization'],
+  },
+  {
+    id: 'mobile',
+    icon: 'smartphone' as IconName,
+    title: 'Responsive & Mobile-Friendly Websites',
+    tagline: 'Seamless experiences on every device.',
+    desc: 'Every website we build is designed with speed, security, mobile responsiveness, and SEO best practices — engaging visitors and converting them into customers across all screen sizes.',
+    features: ['Mobile-First Design', 'Cross-Device Testing', 'Touch-Optimized UI', 'Fast Mobile Loading', 'Adaptive Layouts', 'Progressive Enhancement'],
+  },
+  {
     id: 'seo',
-    icon: 'trending-up' as IconName,
-    tag: null,
-    title: 'SEO & Organic Growth',
-    tagline: 'Own the search results. Own the market.',
-    desc: 'We build comprehensive SEO strategies that compound over time — from deep technical audits and Core Web Vitals optimisation to content architecture and high-authority link acquisition.',
-    features: ['Technical SEO Audits', 'Core Web Vitals Optimisation', 'Content Strategy & Clusters', 'Link Building & PR', 'Local & International SEO', 'Rank Tracking & Reporting'],
+    icon: 'search' as IconName,
+    title: 'Search Engine Optimization (SEO)',
+    tagline: 'Rank higher. Attract qualified traffic.',
+    desc: 'Professional SEO services in Navi Mumbai that improve search rankings, increase organic traffic, and convert visitors into customers through technical knowledge, content optimization, and data-driven insights.',
+    features: ['Technical SEO Audits', 'Keyword Research', 'On-Page Optimization', 'Local & International SEO', 'Link Building', 'Rank Tracking & Reporting'],
   },
   {
     id: 'performance',
     icon: 'target' as IconName,
-    tag: null,
-    title: 'Performance Marketing',
-    tagline: 'Every rupee spent, accountable.',
-    desc: 'ROI-focused paid media across Meta, Google, TikTok, and programmatic channels. We build full-funnel campaign architectures designed to acquire, nurture, and convert at scale.',
-    features: ['Google & Meta Ads Management', 'TikTok & YouTube Advertising', 'Programmatic Display', 'Shopping & Feed Optimisation', 'Conversion Rate Optimisation', 'Attribution Modelling'],
-  },
-  {
-    id: 'web',
-    icon: 'monitor' as IconName,
-    tag: null,
-    title: 'Web Experience',
-    tagline: 'Your website should work as hard as you do.',
-    desc: 'High-performance websites and digital platforms engineered for speed, conversion, and scalability. We design and develop experiences that turn visitors into customers.',
-    features: ['UX/UI Design', 'Next.js & React Development', 'E-Commerce Platforms', 'Page Speed Optimisation', 'A/B Testing Infrastructure', 'CMS Integration'],
-  },
-  {
-    id: 'content',
-    icon: 'pen' as IconName,
-    tag: null,
-    title: 'Content & Storytelling',
-    tagline: 'Stories that build authority and drive pipeline.',
-    desc: 'Strategic content systems — from thought leadership and long-form SEO content to video scripts and social campaigns — built to establish your brand as the definitive voice in your category.',
-    features: ['Content Strategy & Planning', 'Blog & Long-Form Articles', 'Video & Podcast Scripts', 'Social Media Management', 'Email Marketing Sequences', 'Brand Voice Guidelines'],
-  },
-  {
-    id: 'brand',
-    icon: 'globe' as IconName,
-    tag: null,
-    title: 'Brand & Strategy',
-    tagline: 'Position. Differentiate. Dominate.',
-    desc: 'Positioning frameworks, go-to-market strategy, and brand identity systems that give your company a sharp, defensible market position — and the narrative to own it.',
-    features: ['Market Positioning', 'Go-To-Market Strategy', 'Competitive Analysis', 'Brand Identity Systems', 'Messaging Frameworks', 'Launch Planning'],
+    title: 'Digital Marketing Services',
+    tagline: 'Data-driven campaigns that deliver ROI.',
+    desc: 'Customized digital marketing services in Navi Mumbai combining strategic planning, creative execution, and data-driven insights — including SEO, Google Ads, social media, content marketing, and ORM.',
+    features: ['Google Ads & PPC', 'Lead Generation Campaigns', 'Conversion Tracking', 'Remarketing', 'Marketing Automation', 'Performance Reporting'],
   },
   {
     id: 'social',
     icon: 'smartphone' as IconName,
-    tag: null,
     title: 'Social Media Marketing',
-    tagline: 'Build communities. Drive conversations. Convert followers.',
-    desc: 'End-to-end social media management across Instagram, Facebook, LinkedIn, and more. We craft platform-native content, grow your audience, and turn engagement into business outcomes.',
-    features: ['Social Media Strategy', 'Content Creation & Scheduling', 'Community Management', 'Influencer Partnerships', 'Social Advertising', 'Analytics & Reporting'],
+    tagline: 'Build communities. Drive conversations.',
+    desc: 'End-to-end social media management across Instagram, Facebook, LinkedIn, and more — crafting platform-native content, growing your audience, and turning engagement into business outcomes.',
+    features: ['Social Media Strategy', 'Content Creation', 'Community Management', 'Paid Social Ads', 'Influencer Partnerships', 'Analytics & Reporting'],
+  },
+  {
+    id: 'content',
+    icon: 'pen' as IconName,
+    title: 'Content Creation & Marketing',
+    tagline: 'Stories that educate, engage, and convert.',
+    desc: 'Compelling content that educates, engages, and converts your audience — from blog articles and social posts to email sequences and brand storytelling that builds authority.',
+    features: ['Blog & Articles', 'Social Content', 'Email Marketing', 'Video Scripts', 'Brand Voice Guidelines', 'Content Strategy'],
+  },
+  {
+    id: 'maintenance',
+    icon: 'wrench' as IconName,
+    title: 'Website Maintenance & Support',
+    tagline: 'Always secure, fast, and up to date.',
+    desc: 'Dedicated post-launch support to keep your digital assets secure, up-to-date, and performing at their best — so you can focus on running your business.',
+    features: ['Security Updates', 'Bug Fixes', 'Content Updates', 'Performance Monitoring', 'Backup Management', 'Technical Support'],
+  },
+  {
+    id: 'brand',
+    icon: 'globe' as IconName,
+    title: 'Branding & Business Promotion',
+    tagline: 'Stand out. Get recognized. Grow.',
+    desc: 'Strategic branding and business promotion solutions that set your business apart, drive recognition, and create a sharp market position with the narrative to own it.',
+    features: ['Brand Identity', 'Market Positioning', 'Go-To-Market Strategy', 'Competitive Analysis', 'Messaging Frameworks', 'Launch Planning'],
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
-      {/* Hero */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 border-b border-[#2A2A2A]">
+    <div className="bg-[#121212] min-h-screen overflow-x-clip">
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 border-b border-[#2E2E2E]">
         <motion.div
           className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#E31E24]/6 blur-[100px] pointer-events-none"
           animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -92,8 +101,8 @@ export default function ServicesPage() {
             </h1>
           </HeroItem>
           <HeroItem delay={0.12}>
-            <p className="max-w-xl text-xl text-[#888888] mb-10">
-              From precision SEO to performance marketing — we deploy the right combination of services to grow your brand faster than your competitors.
+            <p className="max-w-2xl text-xl text-[#9A9A9A] mb-10 leading-relaxed">
+              Looking for the best digital marketing agency in Navi Mumbai? With over 15+ years of experience, we provide customized digital marketing services that combine strategic planning, creative execution, and data-driven insights to help startups, SMEs, healthcare brands, and enterprises grow online.
             </p>
           </HeroItem>
           <HeroItem delay={0.18}>
@@ -103,15 +112,12 @@ export default function ServicesPage() {
             >
               <span className="text-[#E31E24] text-sm">✦</span>
               <span className="text-white text-sm font-medium">Looking for AI Digital Marketing?</span>
-              <span className="text-[#E31E24] text-sm font-semibold group-hover:translate-x-1 transition-transform">Explore our AI services →</span>
+              <span className="text-[#E31E24] text-sm font-semibold group-hover:translate-x-1 transition-transform">Explore AI services →</span>
             </Link>
           </HeroItem>
           <HeroItem delay={0.24}>
             <GlowButton>
-              <Link
-                href="/contact"
-                className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all"
-              >
+              <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all">
                 Get a Free Strategy Session
               </Link>
             </GlowButton>
@@ -119,7 +125,6 @@ export default function ServicesPage() {
         </HeroReveal>
       </section>
 
-      {/* Services Grid */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <Stagger className="grid md:grid-cols-2 gap-6" stagger={0.08}>
           {services.map((service) => (
@@ -127,17 +132,11 @@ export default function ServicesPage() {
               <HoverLift>
                 <div
                   id={service.id}
-                  className="group relative rounded-3xl p-9 border bg-[#161616] border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 h-full"
+                  className="group relative rounded-3xl p-9 border bg-[#1A1A1A] border-[#2E2E2E] hover:border-[#E31E24]/50 transition-colors duration-300 h-full"
                 >
-                  {service.tag && (
-                    <span className="absolute top-6 right-6 text-[10px] tracking-[3px] font-bold px-3 py-1 rounded-full bg-[#E31E24] text-white">
-                      {service.tag}
-                    </span>
-                  )}
-
                   <div className="mb-4 opacity-80"><ServiceIcon name={service.icon} size={36} /></div>
-                  <h2 className="text-3xl font-semibold tracking-tight mb-1 text-white">{service.title}</h2>
-                  <div className="text-[#888888] text-sm mb-4 italic">{service.tagline}</div>
+                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-1 text-white">{service.title}</h2>
+                  <div className="text-[#9A9A9A] text-sm mb-4 italic">{service.tagline}</div>
                   <p className="text-[#AAAAAA] leading-relaxed mb-8">{service.desc}</p>
 
                   <div className="grid grid-cols-2 gap-2 mb-8">
@@ -149,10 +148,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#E31E24] hover:gap-3 transition-all"
-                  >
+                  <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[#E31E24] hover:gap-3 transition-all">
                     Get Started →
                   </Link>
                 </div>
@@ -162,7 +158,6 @@ export default function ServicesPage() {
         </Stagger>
       </section>
 
-      {/* CTA Band */}
       <section className="bg-[#E31E24] py-16 mt-4 overflow-hidden relative">
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"
@@ -173,10 +168,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-4">Not sure where to start?</h2>
           <p className="text-white/80 text-xl mb-8">We&apos;ll audit your current digital presence and show you exactly where the biggest growth opportunities are — for free.</p>
           <GlowButton>
-            <Link
-              href="/contact"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-white text-[#E31E24] text-lg font-bold px-10 hover:bg-[#F0F0F0] transition-all"
-            >
+            <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-full bg-white text-[#E31E24] text-lg font-bold px-10 hover:bg-[#F0F0F0] transition-all">
               Book Your Free Audit
             </Link>
           </GlowButton>

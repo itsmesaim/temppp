@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="overflow-hidden">
       {/* HERO */}
-      <section className="relative py-24 md:py-32 border-b border-[#2A2A2A] bg-[#0D0D0D]">
+      <section className="relative py-24 md:py-32 border-b border-[#2E2E2E] bg-[#121212]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(227,30,36,0.08)_0%,transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-6 relative">
           {/* Breadcrumb */}
@@ -52,7 +52,7 @@ export default function CaseStudiesPage() {
               <span className="text-[#E31E24]">Real Businesses.</span>
             </h1>
             <p className="text-xl text-[#888888] max-w-2xl mb-10">
-              Discover how SNK Web Solutions helps businesses grow through web development, SEO, branding, digital marketing, and software solutions — with results that speak for themselves.
+              Discover how SNK helps businesses grow through web development, SEO, branding, digital marketing, and software solutions — with results that speak for themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-base font-medium text-white hover:bg-[#161616] hover:border-[#E31E24] transition-all"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-base font-medium text-white hover:bg-[#1A1A1A] hover:border-[#E31E24] transition-all"
               >
                 Free Website Audit
               </Link>
@@ -78,7 +78,7 @@ export default function CaseStudiesPage() {
               { value: '300%', label: 'Max Traffic Growth' },
               { value: '94%', label: 'Top 10 Keywords' },
             ].map((stat, i) => (
-              <div key={i} className="p-5 rounded-2xl bg-[#161616] border border-[#2A2A2A] text-center">
+              <div key={i} className="p-5 rounded-2xl bg-[#1A1A1A] border border-[#2E2E2E] text-center">
                 <div className="text-3xl font-semibold tracking-tighter text-[#E31E24] mb-1">{stat.value}</div>
                 <div className="text-xs text-[#666666] tracking-wide">{stat.label}</div>
               </div>
@@ -88,7 +88,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* FILTERS + SEARCH */}
-      <section className="py-10 border-b border-[#2A2A2A] bg-[#111111] sticky top-20 z-30">
+      <section className="py-10 border-b border-[#2E2E2E] bg-[#181818] sticky top-20 z-30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
             {/* Filter Pills */}
@@ -100,7 +100,7 @@ export default function CaseStudiesPage() {
                   className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
                     activeFilter === service
                       ? 'bg-[#E31E24] text-white'
-                      : 'bg-[#161616] border border-[#2A2A2A] text-[#888888] hover:border-[#E31E24] hover:text-white'
+                      : 'bg-[#1A1A1A] border border-[#2E2E2E] text-[#888888] hover:border-[#E31E24] hover:text-white'
                   }`}
                 >
                   {service}
@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
                 placeholder="Search client, industry, service..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 text-sm rounded-full bg-[#161616] border border-[#2A2A2A] text-white placeholder-[#555555] focus:border-[#E31E24] focus:outline-none transition"
+                className="w-full pl-9 pr-4 py-2 text-sm rounded-full bg-[#1A1A1A] border border-[#2E2E2E] text-white placeholder-[#555555] focus:border-[#E31E24] focus:outline-none transition"
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CASE STUDY GRID */}
-      <section className="py-16 bg-[#0D0D0D]">
+      <section className="py-16 bg-[#121212]">
         <div className="max-w-7xl mx-auto px-6">
           {filtered.length === 0 ? (
             <div className="text-center py-20">
@@ -155,7 +155,7 @@ export default function CaseStudiesPage() {
                   <Link
                     key={cs.id}
                     href={`/case-studies/${cs.slug}`}
-                    className="case-card group relative block rounded-3xl bg-[#161616] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
+                    className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2E2E2E] hover:border-[#E31E24] overflow-hidden"
                   >
                     {/* Cover Image */}
                     <div className="relative h-52 overflow-hidden">
@@ -166,7 +166,7 @@ export default function CaseStudiesPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
                       <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
                         <span className="px-3 py-1 rounded-full bg-[#E31E24]/90 text-white text-xs font-semibold backdrop-blur-sm">
                           {cs.industry}
@@ -204,7 +204,7 @@ export default function CaseStudiesPage() {
                       </p>
 
                       {/* Key Result */}
-                      <div className="flex items-center justify-between p-3 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-4">
+                      <div className="flex items-center justify-between p-3 rounded-xl bg-[#222222] border border-[#2E2E2E] group-hover:border-[#E31E24]/30 transition-colors mb-4">
                         <span className="text-xs text-[#555555]">Key Result</span>
                         <span className="text-[#E31E24] font-semibold text-sm text-right">{cs.keyResult}</span>
                       </div>
@@ -212,7 +212,7 @@ export default function CaseStudiesPage() {
                       {/* Services Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {cs.services.slice(0, 3).map((s) => (
-                          <span key={s} className="px-2 py-0.5 rounded-md bg-[#1A1A1A] border border-[#2A2A2A] text-[#666666] text-xs">
+                          <span key={s} className="px-2 py-0.5 rounded-md bg-[#222222] border border-[#2E2E2E] text-[#666666] text-xs">
                             {s}
                           </span>
                         ))}
@@ -232,7 +232,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 bg-[#111111] border-t border-[#2A2A2A]">
+      <section className="py-20 bg-[#181818] border-t border-[#2E2E2E]">
         <div className="max-w-3xl mx-auto text-center px-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/20 text-[#E31E24] text-xs tracking-[3px] mb-6">
             YOUR TURN
@@ -253,7 +253,7 @@ export default function CaseStudiesPage() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-base font-medium text-white hover:bg-[#161616] hover:border-[#E31E24] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-base font-medium text-white hover:bg-[#1A1A1A] hover:border-[#E31E24] transition-all"
             >
               Free Website Audit
             </Link>

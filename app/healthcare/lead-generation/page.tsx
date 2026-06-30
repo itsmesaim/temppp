@@ -45,10 +45,10 @@ const healthcareTypes = [
 
 export default function HealthcareLeadGenerationPage() {
   return (
-    <div className="bg-[#0D0D0D] min-h-screen overflow-x-clip">
+    <div className="bg-[#121212] min-h-screen overflow-x-clip">
 
       {/* Hero */}
-      <section className="relative border-b border-[#2A2A2A] overflow-hidden">
+      <section className="relative border-b border-[#2E2E2E] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none"
           animate={{ opacity: [0.5, 0.9, 0.5] }}
@@ -85,7 +85,7 @@ export default function HealthcareLeadGenerationPage() {
                 </GlowButton>
                 <Link
                   href="/healthcare"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
                 >
                   ← Healthcare Services
                 </Link>
@@ -96,7 +96,7 @@ export default function HealthcareLeadGenerationPage() {
       </section>
 
       {/* Stats */}
-      <section className="border-b border-[#2A2A2A]">
+      <section className="border-b border-[#2E2E2E]">
         <Stagger className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10" fast>
           {stats.map((s) => (
             <StaggerItem key={s.number} variant="scaleIn">
@@ -110,14 +110,14 @@ export default function HealthcareLeadGenerationPage() {
       </section>
 
       {/* Intro */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
             Connecting Healthcare Providers with Patients Who Need Them Most
           </h2>
           <p className="text-[#888888] text-lg leading-relaxed mb-5">
             In today's competitive healthcare industry, effective lead generation requires a combination of
-            data-driven marketing, advanced targeting, and continuous optimisation. SNK Web Solutions is a trusted
+            data-driven marketing, advanced targeting, and continuous optimisation. SNK is a trusted
             <strong className="text-white"> healthcare lead generation agency</strong> offering result-driven services
             for hospitals, clinics, doctors, diagnostic centres, and healthcare organisations across Navi Mumbai and beyond.
           </p>
@@ -130,7 +130,7 @@ export default function HealthcareLeadGenerationPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
         <div className="mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Our Healthcare Lead Generation Services
@@ -143,7 +143,7 @@ export default function HealthcareLeadGenerationPage() {
           {services.map((s) => (
             <StaggerItem key={s.title}>
               <HoverLift>
-              <div className="p-7 rounded-2xl bg-[#111111] border border-[#2A2A2A] hover:border-[#E31E24]/30 transition-colors group h-full">
+              <div className="p-7 rounded-2xl bg-[#181818] border border-[#2E2E2E] hover:border-[#E31E24]/30 transition-colors group h-full">
                 <div className="mb-4"><ServiceIcon name={s.icon} size={28} /></div>
                 <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-[#E31E24] transition-colors">
                   {s.title}
@@ -157,7 +157,7 @@ export default function HealthcareLeadGenerationPage() {
       </section>
 
       {/* Healthcare Types */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2E2E2E]">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
@@ -176,7 +176,7 @@ export default function HealthcareLeadGenerationPage() {
           </div>
           <div className="lg:w-1/2 grid grid-cols-2 gap-3">
             {healthcareTypes.map((type) => (
-              <div key={type} className="flex items-center gap-3 p-4 rounded-xl bg-[#111111] border border-[#2A2A2A]">
+              <div key={type} className="flex items-center gap-3 p-4 rounded-xl bg-[#181818] border border-[#2E2E2E]">
                 <div className="w-2 h-2 rounded-full bg-[#E31E24] flex-shrink-0" />
                 <span className="text-[#CCCCCC] text-sm">{type}</span>
               </div>
@@ -192,7 +192,7 @@ export default function HealthcareLeadGenerationPage() {
             Ready to Increase Patient Inquiries?
           </h2>
           <p className="text-[#888888] text-xl mb-10">
-            Partner with SNK Web Solutions for expert healthcare lead generation services and let our
+            Partner with SNK for expert healthcare lead generation services and let our
             specialists create a customised strategy that drives measurable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -206,7 +206,7 @@ export default function HealthcareLeadGenerationPage() {
             </GlowButton>
             <Link
               href="/case-studies"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2E2E2E] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#222222] transition-all"
             >
               View Case Studies
             </Link>
