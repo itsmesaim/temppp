@@ -216,18 +216,22 @@ export default function Navbar() {
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-white/80" />
 
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-[4.5rem] gap-4">
+          <div className="flex h-[5rem] items-center justify-between gap-3 sm:gap-4">
             <Link
               href="/"
-              className="relative z-10 isolate flex h-full shrink-0 items-center overflow-visible"
+              className="group relative z-10 flex h-full max-w-[48vw] shrink-0 items-center sm:max-w-none"
             >
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-2xl bg-[#E31E24]/20 opacity-70 blur-2xl"
+              />
               <Image
-                src="/new_logo-nav.webp"
+                src="/grey_logo-nav.webp"
                 alt="SNK Web Solutions"
-                width={320}
-                height={120}
-                sizes="(max-width: 1024px) 180px, 220px"
-                className="h-[3.35rem] w-auto max-h-full object-contain object-left mix-blend-multiply"
+                width={562}
+                height={280}
+                sizes="(max-width: 640px) 180px, (max-width: 1024px) 260px, 320px"
+                className="relative h-[3.5rem] w-auto max-h-full object-contain object-left contrast-[1.08] saturate-[1.15] drop-shadow-[0_0_24px_rgba(227,30,36,0.4)] sm:h-[3.85rem] md:h-[4.1rem] lg:h-[4.35rem]"
                 priority
               />
             </Link>
@@ -288,7 +292,7 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
               className="lg:hidden border-t border-white/40 overflow-hidden bg-white/85 backdrop-blur-2xl backdrop-saturate-150"
             >
-              <div className="px-4 py-4 flex flex-col gap-1 max-h-[calc(100dvh-4.5rem)] overflow-y-auto">
+              <div className="px-4 py-4 flex flex-col gap-1 max-h-[calc(100dvh-5rem)] overflow-y-auto">
                 <Link
                   href="/"
                   onClick={() => setIsOpen(false)}

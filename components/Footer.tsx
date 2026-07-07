@@ -83,16 +83,16 @@ export default function Footer() {
             <div>
               <Link
                 href="/"
-                className="relative isolate mb-5 inline-flex items-center overflow-visible rounded-lg bg-white px-2.5 py-1.5"
+                className="group relative isolate mb-5 inline-flex items-center overflow-visible"
               >
                 <Image
-                  src="/new_logo-nav.webp"
+                  src="/new_footer_logo.webp"
                   alt="SNK Web Solutions"
-                  width={320}
-                  height={120}
-                  sizes="(max-width: 1024px) 180px, 220px"
+                  width={646}
+                  height={320}
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 400px, 480px"
                   loading="lazy"
-                  className="h-[3.35rem] w-auto max-h-full object-contain object-left mix-blend-multiply"
+                  className="h-[5.5rem] w-auto object-contain object-left drop-shadow-[0_0_24px_rgba(227,30,36,0.4)] sm:h-[6.25rem] md:h-[7rem]"
                 />
               </Link>
 
