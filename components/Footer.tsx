@@ -81,17 +81,20 @@ export default function Footer() {
           {/* ── Col 1: Brand ── */}
           <StaggerItem variant="fadeUp">
             <div>
-              <div className="mb-5">
+              <Link
+                href="/"
+                className="relative isolate mb-5 inline-flex items-center overflow-visible rounded-lg bg-white px-2.5 py-1.5"
+              >
                 <Image
-                  src="/snk-logo.jpg"
-                  alt="SNK"
-                  width={1080}
-                  height={1080}
-                  sizes="120px"
+                  src="/new_logo-nav.webp"
+                  alt="SNK Web Solutions"
+                  width={320}
+                  height={120}
+                  sizes="(max-width: 1024px) 180px, 220px"
                   loading="lazy"
-                  className="h-14 w-auto rounded-lg object-contain"
+                  className="h-[3.35rem] w-auto max-h-full object-contain object-left mix-blend-multiply"
                 />
-              </div>
+              </Link>
 
               <p className="text-[#888888] text-sm leading-relaxed mb-6 max-w-[240px]">
                 Helping businesses grow and thrive in the digital world since {FOUNDED_YEAR}. Your

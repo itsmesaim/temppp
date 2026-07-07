@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -142,6 +142,8 @@ export default function Navbar() {
   const [healthcareOpen, setHealthcareOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [navHidden, setNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -165,12 +167,23 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrollProgress(Math.min(window.scrollY / 160, 1));
+      const y = window.scrollY;
+      setScrollProgress(Math.min(y / 160, 1));
+
+      if (isOpen || y < 72) {
+        setNavHidden(false);
+      } else if (y > lastScrollY.current + 6) {
+        setNavHidden(true);
+      } else if (y < lastScrollY.current - 6) {
+        setNavHidden(false);
+      }
+
+      lastScrollY.current = y;
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [isOpen]);
 
   const glassWhite = 0.9 - scrollProgress * 0.45;
   const glassFade = 1 - scrollProgress * 0.35;
@@ -183,7 +196,11 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+        navHidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       <nav className="relative border-b border-white/40 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
         <div
           className="absolute inset-0 -z-10 backdrop-blur-2xl backdrop-saturate-150 transition-opacity duration-300"

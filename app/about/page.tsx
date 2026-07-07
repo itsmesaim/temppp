@@ -77,45 +77,45 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
   {
     name: 'Mr. Sandeep Narayan Kanade',
     role: 'Founder & Director',
-    img: '/team-sandeep.webp',
+    img: '/team-sandeep1.jpg',
     bio: `Founder and Director of SNK since ${FOUNDED_YEAR}. With a passion for technology and business development, he guides the organization through evolving market trends while centering leadership on quality, innovation, integrity, and customer satisfaction.`,
   },
   {
     name: 'Yusuf Kadiri',
     role: 'Digital Marketing Manager',
-    img: '/team-main.webp',
+    img: '/team-main.jpeg',
     bio: 'Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.',
   },
 
   {
     name: 'Pinky',
     role: 'Senior Counsellor',
-    img: '/team-pinky.webp',
+    img: '/team-pinky1.jpg',
     bio: 'A trusted advisor who guides clients through their digital journey with professionalism, clarity, and a genuine commitment to their success.',
   },
 
   {
     name: 'Anup Patil',
     role: 'Social Media Associate',
-    img: '/team-anup.webp',
+    img: '/team-anup1.jpg',
     bio: 'Manages and grows brand presence across social platforms through engaging content, strategic planning, and community engagement.',
   },
   {
     name: 'Aakash Karnekar',
     role: 'Digital Marketing Associate',
-    img: '/team-akash.webp',
+    img: '/team-Aakash1.jpg',
     bio: 'Executes performance-focused digital marketing strategies across multiple channels to deliver consistent, measurable client growth.',
   },
   {
     name: 'Kahkasha Bhatkar',
     role: 'Website Developer',
-    img: '/team-kahkasha.webp',
+    img: '/team-kahkasha1.jpg',
     bio: 'Builds responsive, high-performance websites that combine clean code, modern design, and excellent user experience to elevate brands online.',
   },
   {
     name: 'Khushi Pandey',
     role: 'Digital Marketing Associate',
-    img: '/team-khushi.webp',
+    img: '/team-khushi2.jpg',
     bio: 'Supports campaign planning, content coordination, and performance reporting to help clients build stronger visibility and steady lead flow.',
   },
   {
@@ -127,7 +127,7 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
   {
     name: 'Shabana Tole',
     role: 'Digital Marketing Intern',
-    img: '/team-shabana.webp',
+    img: '/team-shabana1.jpg',
     bio: 'Contributes to content creation, audience research, and day-to-day campaign coordination to keep client marketing moving forward.',
   },
 ];
