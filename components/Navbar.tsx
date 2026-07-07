@@ -56,6 +56,15 @@ const aboutLinks = [
   { href: '/blog', label: 'Blog' },
 ];
 
+const navLinkClass = (active: boolean, nowrap?: boolean) =>
+  [
+    'relative inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[13px] xl:text-sm font-medium transition-all duration-200',
+    nowrap ? 'whitespace-nowrap' : '',
+    active
+      ? 'text-[#111111] bg-white/70 backdrop-blur-sm shadow-sm ring-1 ring-white/60'
+      : 'text-[#555555] hover:text-[#111111] hover:bg-white/50',
+  ].join(' ');
+
 function NavItem({
   href,
   label,
@@ -68,16 +77,8 @@ function NavItem({
   nowrap?: boolean;
 }) {
   return (
-    <Link
-      href={href}
-      className={`relative px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors ${
-        nowrap ? 'whitespace-nowrap' : ''
-      } ${active ? 'text-white' : 'text-[#999999] hover:text-white'}`}
-    >
+    <Link href={href} className={navLinkClass(active, nowrap)}>
       {label}
-      {active && (
-        <span className="absolute bottom-0 left-2.5 right-2.5 xl:left-3 xl:right-3 h-px bg-[#E31E24] rounded-full" />
-      )}
     </Link>
   );
 }
@@ -103,17 +104,12 @@ function DesktopDropdown({
     >
       <button
         type="button"
-        className={`inline-flex items-center gap-1 px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors ${
-          nowrap ? 'whitespace-nowrap' : ''
-        } ${active || open ? 'text-white' : 'text-[#999999] hover:text-white'}`}
+        className={`inline-flex items-center gap-1 ${navLinkClass(active || open, nowrap)}`}
         aria-expanded={open}
       >
         {label}
         <ChevronDown open={open} />
       </button>
-      {(active || open) && (
-        <span className="absolute bottom-0 left-2.5 right-2.5 xl:left-3 xl:right-3 h-px bg-[#E31E24] rounded-full" />
-      )}
 
       <AnimatePresence>
         {open && (
@@ -122,13 +118,13 @@ function DesktopDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-2 min-w-[240px] rounded-xl border border-[#2A2A2A] bg-[#141414] p-1.5 shadow-xl shadow-black/40"
+            className="absolute top-full left-0 mt-2 min-w-[220px] rounded-2xl border border-white/50 bg-white/80 backdrop-blur-2xl backdrop-saturate-150 p-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
           >
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-lg px-3 py-2.5 text-sm text-[#AAAAAA] hover:text-white hover:bg-[#1F1F1F] transition-colors"
+                className="block rounded-lg px-3 py-2 text-sm text-[#666666] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
               >
                 {item.label}
               </Link>
@@ -145,6 +141,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [healthcareOpen, setHealthcareOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -166,31 +163,59 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setScrollProgress(Math.min(window.scrollY / 160, 1));
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const glassWhite = 0.9 - scrollProgress * 0.45;
+  const glassFade = 1 - scrollProgress * 0.35;
+
   const mobileLinkClass = (active: boolean) =>
-    `rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-      active ? 'text-white bg-[#1A1A1A]' : 'text-[#AAAAAA] hover:text-white hover:bg-[#161616]'
+    `rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+      active
+        ? 'text-[#111111] bg-white/70 ring-1 ring-white/60'
+        : 'text-[#555555] hover:text-[#111111] hover:bg-white/50'
     }`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#2A2A2A]/80">
+      <nav className="relative border-b border-white/40 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+        <div
+          className="absolute inset-0 -z-10 backdrop-blur-2xl backdrop-saturate-150 transition-opacity duration-300"
+          style={{
+            opacity: isOpen ? 1 : glassFade,
+            backgroundColor: `rgba(255, 255, 255, ${glassWhite})`,
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/35 via-white/15 to-transparent transition-opacity duration-300"
+          style={{ opacity: isOpen ? 1 : glassFade }}
+        />
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-white/80" />
+
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-[4.5rem] gap-4">
-            <Link href="/" className="flex shrink-0 items-center">
-              <div className="rounded-2xl bg-white px-5 py-1.5">
-                <Image
-                  src="/snk-logo.jpg"
-                  alt="SNK Web Solutions"
-                  width={1080}
-                  height={1080}
-                  sizes="(max-width: 1024px) 150px, 180px"
-                  className="h-11 w-auto object-contain sm:h-[3.25rem]"
-                  priority
-                />
-              </div>
+            <Link href="/" className="relative z-10 isolate flex shrink-0 items-center">
+              <Image
+                src="/new_logo-nav.webp"
+                alt="SNK Web Solutions"
+                width={320}
+                height={120}
+                sizes="(max-width: 1024px) 160px, 200px"
+                className="h-11 w-auto object-contain sm:h-12 mix-blend-multiply"
+                priority
+              />
             </Link>
 
-            <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center min-w-0">
+            <div
+              className="hidden lg:flex items-center gap-0.5 flex-1 justify-center min-w-0 transition-opacity duration-300"
+              style={{ opacity: isOpen ? 1 : glassFade }}
+            >
               <NavItem href="/" label="Home" active={isActive('/')} />
               <DesktopDropdown
                 label="About Us"
@@ -213,10 +238,10 @@ export default function Navbar() {
               <NavItem href="/contact" label="Contact" active={isActive('/contact')} />
             </div>
 
-            <div className="hidden lg:block shrink-0">
+            <div className="relative z-10 hidden lg:block shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex h-10 items-center rounded-lg bg-[#E31E24] px-5 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-colors whitespace-nowrap"
+                className="inline-flex h-10 items-center rounded-full bg-[#E31E24] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(227,30,36,0.35)] hover:bg-[#C01A1F] transition-colors whitespace-nowrap"
               >
                 Book a Call
               </Link>
@@ -225,7 +250,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-[#CCCCCC] hover:text-white p-2 -mr-2 transition-colors"
+              className="relative z-10 lg:hidden text-[#444444] hover:text-[#111111] p-2 -mr-2 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -241,7 +266,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-              className="lg:hidden border-t border-[#2A2A2A] bg-[#0D0D0D] overflow-hidden"
+              className="lg:hidden border-t border-white/40 overflow-hidden bg-white/85 backdrop-blur-2xl backdrop-saturate-150"
             >
               <div className="px-4 py-4 flex flex-col gap-1 max-h-[calc(100dvh-4.5rem)] overflow-y-auto">
                 <Link
@@ -254,7 +279,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setAboutOpen(!aboutOpen)}
-                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
+                  className="flex items-center justify-between rounded-full px-3.5 py-2 text-sm font-medium text-[#555555] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                 >
                   About Us
                   <ChevronDown open={aboutOpen} />
@@ -266,7 +291,7 @@ export default function Navbar() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -284,7 +309,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
+                  className="flex items-center justify-between rounded-full px-3.5 py-2 text-sm font-medium text-[#555555] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                 >
                   Services
                   <ChevronDown open={servicesOpen} />
@@ -296,7 +321,7 @@ export default function Navbar() {
                         key={s.href}
                         href={s.href}
                         onClick={() => setIsOpen(false)}
-                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                       >
                         {s.label}
                       </Link>
@@ -307,7 +332,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setHealthcareOpen(!healthcareOpen)}
-                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
+                  className="flex items-center justify-between rounded-full px-3.5 py-2 text-sm font-medium text-[#555555] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                 >
                   Healthcare DM
                   <ChevronDown open={healthcareOpen} />
@@ -319,7 +344,7 @@ export default function Navbar() {
                         key={h.href}
                         href={h.href}
                         onClick={() => setIsOpen(false)}
-                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-[#111111] hover:bg-[#F5F5F5] transition-colors"
                       >
                         {h.label}
                       </Link>
@@ -338,7 +363,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-3 flex h-11 items-center justify-center rounded-lg bg-[#E31E24] text-sm font-semibold text-white hover:bg-[#C01A1F] transition-colors"
+                  className="mt-3 flex h-11 items-center justify-center rounded-full bg-[#E31E24] text-sm font-semibold text-white hover:bg-[#C01A1F] transition-colors"
                 >
                   Book a Call
                 </Link>

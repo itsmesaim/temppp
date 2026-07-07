@@ -11,8 +11,8 @@ export default function CaseStudiesSection() {
   const featured = getFeaturedCaseStudies();
 
   return (
-    <section className="py-20 bg-[#0D0D0D] border-t border-[#2A2A2A]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-20 bg-[#0D0D0D] border-t border-[#2A2A2A] overflow-x-clip">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <Reveal>
             <div>
@@ -46,21 +46,24 @@ export default function CaseStudiesSection() {
           </Reveal>
         </div>
 
-        <Stagger className="grid md:grid-cols-3 gap-5" stagger={0.12}>
+        <Stagger
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-fr"
+          stagger={0.12}
+        >
           {featured.map((cs) => (
-            <StaggerItem key={cs.id} variant="scaleIn">
-              <HoverLift lift={-8} scale={1.015}>
+            <StaggerItem key={cs.id} variant="scaleIn" className="h-full min-w-0">
+              <HoverLift lift={-8} scale={1.015} className="h-full">
                 <Link
                   href={`/case-studies/${cs.slug}`}
-                  className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
+                  className="case-card group relative flex h-full min-w-0 flex-col rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 sm:h-44 lg:h-48 shrink-0 overflow-hidden">
                     <Image
                       src={cs.coverImage}
                       alt={cs.client}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent pointer-events-none" />
                     <div className="absolute top-4 left-4">
@@ -81,26 +84,28 @@ export default function CaseStudiesSection() {
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h3 className="font-semibold text-xl text-white tracking-tight group-hover:text-[#E31E24] transition-colors">
+                  <div className="flex flex-1 flex-col p-5 sm:p-6 min-w-0">
+                    <div className="mb-3 sm:mb-4">
+                      <h3 className="font-semibold text-lg sm:text-xl text-white tracking-tight group-hover:text-[#E31E24] transition-colors">
                         {cs.client}
                       </h3>
-                      <p className="text-[#666666] text-sm mt-1">
+                      <p className="text-[#666666] text-xs sm:text-sm mt-1">
                         {cs.duration} • {cs.services.slice(0, 2).join(' + ')}
                       </p>
                     </div>
 
-                    <p className="text-[#888888] text-sm leading-relaxed mb-5 line-clamp-2">
+                    <p className="text-[#888888] text-sm leading-relaxed mb-4 sm:mb-5 line-clamp-2">
                       {cs.shortDesc}
                     </p>
 
-                    <div className="p-4 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-5">
+                    <div className="p-3 sm:p-4 rounded-2xl bg-[#141414] border border-[#2A2A2A] group-hover:border-[#E31E24]/30 transition-colors mb-4 sm:mb-5">
                       <div className="text-xs text-[#666666] mb-1 tracking-wide">KEY RESULT</div>
-                      <div className="text-[#E31E24] font-semibold text-lg">{cs.keyResult}</div>
+                      <div className="text-[#E31E24] font-semibold text-base sm:text-lg leading-snug">
+                        {cs.keyResult}
+                      </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-sm font-medium text-[#888888] group-hover:text-white transition-colors">
+                    <div className="mt-auto flex items-center gap-2 text-sm font-medium text-[#888888] group-hover:text-white transition-colors">
                       View Case Study
                       <motion.span
                         className="inline-block"

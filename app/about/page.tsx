@@ -114,15 +114,21 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
   },
   {
     name: 'Khushi Pandey',
-    role: 'Digital MArketing Associate',
-    img: '/team-Khushi.jpeg',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    role: 'Digital Marketing Associate',
+    img: '/team-khushi.webp',
+    bio: 'Supports campaign planning, content coordination, and performance reporting to help clients build stronger visibility and steady lead flow.',
   },
   {
     name: 'Nikhil Navghane',
     role: 'Digital Marketing Intern',
-    img: '/team-Nikhil.jpeg',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    img: '/team-nikhil.webp',
+    bio: 'Assists with social media execution, ad campaign support, and analytics tracking while building hands-on experience across digital channels.',
+  },
+  {
+    name: 'Shabana Tole',
+    role: 'Digital Marketing Intern',
+    img: '/team-shabana.webp',
+    bio: 'Contributes to content creation, audience research, and day-to-day campaign coordination to keep client marketing moving forward.',
   },
 ];
 
@@ -399,7 +405,7 @@ export default function About() {
                     onMouseLeave={() => setActiveTeam(null)}
                   >
                     <div
-                      className="relative w-full overflow-hidden"
+                      className="relative w-full overflow-hidden bg-[#111111]"
                       style={{ paddingBottom: '100%' }}
                     >
                       <div className="absolute inset-0">
@@ -410,9 +416,10 @@ export default function About() {
                           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 33vw"
                           loading={i < 2 ? 'eager' : 'lazy'}
                           priority={i === 0}
-                          className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                          className="object-cover object-[center_18%] transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-black/10 mix-blend-multiply pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/20 to-transparent pointer-events-none" />
                       </div>
                     </div>
                     <div className="p-5 flex flex-col flex-1">

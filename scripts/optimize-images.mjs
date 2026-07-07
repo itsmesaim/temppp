@@ -11,6 +11,9 @@ const TEAM_FILES = [
   'team-kahkasha.jpeg',
   'team-anup.jpeg',
   'team-akash.jpeg',
+  'team-Khushi.jpeg',
+  'team-Nikhil.jpeg',
+  'team-Shabana.png',
   'snk-logo.jpg',
 ];
 
