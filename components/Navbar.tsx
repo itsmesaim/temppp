@@ -200,14 +200,17 @@ export default function Navbar() {
 
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-[4.5rem] gap-4">
-            <Link href="/" className="relative z-10 isolate flex shrink-0 items-center">
+            <Link
+              href="/"
+              className="relative z-10 isolate flex h-full shrink-0 items-center overflow-visible"
+            >
               <Image
                 src="/new_logo-nav.webp"
                 alt="SNK Web Solutions"
                 width={320}
                 height={120}
-                sizes="(max-width: 1024px) 160px, 200px"
-                className="h-11 w-auto object-contain sm:h-12 mix-blend-multiply"
+                sizes="(max-width: 1024px) 180px, 220px"
+                className="h-[3.35rem] w-auto max-h-full object-contain object-left mix-blend-multiply"
                 priority
               />
             </Link>
