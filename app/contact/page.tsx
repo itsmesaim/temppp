@@ -126,7 +126,9 @@ export default function Contact() {
           <StaggerItem className="h-full">
             <ContactCard icon="map-pin" label="Office Address" href={MAPS_URL}>
               <p className="text-sm font-medium leading-snug text-white">{OFFICE_ADDRESS.line1}</p>
-              <p className="mt-0.5 text-xs leading-relaxed text-[#888888]">{OFFICE_ADDRESS.line2}</p>
+              <p className="mt-0.5 text-xs leading-relaxed text-[#888888]">
+                {OFFICE_ADDRESS.line2}
+              </p>
             </ContactCard>
           </StaggerItem>
 

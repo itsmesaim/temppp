@@ -74,7 +74,11 @@ const markCrop = {
   width: Math.round(meta.width * 0.72),
   height: Math.round(meta.height * 0.62),
 };
-const mark = await sharp(trimmed).extract(markCrop).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+const mark = await sharp(trimmed)
+  .extract(markCrop)
+  .ensureAlpha()
+  .raw()
+  .toBuffer({ resolveWithObject: true });
 const navSharp = await toDarkTheme(mark.data, mark.info);
 
 for (const width of [320, 640]) {

@@ -220,7 +220,7 @@ export default function AIDigitalMarketingPage() {
               neither could achieve alone.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
                 label: 'Manual Marketing',
@@ -270,24 +270,27 @@ export default function AIDigitalMarketingPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-[#2A2A2A]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 border-b border-[#2A2A2A]">
         <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">CAPABILITIES</div>
-        <h2 className="text-5xl font-semibold tracking-tighter text-white mb-4">
+        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-white mb-4">
           What we deploy for you.
         </h2>
-        <p className="text-[#888888] text-lg mb-12 max-w-2xl">
+        <p className="text-[#888888] text-base sm:text-lg mb-12 max-w-2xl">
           A full suite of AI marketing capabilities tailored to your business goals — from traffic
           to leads to revenue.
         </p>
-        <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" stagger={0.07}>
+        <Stagger
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
+          stagger={0.07}
+        >
           {capabilities.map((cap) => (
-            <StaggerItem key={cap.title}>
-              <HoverLift>
-                <div className="p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 group h-full">
+            <StaggerItem key={cap.title} className="h-full min-w-0">
+              <HoverLift className="h-full">
+                <div className="p-6 sm:p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-colors duration-300 group h-full min-w-0">
                   <div className="mb-5 group-hover:scale-110 transition-transform duration-300">
                     <ServiceIcon name={cap.icon} size={36} />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 tracking-tight">
                     {cap.title}
                   </h3>
                   <p className="text-[#777777] leading-relaxed text-sm">{cap.desc}</p>
@@ -306,15 +309,15 @@ export default function AIDigitalMarketingPage() {
           <br />
           in four steps.
         </h2>
-        <Stagger className="grid md:grid-cols-4 gap-6" stagger={0.1}>
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.1}>
           {process.map((p, i) => (
-            <StaggerItem key={p.step}>
+            <StaggerItem key={p.step} className="h-full min-w-0">
               <div className="relative h-full">
                 {i < process.length - 1 && (
                   <div className="hidden md:block absolute top-6 left-full w-full h-px bg-[#2A2A2A] z-0" />
                 )}
-                <HoverLift>
-                  <div className="relative z-10 p-7 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] h-full hover:border-[#E31E24]/40 transition-colors">
+                <HoverLift className="h-full">
+                  <div className="relative z-10 p-6 sm:p-7 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] h-full min-w-0 hover:border-[#E31E24]/40 transition-colors">
                     <div className="text-[#E31E24] text-4xl font-semibold tracking-tighter mb-4">
                       {p.step}
                     </div>

@@ -8,7 +8,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const MenuIcon = () => (
   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M4 7h16M4 12h16M4 17h16"
+    />
   </svg>
 );
 
@@ -43,6 +48,12 @@ const healthcareLinks = [
   { href: '/healthcare/seo', label: 'Healthcare SEO' },
   { href: '/healthcare/social-media', label: 'Healthcare Social Media' },
   { href: '/healthcare/lead-generation', label: 'Healthcare Lead Generation' },
+];
+
+const aboutLinks = [
+  { href: '/about', label: 'About Us' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 function NavItem({
@@ -133,6 +144,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [healthcareOpen, setHealthcareOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -144,6 +156,7 @@ export default function Navbar() {
     setIsOpen(false);
     setServicesOpen(false);
     setHealthcareOpen(false);
+    setAboutOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -179,26 +192,24 @@ export default function Navbar() {
 
             <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center min-w-0">
               <NavItem href="/" label="Home" active={isActive('/')} />
-              <NavItem href="/about" label="About Us" active={isActive('/about')} />
+              <DesktopDropdown
+                label="About Us"
+                active={isActive('/about') || isActive('/case-studies') || isActive('/blog')}
+                items={aboutLinks}
+              />
               <NavItem
                 href="/ai-digital-marketing"
                 label="AI Digital Marketing"
                 active={isActive('/ai-digital-marketing')}
                 nowrap
               />
-              <DesktopDropdown
-                label="Services"
-                active={isActive('/services')}
-                items={services}
-              />
+              <DesktopDropdown label="Services" active={isActive('/services')} items={services} />
               <DesktopDropdown
                 label="Healthcare DM"
                 active={isActive('/healthcare')}
                 items={healthcareLinks}
                 nowrap
               />
-              <NavItem href="/case-studies" label="Case Studies" active={isActive('/case-studies')} />
-              <NavItem href="/blog" label="Blog" active={isActive('/blog')} />
               <NavItem href="/contact" label="Contact" active={isActive('/contact')} />
             </div>
 
@@ -233,16 +244,35 @@ export default function Navbar() {
               className="lg:hidden border-t border-[#2A2A2A] bg-[#0D0D0D] overflow-hidden"
             >
               <div className="px-4 py-4 flex flex-col gap-1 max-h-[calc(100dvh-4.5rem)] overflow-y-auto">
-                <Link href="/" onClick={() => setIsOpen(false)} className={mobileLinkClass(isActive('/'))}>
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className={mobileLinkClass(isActive('/'))}
+                >
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setIsOpen(false)}
-                  className={mobileLinkClass(isActive('/about'))}
+                <button
+                  type="button"
+                  onClick={() => setAboutOpen(!aboutOpen)}
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[#AAAAAA] hover:text-white hover:bg-[#161616] transition-colors"
                 >
                   About Us
-                </Link>
+                  <ChevronDown open={aboutOpen} />
+                </button>
+                {aboutOpen && (
+                  <div className="ml-3 flex flex-col gap-0.5 pb-1">
+                    {aboutLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-lg px-3 py-2 text-sm text-[#777777] hover:text-white hover:bg-[#161616] transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
                 <Link
                   href="/ai-digital-marketing"
                   onClick={() => setIsOpen(false)}
@@ -297,20 +327,6 @@ export default function Navbar() {
                   </div>
                 )}
 
-                <Link
-                  href="/case-studies"
-                  onClick={() => setIsOpen(false)}
-                  className={mobileLinkClass(isActive('/case-studies'))}
-                >
-                  Case Studies
-                </Link>
-                <Link
-                  href="/blog"
-                  onClick={() => setIsOpen(false)}
-                  className={mobileLinkClass(isActive('/blog'))}
-                >
-                  Blog
-                </Link>
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}

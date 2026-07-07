@@ -81,17 +81,19 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     bio: `Founder and Director of SNK since ${FOUNDED_YEAR}. With a passion for technology and business development, he guides the organization through evolving market trends while centering leadership on quality, innovation, integrity, and customer satisfaction.`,
   },
   {
+    name: 'Yusuf Kadiri',
+    role: 'Digital Marketing Manager',
+    img: '/team-main.webp',
+    bio: 'Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.',
+  },
+
+  {
     name: 'Pinky',
     role: 'Senior Counsellor',
     img: '/team-pinky.webp',
     bio: 'A trusted advisor who guides clients through their digital journey with professionalism, clarity, and a genuine commitment to their success.',
   },
-  {
-    name: 'Yusuf Kadiri',
-    role: 'Digital Marketing Associate',
-    img: '/team-main.webp',
-    bio: 'Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.',
-  },
+
   {
     name: 'Anup Patil',
     role: 'Social Media Associate',
@@ -109,6 +111,18 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     role: 'Website Developer',
     img: '/team-kahkasha.webp',
     bio: 'Builds responsive, high-performance websites that combine clean code, modern design, and excellent user experience to elevate brands online.',
+  },
+  {
+    name: 'Khushi Pandey',
+    role: 'Digital MArketing Associate',
+    img: '/team-Khushi.jpeg',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+  },
+  {
+    name: 'Nikhil Navghane',
+    role: 'Digital Marketing Intern',
+    img: '/team-Nikhil.jpeg',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
 ];
 
