@@ -280,10 +280,10 @@ export default function Contact() {
                           className="w-full rounded-2xl px-6 py-4 text-lg"
                         >
                           <option value="">Select range</option>
-                          <option value="50k-1.5L">₹50,000 — ₹1.5 Lakh</option>
-                          <option value="1.5L-4L">₹1.5 Lakh — ₹4 Lakh</option>
-                          <option value="4L-8L">₹4 Lakh — ₹8 Lakh</option>
-                          <option value="8L+">₹8 Lakh+</option>
+                          <option value="10k-25k">₹10,000 — ₹25,000</option>
+                          <option value="25k-50k">₹25,000 — ₹50,000</option>
+                          <option value="50k-1L">₹50,000 — ₹1 Lakh</option>
+                          <option value="1L-2L">₹1 Lakh — ₹2 Lakh</option>
                         </select>
                       </div>
                     </div>

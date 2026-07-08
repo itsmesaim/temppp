@@ -76,9 +76,9 @@ const whyChoose: { icon: IconName; title: string }[] = [
 const team: { name: string; role: string; img: string; bio: string }[] = [
   {
     name: 'Mr. Sandeep Narayan Kanade',
-    role: 'Founder & Director',
+    role: 'Founder',
     img: '/team-sandeep1.jpg',
-    bio: `Founder and Director of SNK since ${FOUNDED_YEAR}. With a passion for technology and business development, he guides the organization through evolving market trends while centering leadership on quality, innovation, integrity, and customer satisfaction.`,
+    bio: `Founder of SNK since ${FOUNDED_YEAR}. With a passion for technology and business development, he guides the organization through evolving market trends while centering leadership on quality, innovation, integrity, and customer satisfaction.`,
   },
   {
     name: 'Yusuf Kadiri',
