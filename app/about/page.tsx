@@ -324,7 +324,7 @@ export default function About() {
             <StaggerItem key={service.slug} className="h-full">
               <HoverLift lift={-4}>
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={`/services/${service.slug}/`}
                   className="group flex flex-col h-full p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/40 transition-colors duration-300"
                 >
                   <div className="mb-4">

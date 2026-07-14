@@ -155,7 +155,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 {related.map((r) => (
                   <Link
                     key={r.slug}
-                    href={`/blog/${r.slug}`}
+                    href={`/blog/${r.slug}/`}
                     className="group flex flex-col rounded-2xl border border-[#2A2A2A] bg-[#1A1A1A] overflow-hidden hover:border-[#E31E24]/40 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative h-40 overflow-hidden">

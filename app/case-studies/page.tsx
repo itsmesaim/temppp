@@ -175,7 +175,7 @@ export default function CaseStudiesPage() {
                 {filtered.map((cs) => (
                   <Link
                     key={cs.id}
-                    href={`/case-studies/${cs.slug}`}
+                    href={`/case-studies/${cs.slug}/`}
                     className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
                   >
                     {/* Cover Image */}

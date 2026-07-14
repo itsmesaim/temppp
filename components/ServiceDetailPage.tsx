@@ -9,7 +9,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
   const relatedLinks = services
     .filter((s) => s.slug !== service.slug)
     .slice(0, 4)
-    .map((s) => ({ href: `/services/${s.slug}`, label: s.title }));
+    .map((s) => ({ href: `/services/${s.slug}/`, label: s.title }));
 
   return (
     <ServicePageLayout

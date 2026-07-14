@@ -23,7 +23,7 @@ export type HealthcareService = {
 export const healthcareServices: HealthcareService[] = [
   {
     slug: 'seo',
-    href: '/healthcare/seo',
+    href: '/healthcare/seo/',
     icon: 'search',
     badge: 'SEO',
     title: 'Healthcare SEO',
@@ -62,7 +62,7 @@ export const healthcareServices: HealthcareService[] = [
   },
   {
     slug: 'social-media',
-    href: '/healthcare/social-media',
+    href: '/healthcare/social-media/',
     icon: 'smartphone',
     badge: 'Social Media',
     title: 'Healthcare Social Media',
@@ -104,7 +104,7 @@ export const healthcareServices: HealthcareService[] = [
   },
   {
     slug: 'lead-generation',
-    href: '/healthcare/lead-generation',
+    href: '/healthcare/lead-generation/',
     icon: 'target',
     badge: 'Lead Generation',
     title: 'Healthcare Lead Generation',

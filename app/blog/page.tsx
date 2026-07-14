@@ -31,7 +31,7 @@ export default function Blog() {
         {blogPosts.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             className="blog-card group cursor-pointer overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] flex flex-col"
           >
             {/* Cover image */}

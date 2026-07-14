@@ -11,7 +11,7 @@ const MAPS_URL = OFFICE_ADDRESS.mapsUrl;
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Services', href: '/services/' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
   { label: 'Careers', href: '/contact' },
@@ -20,11 +20,11 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: 'SEO', href: '/services/seo' },
-  { label: 'AEO', href: '/services/aeo' },
-  { label: 'Social Media Marketing', href: '/services/social-media' },
-  { label: 'Performance Marketing', href: '/services/performance-marketing' },
-  { label: 'Web Design & Development', href: '/services/web-design' },
+  { label: 'SEO', href: '/services/seo/' },
+  { label: 'AEO', href: '/services/aeo/' },
+  { label: 'Social Media Marketing', href: '/services/social-media/' },
+  { label: 'Performance Marketing', href: '/services/performance-marketing/' },
+  { label: 'Web Design & Development', href: '/services/web-design/' },
 ];
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/snk-web-solutions/';

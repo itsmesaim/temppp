@@ -35,19 +35,19 @@ const ChevronDown = ({ open }: { open?: boolean }) => (
 );
 
 const services = [
-  { href: '/services', label: 'All Services' },
-  { href: '/services/seo', label: 'SEO' },
-  { href: '/services/aeo', label: 'AEO' },
-  { href: '/services/social-media', label: 'Social Media' },
-  { href: '/services/performance-marketing', label: 'Performance Marketing' },
-  { href: '/services/web-design', label: 'Web Design' },
+  { href: '/services/', label: 'All Services' },
+  { href: '/services/seo/', label: 'SEO' },
+  { href: '/services/aeo/', label: 'AEO' },
+  { href: '/services/social-media/', label: 'Social Media' },
+  { href: '/services/performance-marketing/', label: 'Performance Marketing' },
+  { href: '/services/web-design/', label: 'Web Design' },
 ];
 
 const healthcareLinks = [
   { href: '/healthcare', label: 'All Healthcare Services' },
-  { href: '/healthcare/seo', label: 'Healthcare SEO' },
-  { href: '/healthcare/social-media', label: 'Healthcare Social Media' },
-  { href: '/healthcare/lead-generation', label: 'Healthcare Lead Generation' },
+  { href: '/healthcare/seo/', label: 'Healthcare SEO' },
+  { href: '/healthcare/social-media/', label: 'Healthcare Social Media' },
+  { href: '/healthcare/lead-generation/', label: 'Healthcare Lead Generation' },
 ];
 
 const aboutLinks = [

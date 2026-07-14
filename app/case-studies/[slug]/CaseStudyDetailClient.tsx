@@ -538,7 +538,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <StaggerItem key={rc.id}>
                   <HoverLift>
                     <Link
-                      href={`/case-studies/${rc.slug}`}
+                      href={`/case-studies/${rc.slug}/`}
                       className="case-card group block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
                     >
                       <div className="relative h-40 overflow-hidden">

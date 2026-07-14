@@ -54,7 +54,7 @@ export default function CaseStudiesSection() {
             <StaggerItem key={cs.id} variant="scaleIn" className="h-full min-w-0">
               <HoverLift lift={-8} scale={1.015} className="h-full">
                 <Link
-                  href={`/case-studies/${cs.slug}`}
+                  href={`/case-studies/${cs.slug}/`}
                   className="case-card group relative flex h-full min-w-0 flex-col rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
                 >
                   <div className="relative h-40 sm:h-44 lg:h-48 shrink-0 overflow-hidden">

@@ -164,7 +164,7 @@ export default function ServicesPageClient() {
             >
               <HoverLift lift={-8}>
                 <Link
-                  href={`/services/${s.slug}`}
+                  href={`/services/${s.slug}/`}
                   className="group flex flex-col h-full p-8 rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24]/50 transition-all duration-300 hover:shadow-[0_0_40px_-12px_rgba(227,30,36,0.3)]"
                 >
                   <div className="flex items-center justify-between mb-6">

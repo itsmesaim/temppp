@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect non-trailing slash to trailing slash (for clean URLs with trailingSlash: true)
+# Only for requests that are not real files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+# Use index.html as the default file in directories
+DirectoryIndex index.html
+
+# Custom 404 page (Next static export generates 404.html)
+ErrorDocument 404 /404.html
+
+# Prevent directory listing
+Options -Indexes

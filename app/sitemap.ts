@@ -10,19 +10,19 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '',
-    '/about',
-    '/services',
-    ...getAllServiceSlugs().map((slug) => `/services/${slug}`),
-    '/ai-digital-marketing',
-    '/case-studies',
-    '/blog',
-    '/contact',
-    '/healthcare',
-    '/healthcare/lead-generation',
-    '/healthcare/social-media',
-    '/healthcare/seo',
-    '/privacy-policy',
-    '/terms',
+    '/about/',
+    '/services/',
+    ...getAllServiceSlugs().map((slug) => `/services/${slug}/`),
+    '/ai-digital-marketing/',
+    '/case-studies/',
+    '/blog/',
+    '/contact/',
+    '/healthcare/',
+    '/healthcare/lead-generation/',
+    '/healthcare/social-media/',
+    '/healthcare/seo/',
+    '/privacy-policy/',
+    '/terms/',
   ];
 
   return [
@@ -33,13 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: path === '' ? 1 : 0.8,
     })),
     ...blogPosts.map((post) => ({
-      url: `${BASE_URL}/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
     ...caseStudies.map((cs) => ({
-      url: `${BASE_URL}/case-studies/${cs.slug}`,
+      url: `${BASE_URL}/case-studies/${cs.slug}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
