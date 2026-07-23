@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconBox } from '../../components/ServiceIcon';
 import { healthcareServices, healthcareHubIntro } from '../../lib/healthcare-data';
 import { getHealthcareMetrics, hubMetrics } from '../../lib/service-metrics';
@@ -40,53 +41,68 @@ export default function HealthcarePageClient() {
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 relative">
-          <HeroReveal>
-            <HeroItem>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E31E24]/15 border border-[#E31E24]/30 text-[#E31E24] text-xs tracking-[3px] font-semibold mb-6">
-                Healthcare Specialisation
-              </div>
-            </HeroItem>
-            <HeroItem delay={0.08}>
-              <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
-                Digital Marketing
-                <br />
-                <span className="text-[#E31E24]">for Healthcare.</span>
-              </h1>
-            </HeroItem>
-            <HeroItem delay={0.14}>
-              <p className="max-w-2xl text-xl md:text-2xl text-[#999999] mb-8 leading-relaxed">
-                {healthcareHubIntro.heroDesc}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-10">
-                {locations.map((loc) => (
-                  <span
-                    key={loc}
-                    className="text-xs px-3 py-1.5 rounded-full bg-[#1A1A1A] text-[#AAAAAA] border border-[#2A2A2A]"
-                  >
-                    {loc}
-                  </span>
-                ))}
-              </div>
-            </HeroItem>
-            <HeroItem delay={0.2}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <GlowButton>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <HeroReveal>
+              <HeroItem>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E31E24]/15 border border-[#E31E24]/30 text-[#E31E24] text-xs tracking-[3px] font-semibold mb-6">
+                  Healthcare Specialisation
+                </div>
+              </HeroItem>
+              <HeroItem delay={0.08}>
+                <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
+                  Digital Marketing
+                  <br />
+                  <span className="text-[#E31E24]">for Healthcare.</span>
+                </h1>
+              </HeroItem>
+              <HeroItem delay={0.14}>
+                <p className="max-w-2xl text-xl md:text-2xl text-[#999999] mb-8 leading-relaxed">
+                  {healthcareHubIntro.heroDesc}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {locations.map((loc) => (
+                    <span
+                      key={loc}
+                      className="text-xs px-3 py-1.5 rounded-full bg-[#1A1A1A] text-[#AAAAAA] border border-[#2A2A2A]"
+                    >
+                      {loc}
+                    </span>
+                  ))}
+                </div>
+              </HeroItem>
+              <HeroItem delay={0.2}>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <GlowButton>
+                    <Link
+                      href="/contact"
+                      className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all"
+                    >
+                      Book a Free Consultation
+                    </Link>
+                  </GlowButton>
                   <Link
-                    href="/contact"
-                    className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all"
+                    href="/services"
+                    className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
                   >
-                    Book a Free Consultation
+                    All Services
                   </Link>
-                </GlowButton>
-                <Link
-                  href="/services"
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
-                >
-                  All Services
-                </Link>
+                </div>
+              </HeroItem>
+            </HeroReveal>
+            {/* ponytail: stock placeholder — replace public/heroes/healthcare.jpg */}
+            <HeroItem delay={0.12}>
+              <div className="relative aspect-[4/3] w-full min-h-[220px] lg:aspect-auto lg:min-h-[28rem] xl:min-h-[32rem] overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
+                <Image
+                  src="/heroes/healthcare.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </HeroItem>
-          </HeroReveal>
+          </div>
         </div>
       </section>
 

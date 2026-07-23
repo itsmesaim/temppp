@@ -46,7 +46,7 @@ export default function CaseStudyBrandVisual({
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
         <div
-          className={`rounded-2xl bg-white/95 flex items-center justify-center shadow-lg ${
+          className={`rounded-2xl bg-white flex items-center justify-center shadow-lg ring-1 ring-black/5 ${
             isHero ? 'w-44 h-44 md:w-52 md:h-52 p-5' : 'w-28 h-28 md:w-32 md:h-32 p-3'
           }`}
         >
@@ -57,7 +57,7 @@ export default function CaseStudyBrandVisual({
             height={logoSize}
             sizes={isHero ? '208px' : variant === 'gallery' ? '120px' : '128px'}
             loading="lazy"
-            className="w-full h-full object-contain"
+            className="max-h-full max-w-full h-full w-full object-contain object-center"
           />
         </div>
         {!isHero && (

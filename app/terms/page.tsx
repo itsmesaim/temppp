@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Terms & Conditions | SNK',
-  description: 'Terms and Conditions for using SNK website and services.',
-};
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Terms & Conditions',
+  description: 'Terms and Conditions for using SNK Web Solutions website and services.',
+  path: '/terms/',
+});
 
 export default function TermsPage() {
   return (

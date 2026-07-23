@@ -97,17 +97,10 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
     <div className="overflow-x-clip bg-[#0D0D0D]">
       {/* HERO BANNER */}
       <section className="relative min-h-[70vh] flex items-end pb-16 pt-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={cs.heroImage}
-            alt={cs.client}
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/85 to-[#0D0D0D]/50" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(227,30,36,0.12)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[#0D0D0D]">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(227,30,36,0.14)_0%,transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(227,30,36,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/90 to-[#111111]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 w-full">
@@ -148,15 +141,15 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               {/* Client Card */}
               <div className="flex-shrink-0 p-5 rounded-2xl bg-[#1A1A1A]/90 backdrop-blur-md border border-[#2A2A2A] min-w-[220px]">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-white p-2 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-sm ring-1 ring-black/5">
                     <Image
                       src={cs.clientLogo}
                       alt={cs.client}
-                      width={80}
-                      height={80}
+                      width={48}
+                      height={48}
                       sizes="48px"
                       loading="lazy"
-                      className="w-full h-full object-contain"
+                      className="max-h-full max-w-full h-full w-full object-contain object-center"
                     />
                   </div>
                   <div>
@@ -541,17 +534,19 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                       href={`/case-studies/${rc.slug}/`}
                       className="case-card group block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden h-full"
                     >
-                      <div className="relative h-40 overflow-hidden">
-                        <Image
-                          src={rc.coverImage}
-                          alt={rc.client}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent pointer-events-none" />
-                        <div className="absolute top-3 left-3">
-                          <span className="px-2.5 py-1 rounded-full bg-[#E31E24]/80 text-white text-xs font-medium">
+                      <div className="relative h-40 overflow-hidden bg-white border-b border-[#2A2A2A]">
+                        <div className="absolute inset-0 flex items-center justify-center px-4 py-4">
+                          <Image
+                            src={rc.clientLogo}
+                            alt={rc.client}
+                            width={280}
+                            height={120}
+                            className="h-full w-full max-h-full max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                            sizes="280px"
+                          />
+                        </div>
+                        <div className="absolute top-3 left-3 z-10">
+                          <span className="px-2.5 py-1 rounded-full bg-[#E31E24] text-white text-xs font-medium shadow-sm">
                             {rc.industry}
                           </span>
                         </div>

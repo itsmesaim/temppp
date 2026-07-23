@@ -1,13 +1,16 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from '../../lib/blog-data';
+import { buildMetadata } from '../../lib/seo';
 
-export const metadata = {
-  title: 'Blog | SNK',
+export const metadata: Metadata = buildMetadata({
+  title: 'Blog — SEO, Marketing & Growth Insights',
   description:
-    'Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from the SNK team.',
-};
+    'Practical, no-fluff insights on SEO, ORM, paid social, and digital growth — straight from the SNK Web Solutions team in Navi Mumbai.',
+  path: '/blog/',
+});
 
 export default function Blog() {
   return (

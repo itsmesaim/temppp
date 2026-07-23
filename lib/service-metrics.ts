@@ -215,7 +215,7 @@ export const healthcareMetrics: Record<string, ServiceMetrics> = {
 export const hubMetrics: ServiceMetrics = {
   kpis: [
     { value: '15+', label: 'Years in digital marketing', change: 'Est. 2010', positive: true },
-    { value: '150+', label: 'Projects delivered', change: 'Across industries', positive: true },
+    { value: '1500+', label: 'Projects delivered', change: 'Across industries', positive: true },
     {
       value: '100+',
       label: 'Active client accounts',

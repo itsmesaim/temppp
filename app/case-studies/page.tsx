@@ -178,34 +178,27 @@ export default function CaseStudiesPage() {
                     href={`/case-studies/${cs.slug}/`}
                     className="case-card group relative block rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
                   >
-                    {/* Cover Image */}
-                    <div className="relative h-52 overflow-hidden">
-                      <Image
-                        src={cs.coverImage}
-                        alt={cs.client}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
-                      <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                        <span className="px-3 py-1 rounded-full bg-[#E31E24]/90 text-white text-xs font-semibold backdrop-blur-sm">
-                          {cs.industry}
-                        </span>
-                        {cs.featured && (
-                          <span className="px-3 py-1 rounded-full bg-black/60 text-[#FFD700] text-xs font-semibold backdrop-blur-sm border border-[#FFD700]/30">
-                            ★ Featured
-                          </span>
-                        )}
-                      </div>
-                      <div className="absolute bottom-4 right-4 w-11 h-11 rounded-xl bg-white/90 backdrop-blur-sm p-1.5 flex items-center justify-center">
+                    {/* Cover: full-width white band, logos fill most of the area */}
+                    <div className="relative h-48 sm:h-52 overflow-hidden bg-white border-b border-[#2A2A2A]">
+                      <div className="absolute inset-0 flex items-center justify-center px-5 py-5 sm:px-6 sm:py-6">
                         <Image
                           src={cs.clientLogo}
                           alt={cs.client}
-                          width={60}
-                          height={60}
-                          className="w-full h-full object-contain"
+                          width={360}
+                          height={160}
+                          className="h-full w-full max-h-full max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 90vw, 360px"
                         />
+                      </div>
+                      <div className="absolute top-4 left-4 flex gap-2 flex-wrap z-10">
+                        <span className="px-3 py-1 rounded-full bg-[#E31E24] text-white text-xs font-semibold shadow-sm">
+                          {cs.industry}
+                        </span>
+                        {cs.featured && (
+                          <span className="px-3 py-1 rounded-full bg-black/80 text-[#FFD700] text-xs font-semibold border border-[#FFD700]/30">
+                            ★ Featured
+                          </span>
+                        )}
                       </div>
                     </div>
 

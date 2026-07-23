@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconBox, type IconName } from './ServiceIcon';
 import {
   HeroReveal,
@@ -34,6 +35,8 @@ type ServicePageLayoutProps = {
   heroLine2: string;
   tagline?: string;
   heroDesc: string;
+  // ponytail: stock placeholders until real brand art lands
+  heroImage?: string;
   introTitle: string;
   introParagraphs: string[];
   features: string[];
@@ -59,6 +62,7 @@ export default function ServicePageLayout({
   heroLine2,
   tagline,
   heroDesc,
+  heroImage,
   introTitle,
   introParagraphs,
   features,
@@ -94,7 +98,7 @@ export default function ServicePageLayout({
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 relative">
-          <div className="max-w-4xl">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
               <HeroReveal>
                 <HeroItem>
@@ -135,6 +139,20 @@ export default function ServicePageLayout({
                 </HeroItem>
               </HeroReveal>
             </div>
+            {heroImage && (
+              <HeroItem delay={0.12}>
+                <div className="relative aspect-[4/3] w-full min-h-[220px] lg:aspect-auto lg:min-h-[28rem] xl:min-h-[32rem] overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
+                  <Image
+                    src={heroImage}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              </HeroItem>
+            )}
           </div>
         </div>
       </section>

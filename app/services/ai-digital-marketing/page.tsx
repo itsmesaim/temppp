@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ServiceIcon, type IconName } from '../../../components/ServiceIcon';
+import { buildMetadata } from '../../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'AI Digital Marketing Agency in Navi Mumbai',
+  description:
+    'AI-powered digital marketing from SNK — campaign optimisation, predictive targeting, and automated creative testing for businesses in Navi Mumbai.',
+  path: '/services/ai-digital-marketing/',
+});
 
 const capabilities: { icon: IconName; title: string; desc: string }[] = [
   {
@@ -72,31 +82,46 @@ export default function AIDigitalMarketingPage() {
         {/* Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#E31E24]/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E31E24]/15 border border-[#E31E24]/30 text-[#E31E24] text-xs tracking-[3px] font-semibold mb-6">
-            New Service
-          </div>
-          <h1 className="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.88] mb-6 text-white max-w-4xl">
-            AI Digital
-            <br />
-            <span className="text-[#E31E24]">Marketing.</span>
-          </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-[#888888] mb-10 leading-relaxed">
-            Your competitors are still doing marketing the old way. We use artificial intelligence
-            to outpace them on every channel, every day.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] active:scale-[0.985] transition-all"
-            >
-              Get an AI Strategy Session
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
-            >
-              All Services
-            </Link>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E31E24]/15 border border-[#E31E24]/30 text-[#E31E24] text-xs tracking-[3px] font-semibold mb-6">
+                New Service
+              </div>
+              <h1 className="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.88] mb-6 text-white max-w-4xl">
+                AI Digital
+                <br />
+                <span className="text-[#E31E24]">Marketing.</span>
+              </h1>
+              <p className="max-w-2xl text-xl md:text-2xl text-[#888888] mb-10 leading-relaxed">
+                Your competitors are still doing marketing the old way. We use artificial
+                intelligence to outpace them on every channel, every day.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] active:scale-[0.985] transition-all"
+                >
+                  Get an AI Strategy Session
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-[#2A2A2A] px-8 text-lg font-medium text-[#CCCCCC] hover:bg-[#1A1A1A] transition-all"
+                >
+                  All Services
+                </Link>
+              </div>
+            </div>
+            {/* ponytail: stock placeholder — replace public/heroes/ai-digital-marketing.jpg */}
+            <div className="relative aspect-[4/3] w-full min-h-[220px] lg:aspect-auto lg:min-h-[28rem] xl:min-h-[32rem] overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
+              <Image
+                src="/heroes/ai-digital-marketing.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

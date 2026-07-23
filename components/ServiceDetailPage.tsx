@@ -20,6 +20,8 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
       heroLine2={service.heroLine2}
       tagline={service.tagline}
       heroDesc={service.heroDesc}
+      // ponytail: stock Unsplash placeholders — swap files in public/heroes/
+      heroImage={`/heroes/${service.slug}.jpg`}
       introTitle={service.introTitle}
       introParagraphs={service.introParagraphs}
       features={service.features}

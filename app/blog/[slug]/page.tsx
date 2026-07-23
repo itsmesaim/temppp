@@ -1,7 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { blogPosts, type ContentBlock } from '../../../lib/blog-data';
+import { buildMetadata, articleJsonLd, breadcrumbJsonLd } from '../../../lib/seo';
+import JsonLd from '../../../components/JsonLd';
 
 /* ── Static params for Next.js 15 ── */
 export function generateStaticParams() {
@@ -9,14 +12,21 @@ export function generateStaticParams() {
 }
 
 /* ── Per-page metadata ── */
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
-  if (!post) return {};
-  return {
-    title: `${post.title} | SNK`,
+  if (!post) return { title: { absolute: 'Post Not Found | SNK' } };
+  return buildMetadata({
+    title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${post.slug}/`,
+    image: post.image,
+    type: 'article',
+  });
 }
 
 /* ── Content block renderer ── */
@@ -79,6 +89,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="bg-[#0D0D0D] min-h-screen">
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: post.title,
+            description: post.excerpt,
+            path: `/blog/${post.slug}/`,
+            image: post.image,
+            datePublished: post.date,
+          }),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog/' },
+            { name: post.title, path: `/blog/${post.slug}/` },
+          ]),
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="border-b border-[#2A2A2A]">
         <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">

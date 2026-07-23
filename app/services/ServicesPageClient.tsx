@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconBox } from '../../components/ServiceIcon';
 import { services, servicesHubIntro } from '../../lib/services-data';
 import { getServiceMetrics, hubMetrics } from '../../lib/service-metrics';
@@ -18,7 +19,7 @@ import {
 
 const stats = [
   { number: '15+', label: 'Years Experience' },
-  { number: '150+', label: 'Projects Delivered' },
+  { number: '1500+', label: 'Projects Delivered' },
   { number: '100+', label: 'Happy Clients' },
   { number: 'Navi Mumbai', label: 'Serving Maharashtra' },
 ];
@@ -33,48 +34,63 @@ export default function ServicesPageClient() {
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         />
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 relative">
-          <HeroReveal>
-            <HeroItem>
-              <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">WHAT WE DO</div>
-            </HeroItem>
-            <HeroItem delay={0.06}>
-              <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
-                Services built
-                <br />
-                for measurable
-                <br />
-                <span className="text-[#E31E24]">outcomes.</span>
-              </h1>
-            </HeroItem>
-            <HeroItem delay={0.12}>
-              <p className="max-w-2xl text-xl text-[#999999] mb-10 leading-relaxed">
-                {servicesHubIntro.paragraphs[0]}
-              </p>
-            </HeroItem>
-            <HeroItem delay={0.18}>
-              <Link
-                href="/ai-digital-marketing"
-                className="inline-flex items-center gap-3 mb-8 px-6 py-3 rounded-full bg-[#1A0505] border border-[#E31E24]/40 hover:border-[#E31E24] transition-all group"
-              >
-                <span className="text-white text-sm font-medium">
-                  Looking for AI Digital Marketing?
-                </span>
-                <span className="text-[#E31E24] text-sm font-semibold group-hover:translate-x-1 transition-transform">
-                  Explore AI services
-                </span>
-              </Link>
-            </HeroItem>
-            <HeroItem delay={0.24}>
-              <GlowButton>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <HeroReveal>
+              <HeroItem>
+                <div className="text-[#E31E24] tracking-[4px] text-xs mb-4">WHAT WE DO</div>
+              </HeroItem>
+              <HeroItem delay={0.06}>
+                <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-6 text-white max-w-4xl">
+                  Services built
+                  <br />
+                  for measurable
+                  <br />
+                  <span className="text-[#E31E24]">outcomes.</span>
+                </h1>
+              </HeroItem>
+              <HeroItem delay={0.12}>
+                <p className="max-w-2xl text-xl text-[#999999] mb-10 leading-relaxed">
+                  {servicesHubIntro.paragraphs[0]}
+                </p>
+              </HeroItem>
+              <HeroItem delay={0.18}>
                 <Link
-                  href="/contact"
-                  className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all"
+                  href="/ai-digital-marketing"
+                  className="inline-flex items-center gap-3 mb-8 px-6 py-3 rounded-full bg-[#1A0505] border border-[#E31E24]/40 hover:border-[#E31E24] transition-all group"
                 >
-                  Get a Free Strategy Session
+                  <span className="text-white text-sm font-medium">
+                    Looking for AI Digital Marketing?
+                  </span>
+                  <span className="text-[#E31E24] text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                    Explore AI services
+                  </span>
                 </Link>
-              </GlowButton>
+              </HeroItem>
+              <HeroItem delay={0.24}>
+                <GlowButton>
+                  <Link
+                    href="/contact"
+                    className="inline-flex h-14 items-center justify-center rounded-full bg-[#E31E24] px-10 text-lg font-semibold text-white hover:bg-[#C01A1F] transition-all"
+                  >
+                    Get a Free Strategy Session
+                  </Link>
+                </GlowButton>
+              </HeroItem>
+            </HeroReveal>
+            {/* ponytail: stock placeholder — replace public/heroes/services-hub.jpg */}
+            <HeroItem delay={0.12}>
+              <div className="relative aspect-[4/3] w-full min-h-[220px] lg:aspect-auto lg:min-h-[28rem] xl:min-h-[32rem] overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#1A1A1A] shadow-[0_0_60px_-15px_rgba(227,30,36,0.25)]">
+                <Image
+                  src="/heroes/services-hub.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
             </HeroItem>
-          </HeroReveal>
+          </div>
         </div>
       </section>
 

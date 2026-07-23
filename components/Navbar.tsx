@@ -221,17 +221,13 @@ export default function Navbar() {
               href="/"
               className="group relative z-10 flex h-full max-w-[48vw] shrink-0 items-center sm:max-w-none"
             >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-2xl bg-[#E31E24]/20 opacity-70 blur-2xl"
-              />
               <Image
                 src="/grey_logo-nav.webp"
                 alt="SNK Web Solutions"
                 width={562}
                 height={280}
                 sizes="(max-width: 640px) 180px, (max-width: 1024px) 260px, 320px"
-                className="relative h-[3.5rem] w-auto max-h-full object-contain object-left contrast-[1.08] saturate-[1.15] drop-shadow-[0_0_24px_rgba(227,30,36,0.4)] sm:h-[3.85rem] md:h-[4.1rem] lg:h-[4.35rem]"
+                className="relative h-[3.5rem] w-auto max-h-full object-contain object-left contrast-[1.08] saturate-[1.15] sm:h-[3.85rem] md:h-[4.1rem] lg:h-[4.35rem]"
                 priority
               />
             </Link>

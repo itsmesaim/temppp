@@ -57,30 +57,22 @@ export default function CaseStudiesSection() {
                   href={`/case-studies/${cs.slug}/`}
                   className="case-card group relative flex h-full min-w-0 flex-col rounded-3xl bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#E31E24] overflow-hidden"
                 >
-                  <div className="relative h-40 sm:h-44 lg:h-48 shrink-0 overflow-hidden">
-                    <Image
-                      src={cs.coverImage}
-                      alt={cs.client}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-[#E31E24]/90 text-white text-xs font-semibold tracking-wide backdrop-blur-sm">
-                        {cs.industry}
-                      </span>
-                    </div>
-                    <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm p-1.5 flex items-center justify-center">
+                  <div className="relative h-40 sm:h-44 lg:h-48 shrink-0 overflow-hidden bg-white border-b border-[#2A2A2A]">
+                    <div className="absolute inset-0 flex items-center justify-center px-4 py-4 sm:px-5 sm:py-5">
                       <Image
                         src={cs.clientLogo}
                         alt={cs.client}
-                        width={80}
-                        height={80}
-                        sizes="48px"
+                        width={320}
+                        height={140}
+                        className="h-full w-full max-h-full max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                        sizes="320px"
                         loading="lazy"
-                        className="w-full h-full object-contain"
                       />
+                    </div>
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="px-3 py-1 rounded-full bg-[#E31E24] text-white text-xs font-semibold tracking-wide shadow-sm">
+                        {cs.industry}
+                      </span>
                     </div>
                   </div>
 

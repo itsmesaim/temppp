@@ -2,10 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { OFFICE_ADDRESS } from '../../lib/site';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | SNK',
-  description: 'Privacy Policy for SNK — how we collect, use, and protect your information.',
-};
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Privacy Policy',
+  description:
+    'Privacy Policy for SNK Web Solutions — how we collect, use, and protect your information.',
+  path: '/privacy-policy/',
+});
 
 export default function PrivacyPolicyPage() {
   return (
