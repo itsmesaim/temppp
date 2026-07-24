@@ -138,9 +138,9 @@ export const services: Service[] = [
       'SNK helps startups, SMEs, healthcare brands, educational institutions, and enterprises increase online visibility, generate quality leads, and maximize ROI through strategic social media marketing.',
     introTitle: 'Social Media Marketing in Navi Mumbai',
     introParagraphs: [
-      'With over 15+ years of industry experience, we provide customized digital marketing services in Navi Mumbai that combine strategic planning, creative execution, and data-driven insights — including social media marketing that helps businesses attract the right audience and strengthen their brand presence.',
+      'With over 15+ years of industry experience, we provide customized social media marketing services in Navi Mumbai that combine content strategy, community management, and data-driven campaigns — helping businesses attract the right audience and strengthen their brand presence.',
       'Whether you are looking to improve visibility, generate qualified leads, or strengthen your brand presence, our team develops tailored social media strategies that align with your business objectives and convert engagement into loyal customers.',
-      'At SNK, we believe every business deserves a strong digital presence. Our social media marketing services are designed to drive sustainable growth, increase conversions, and help you stay ahead of the competition.',
+      'At SNK, we believe every business deserves a strong social presence. Our social media marketing services are designed to drive sustainable growth, increase conversions, and help you stay ahead of the competition.',
     ],
     features: [
       'Social Media Strategy & Planning',

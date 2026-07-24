@@ -89,7 +89,7 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
 
   {
     name: 'Pinky',
-    role: 'Senior Counsellor',
+    role: 'Content Writer',
     img: '/team-pinky1.jpg',
     bio: 'A trusted advisor who guides clients through their digital journey with professionalism, clarity, and a genuine commitment to their success.',
   },
@@ -120,13 +120,13 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
   },
   {
     name: 'Nikhil Navghane',
-    role: 'Intern',
+    role: 'Digital marketing executive',
     img: '/team-nikhil.webp',
     bio: 'Assists with social media execution, ad campaign support, and analytics tracking while building hands-on experience across digital channels.',
   },
   {
     name: 'Shabana Tole',
-    role: 'Intern',
+    role: 'Digital Growth Executive',
     img: '/team-shabana1.jpg',
     bio: 'Contributes to content creation, audience research, and day-to-day campaign coordination to keep client marketing moving forward.',
   },
