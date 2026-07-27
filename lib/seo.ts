@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { FOUNDED_YEAR } from './site';
 
-export const SITE_URL = 'https://snkwebsolutions.com';
+export const SITE_URL = 'https://www.snkwebsolutions.com';
 export const SITE_NAME = 'SNK Web Solutions';
 export const SITE_PHONE = '+919321587762';
 export const SITE_EMAIL = 'snkwebsolutions@gmail.com';

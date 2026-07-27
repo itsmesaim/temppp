@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: `${SITE_URL}/` },
+  verification: {
+    google: 'Ay9VlMZGN_wFDz4bNQFW-I_PuWB_z2nusg7eJVyyLbY',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
