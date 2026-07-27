@@ -96,9 +96,9 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
 
   {
     name: 'Anup Patil',
-    role: 'AI Video Creator',
+    role: 'AI & Social Media Marketer',
     img: '/team-anup1.jpg',
-    bio: 'Creates AI-powered video content from concept to final edit—scripts, visuals, and motion that help brands stand out on social and digital channels.',
+    bio: 'Blends AI tools with social media marketing—creating content, running platform campaigns, and using smart automation to grow engagement and brand presence.',
   },
   {
     name: 'Aakash Karnekar',
@@ -110,13 +110,13 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     name: 'Kahkasha Bhatkar',
     role: 'Web Designer & Developer',
     img: '/team-kahkasha1.jpg',
-    bio: 'Designs and develops beautiful websites end to end—from layout and UI to clean, responsive code—so every brand looks polished and performs smoothly online.',
+    bio: 'A hardworking, detail-obsessed talent who turns ideas into stunning websites—crafting elegant design, seamless UX, and rock-solid code from the first pixel to the final deploy. Brands trust her work because it looks premium, loads fast, and just works.',
   },
   {
     name: 'Khushi Pandey',
-    role: 'Digital Marketer',
+    role: 'AEO & GEO Analyst',
     img: '/team-khushi2.jpg',
-    bio: 'Runs digital marketing campaigns across channels—planning, content coordination, and reporting—to grow brand visibility and bring in steady leads.',
+    bio: 'Optimizes brands for answer engines and generative search—structuring content, entities, and visibility signals so clients show up in AI answers and modern search results.',
   },
   {
     name: 'Nikhil Navghane',
