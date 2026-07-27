@@ -84,51 +84,51 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     name: 'Yusuf Kadiri',
     role: 'Digital Marketing Manager',
     img: '/team-main.jpeg',
-    bio: 'Crafts data-driven digital marketing campaigns that boost brand visibility, drive qualified traffic, and generate meaningful business results.',
+    bio: 'Leads digital marketing strategy and campaigns—guiding the team on SEO, ads, content, and reporting so every client gets clear direction and measurable growth.',
   },
 
   {
     name: 'Pinky',
     role: 'Content Writer',
     img: '/team-pinky1.jpg',
-    bio: 'Creates clear, persuasive copy for websites, blogs, and campaigns that strengthen brand voice, improve SEO, and convert readers into customers.',
+    bio: 'Writes clear, persuasive copy for websites, blogs, and campaigns that strengthen brand voice, support SEO goals, and turn readers into customers.',
   },
 
   {
     name: 'Anup Patil',
-    role: 'AI Video Maker',
+    role: 'AI Video Creator',
     img: '/team-anup1.jpg',
-    bio: 'Produces engaging AI-powered video content for brands—from concept and scripting to editing—helping campaigns stand out across social and digital channels.',
+    bio: 'Creates AI-powered video content from concept to final edit—scripts, visuals, and motion that help brands stand out on social and digital channels.',
   },
   {
     name: 'Aakash Karnekar',
-    role: 'Performance Marketing Lead',
+    role: 'Digital Marketing Associate',
     img: '/team-Aakash1.jpg',
-    bio: 'Plans and optimizes paid campaigns—Google Ads, Meta, and beyond—to improve ROAS, lower cost per lead, and turn ad spend into measurable business growth.',
+    bio: 'Assists with day-to-day digital marketing—campaign setup, content support, and performance tracking—so client projects stay organized and results stay on track.',
   },
   {
     name: 'Kahkasha Bhatkar',
     role: 'Web Designer & Developer',
     img: '/team-kahkasha1.jpg',
-    bio: 'A hardworking creative who designs and builds beautiful websites end to end—from layout and visuals to clean, responsive code—so every brand looks polished and performs flawlessly online.',
+    bio: 'Designs and develops beautiful websites end to end—from layout and UI to clean, responsive code—so every brand looks polished and performs smoothly online.',
   },
   {
     name: 'Khushi Pandey',
-    role: 'Digital Marketing Lead',
+    role: 'Digital Marketer',
     img: '/team-khushi2.jpg',
-    bio: 'Coordinates end-to-end digital marketing—campaign planning, content, and performance reporting—so brands stay visible, consistent, and lead-ready across channels.',
+    bio: 'Runs digital marketing campaigns across channels—planning, content coordination, and reporting—to grow brand visibility and bring in steady leads.',
   },
   {
     name: 'Nikhil Navghane',
-    role: 'Social Media Lead',
+    role: 'Digital Marketer',
     img: '/team-nikhil.webp',
-    bio: 'Grows brand presence on social platforms with smart content calendars, community engagement, and ad support—backed by clear analytics that show what works.',
+    bio: 'Executes digital marketing across ads, social, and analytics—keeping campaigns live, optimized, and easy for clients to understand with clear results.',
   },
   {
     name: 'Shabana Tole',
-    role: 'Growth Marketing Lead',
+    role: 'SEO Analyst',
     img: '/team-shabana1.jpg',
-    bio: 'Focuses on growth experiments—audience research, content angles, and campaign tweaks—that expand reach, improve conversion, and keep client pipelines healthy.',
+    bio: 'Analyzes and improves organic search through keyword research, on-page SEO, content optimization, and ranking reports that grow traffic and qualified leads.',
   },
 ];
 
@@ -164,16 +164,16 @@ export default function About() {
           </FadeInSection>
 
           <FadeInSection delay={200}>
-            <div className="flex flex-wrap justify-center gap-4 mt-10">
+            <div className="mt-10 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/contact"
-                className="px-7 py-3.5 rounded-full bg-[#E31E24] text-white font-semibold text-sm hover:bg-[#C01A1F] transition-all hover:shadow-[0_0_24px_rgba(227,30,36,0.4)]"
+                className="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-full bg-[#E31E24] px-7 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-all hover:shadow-[0_0_24px_rgba(227,30,36,0.4)]"
               >
                 Contact Us
               </Link>
               <Link
                 href="/contact"
-                className="px-7 py-3.5 rounded-full border border-[#2A2A2A] text-[#CCCCCC] font-semibold text-sm hover:border-[#E31E24]/40 hover:text-white transition-all"
+                className="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-full border border-[#2A2A2A] px-7 text-sm font-semibold text-[#CCCCCC] hover:border-[#E31E24]/40 hover:text-white transition-all"
               >
                 Get Free Website Audit
               </Link>
@@ -475,19 +475,19 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4">
-                <GlowButton>
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4">
+                <GlowButton className="w-full sm:w-auto">
                   <Link
                     href="/contact"
-                    className="px-8 py-4 rounded-full bg-[#E31E24] text-white font-semibold text-sm hover:bg-[#C01A1F] transition-all"
+                    className="inline-flex h-14 w-full items-center justify-center rounded-full bg-[#E31E24] px-8 text-sm font-semibold text-white hover:bg-[#C01A1F] transition-all sm:px-10"
                   >
                     Start Your Project
                   </Link>
                 </GlowButton>
-                <GlowButton>
+                <GlowButton className="w-full sm:w-auto">
                   <Link
                     href="/contact"
-                    className="px-8 py-4 rounded-full border border-[#E31E24]/50 text-[#E31E24] font-semibold text-sm hover:bg-[#E31E24]/10 transition-all"
+                    className="inline-flex h-14 w-full items-center justify-center rounded-full border border-[#E31E24]/50 px-8 text-sm font-semibold text-[#E31E24] hover:bg-[#E31E24]/10 transition-all sm:px-10"
                   >
                     Contact Us
                   </Link>

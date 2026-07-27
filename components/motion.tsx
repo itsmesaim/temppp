@@ -286,17 +286,20 @@ export function GlowButton({
   className?: string;
 }) {
   const reduced = useReducedMotion();
+  // inline-flex keeps sibling CTAs from collapsing/overlapping in flex rows
+  const classes = ['inline-flex max-w-full', className].filter(Boolean).join(' ');
 
   if (reduced) {
-    return <div className={className}>{children}</div>;
+    return <div className={classes}>{children}</div>;
   }
 
   return (
     <motion.div
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 420, damping: 18 }}
-      className={className}
+      className={classes}
+      style={{ transformOrigin: 'center' }}
     >
       {children}
     </motion.div>
