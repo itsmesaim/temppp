@@ -84,7 +84,7 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     name: 'Yusuf Kadiri',
     role: 'Digital Marketing Manager',
     img: '/team-main.jpeg',
-    bio: 'Leads digital marketing strategy and campaigns—guiding the team on SEO, ads, content, and reporting so every client gets clear direction and measurable growth.',
+    bio: 'Leads digital marketing strategy and campaigns - guiding the team on SEO, ads, content, and reporting so every client gets clear direction and measurable growth.',
   },
 
   {
@@ -98,31 +98,31 @@ const team: { name: string; role: string; img: string; bio: string }[] = [
     name: 'Anup Patil',
     role: 'AI & Social Media Marketer',
     img: '/team-anup1.jpg',
-    bio: 'Blends AI tools with social media marketing—creating content, running platform campaigns, and using smart automation to grow engagement and brand presence.',
+    bio: 'Blends AI tools with social media marketing - creating content, running platform campaigns, and using smart automation to grow engagement and brand presence.',
   },
   {
     name: 'Aakash Karnekar',
     role: 'Digital Marketing Associate',
     img: '/team-Aakash1.jpg',
-    bio: 'Assists with day-to-day digital marketing—campaign setup, content support, and performance tracking—so client projects stay organized and results stay on track.',
+    bio: 'Assists with day-to-day digital marketing - campaign setup, content support, and performance tracking - so client projects stay organized and results stay on track.',
   },
   {
     name: 'Kahkasha Bhatkar',
     role: 'Web Designer & Developer',
     img: '/team-kahkasha1.jpg',
-    bio: 'A hardworking, detail-obsessed talent who turns ideas into stunning websites—crafting elegant design, seamless UX, and rock-solid code from the first pixel to the final deploy. Brands trust her work because it looks premium, loads fast, and just works.',
+    bio: 'A hardworking, detail-obsessed talent who turns ideas into stunning websites - crafting elegant design, seamless UX, and rock-solid code from the first pixel to the final deploy. Brands trust her work because it looks premium, loads fast, and just works.',
   },
   {
     name: 'Khushi Pandey',
     role: 'AEO & GEO Analyst',
     img: '/team-khushi2.jpg',
-    bio: 'Optimizes brands for answer engines and generative search—structuring content, entities, and visibility signals so clients show up in AI answers and modern search results.',
+    bio: 'Optimizes brands for answer engines and generative search - structuring content, entities, and visibility signals so clients show up in AI answers and modern search results.',
   },
   {
     name: 'Nikhil Navghane',
     role: 'Digital Marketer',
     img: '/team-nikhil.webp',
-    bio: 'Executes digital marketing across ads, social, and analytics—keeping campaigns live, optimized, and easy for clients to understand with clear results.',
+    bio: 'Executes digital marketing across ads, social, and analytics - keeping campaigns live, optimized, and easy for clients to understand with clear results.',
   },
   {
     name: 'Shabana Tole',
@@ -387,7 +387,7 @@ export default function About() {
                 Meet Our Team
               </h2>
               <p className="text-[#888888] text-lg mt-3 max-w-2xl mx-auto">
-                The people behind SNK — led by our Founder &amp; Director, working together to
+                The people behind SNK - led by our Founder &amp; Director, working together to
                 deliver exceptional digital solutions.
               </p>
             </div>
